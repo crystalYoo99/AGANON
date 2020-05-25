@@ -3,6 +3,7 @@ import { Initial } from "./pages/InitialPage";
 import Header from "./pages/Header";
 import logo from "./logo.svg";
 import Leftbar from "./pages/Leftbar";
+import MapContainer from "./pages/Map.js";
 
 import "./App.css";
 
@@ -51,7 +52,9 @@ function App() {
   */}
         </div>
         <Leftbar />
-        <div className="content"></div>
+        <div className="content">
+          <MapContainer />
+        </div>
       </div>
     </div>
   );
