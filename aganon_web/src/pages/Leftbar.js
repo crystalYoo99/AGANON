@@ -22,10 +22,22 @@ export default function Leftmenu() {
           <MenuItem component={Link} to="/economy" onClick={handleToggle}>
             Economy
           </MenuItem>
-          <MenuItem onClick={handleToggle}>Mission</MenuItem>
-          <MenuItem onClick={handleToggle}>Infrastructure</MenuItem>
-          <MenuItem onClick={handleToggle}>ICT</MenuItem>
-          <MenuItem onClick={handleToggle}>Emergency</MenuItem>
+          <MenuItem component={Link} to="/mission" onClick={handleToggle}>
+            Mission
+          </MenuItem>
+          <MenuItem
+            component={Link}
+            to="/infrastructure"
+            onClick={handleToggle}
+          >
+            Infrastructure
+          </MenuItem>
+          <MenuItem component={Link} to="/ict" onClick={handleToggle}>
+            ICT
+          </MenuItem>
+          <MenuItem component={Link} to="/emergency" onClick={handleToggle}>
+            Emergency
+          </MenuItem>
         </Drawer>
       </div>
     </React.Fragment>

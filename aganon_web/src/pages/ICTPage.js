@@ -4,7 +4,7 @@ function ICTpage() {
   const [fetch, setFetch] = React.useState(false);
 
   function handleFetch() {
-    setfetch(t => !t);
+    setFetch(t => !t);
   }
   return (
     <div>

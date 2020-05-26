@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import MapContainer from "./Map.js";
+import Leftbar from "./Leftbar";
 import "../App.css";
 
 export default function Initial() {
@@ -39,13 +40,19 @@ export default function Initial() {
     );
   }
   return (
+    <div className="content">
+      <MapContainer />
+    </div>
+  );
+  {
+    /*
+    return (
     <div className="App">
       <Header />
       <div className="Body">
         <div>
           {/*{isSidebarExpanded && sidebarExpanded()}
           {isSidebarExpanded || sidebarCollapsed()}
-  */}
         </div>
         <Leftbar />
         <div className="content">
@@ -54,4 +61,6 @@ export default function Initial() {
       </div>
     </div>
   );
+  */
+  }
 }
