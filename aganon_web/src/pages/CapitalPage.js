@@ -15,36 +15,15 @@ import Select from '@material-ui/core/Select';
 import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
 
-import Typography from '@material-ui/core/Typography';
-
-
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import Favorite from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import blueGrey from '@material-ui/core/colors/blueGrey';
-
-import ButtonBase from '@material-ui/core/ButtonBase';
-
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-
-import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
-import Icon from '@material-ui/core/Icon';
-import SaveIcon from '@material-ui/icons/Save';
-
 
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import ImageIcon from '@material-ui/icons/Image';
 import WorkIcon from '@material-ui/icons/Work';
@@ -52,25 +31,8 @@ import BeachAccessIcon from '@material-ui/icons/BeachAccess';
 import Divider from '@material-ui/core/Divider';
 
 import brown from '@material-ui/core/colors/brown';
+import Button from '@material-ui/core/Button';
 
-
-const images = [
-  {
-    url: '/image/Nation.jpeg',
-    title: 'Breakfast',
-    width: '40%',
-  },
-  {
-    url: '/static/images/grid-list/burgers.jpg',
-    title: 'Burgers',
-    width: '30%',
-  },
-  {
-    url: '/static/images/grid-list/camera.jpg',
-    title: 'Camera',
-    width: '30%',
-  },
-];
 
 
 const GreenCheckbox = withStyles({
@@ -85,7 +47,7 @@ const GreenCheckbox = withStyles({
 
 
 const mainFeaturedPost = {
-  title: 'NATION',
+  title: 'CAPITAL',
   imgText: 'main image description',
 };
 
@@ -243,7 +205,17 @@ const useStyles = makeStyles((theme) => ({
 
           listtext5:{
             color:brown[300]
+          },
+
+          root6: {
+            '& > *': {
+              margin: theme.spacing(1),
+            },
+          buttoncolor:{
+            backgroundColor: blueGrey[900],
+            marginTop: theme.spacing(5),
           }
+        },
     }
   }));
   
@@ -258,42 +230,42 @@ const useStyles = makeStyles((theme) => ({
     },
   };
 
-  const nation_id = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-  ];
+  // const nation_id = [
+  //   '1',
+  //   '2',
+  //   '3',
+  //   '4',
+  //   '5',
+  //   '6',
+  //   '7',
+  //   '8',
+  //   '9',
+  //   '10',
+  // ];
 
-  const nation_name = [
-    'South Africa',
-    'Comoros',
-    'Kenya',
-    'Malawi',
-    'Tanzania',
-  ];
+  // const nation_name = [
+  //   'South Africa',
+  //   'Comoros',
+  //   'Kenya',
+  //   'Malawi',
+  //   'Tanzania',
+  // ];
 
-  const latitude = [
-    'lat:0-10',
-    '10-20',
-    '20-30',
-    '30-40',
-    '40-50',
-  ];
+  // const latitude = [
+  //   'lat:0-10',
+  //   '10-20',
+  //   '20-30',
+  //   '30-40',
+  //   '40-50',
+  // ];
 
-  const longitude = [
-    '0-10',
-    '10-20',
-    '20-30',
-    '30-40',
-    '40-50',
-  ];
+  // const longitude = [
+  //   '0-10',
+  //   '10-20',
+  //   '20-30',
+  //   '30-40',
+  //   '40-50',
+  // ];
 
 
   function getStyles(name, personName, theme) {
@@ -306,7 +278,7 @@ const useStyles = makeStyles((theme) => ({
   }
 
 
-export default function Emergency() {
+export default function CapitalPage() {
     const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -315,27 +287,16 @@ export default function Emergency() {
     setPersonName(event.target.value);
   };
 
-  const handleChangeMultiple = (event) => {
-    const { options } = event.target;
-    const value = [];
-    for (let i = 0, l = options.length; i < l; i += 1) {
-      if (options[i].selected) {
-        value.push(options[i].value);
-      }
-    }
-    setPersonName(value);
-  };
+  const [state, setState] = React.useState({
+    checkedA: false,
+    checkedB: false,
+    checkedC: false,
+    checkedD: false,
+  });
 
-    const [state, setState] = React.useState({
-      checkedA: false,
-      checkedB: false,
-      checkedC: false,
-      checkedD: false,
-    });
-  
-    const handleChange2 = (event) => {
-      setState({ ...state, [event.target.name]: event.target.checked });
-    };
+  const handleChange2 = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
 
   return (
     <React.Fragment>
@@ -343,140 +304,61 @@ export default function Emergency() {
       <Container maxWidth="lg"> 
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
-
-
-    {/* <div className={classes.root1}>
-      {images.map((image) => (
-        <ButtonBase
-          focusRipple
-          key={image.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: image.width,
-          }}
-        >
-          <span
-            className={classes.imageSrc}
-            style={{
-              backgroundImage: `url(${image.url})`,
-            }}
-          />
-          <span className={classes.imageBackdrop} />
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.imageTitle}
-            >
-              {image.title}
-              <span className={classes.imageMarked} />
-            </Typography>
-          </span>
-        </ButtonBase>
-      ))}
-    </div> */}
-
-
-       {/* <div className={classes.root3}>{"This div's text looks like that of a button."}</div> */}
         </main>
       </Container>
-
-
       <div>
-      {/* <Container className={classes.row1}> */}
-      
-      {/* <Button
-        variant="contained"
-        color="secondary"
-        className={classes.button4}
-        startIcon={<DeleteIcon />}
-      >
-        SELECT                    
-      </Button> */}
 
-
-
-
-        
-
-<List className={classes.root5}>
+    <List className={classes.root5}>
       <div className={classes.section5}>
       <ListItem className={classes.list5}>
-        <ListItemText className={classes.listtext5} primary="SELECT"  />
+        <ListItemText className={classes.listtext5} primary="NATION"  />
+      </ListItem>
+        <FormGroup row className={classes.checks}>
+          <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" />
+          <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti" />
+          <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea" />
+          <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia" />
+          <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya" />
+          <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles" />
+          <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia" />
+          <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland" />
+          <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania" />
+          <FormControlLabel control={<Checkbox name="checked10" />} label="Angola" />
+          <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana" />
+          <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini" />
+          <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho" />
+          <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar" />
+          <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi" />
+          <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius" />
+          <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique" />
+          <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia" />
+          <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa" />
+          <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia" />
+          <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" />
+        </FormGroup>
+      </div>
+      <div className={classes.section5}>
+        <Divider variant="inset" component="li" />
+        <ListItem>
+          <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-        <FormControlLabel className={classes.label4}control={<Checkbox name="checkedA" />} label="nation_id" />
-      <FormControlLabel control={<Checkbox name="checkedB" />} label="nation_name" />
-      <FormControlLabel control={<Checkbox name="checkedC" />} label="latitude" />
-      <FormControlLabel control={<Checkbox name="checkedD" />} label="longitude" />
-    </FormGroup>
-    </div>
-      {/* </ListItem> */}
-      <div className={classes.section5}>
-      <Divider variant="inset" component="li" />
-      <ListItem>
-        <ListItemText className={classes.listtext5} primary="CONDITION"  />
-      </ListItem>
+          <FormControlLabel control={<Checkbox name="checkedA" />} label="capital id" />
+          <FormControlLabel control={<Checkbox name="checkedB" />} label="name" />
+        </FormGroup>
       </div>
-
     </List>
 
+    <div className={classes.root6}>
+      <Button className={classes.buttoncolor} variant="contained" >
+        SHOW RESULTS
+      </Button>
+    </div> 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <FormGroup row className={classes.checks}>
-      {/* <Typography row variant="h5" color="primary">
-                SELECT
-        </Typography> */}
-
-      
-      {/* This Button uses a Font Icon, see the installation instructions in the Icon component docs. */}
-      
-      <FormControlLabel className={classes.label4}control={<Checkbox name="checkedA" />} label="nation_id" />
-      <FormControlLabel control={<Checkbox name="checkedB" />} label="nation_name" />
-      <FormControlLabel control={<Checkbox name="checkedC" />} label="latitude" />
-      <FormControlLabel control={<Checkbox name="checkedD" />} label="longitude" />
-    </FormGroup>
-
-      {/* </Container> */}
-
-      {/* <Typography variant="h5" color="primary">
-                CONDITION
-        </Typography> */}
-
-
-      {/* <Button
-        variant="contained"
-        color="primary"
-        className={classes.button4}
-        endIcon={<Icon>send</Icon>}
-      >
-        CONDITION
-      </Button> */}
-
-
-      <FormControl className={classes.formControl}>
+      {/* <FormControl className={classes.formControl}>
 
         <InputLabel id="demo-mutiple-checkbox-label">nation_id</InputLabel>
         <Select
@@ -585,9 +467,8 @@ export default function Emergency() {
             </MenuItem>
           ))}
         </Select>
-      </FormControl>
+      </FormControl> */}
 
-    
     </div>
 
     </React.Fragment>

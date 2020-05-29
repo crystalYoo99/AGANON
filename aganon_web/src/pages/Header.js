@@ -28,7 +28,7 @@ import Icon from '@material-ui/core/Icon';
 import { FaGlobeAfrica, FaBorderNone } from 'react-icons/fa';
 import PublicIcon from '@material-ui/icons/Public';
 import EmergencyPage from './EmergencyPage';
-import NationPage from './NationPage';
+import CapitalPage from './CapitalPage';
 
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import green from '@material-ui/core/colors/green';
@@ -217,7 +217,7 @@ export default function Header() {
          <Container maxWidth="lg" className={classes.container}>
            {/* <InitialPage/> */}
            {/* <EmergencyPage/> */}
-           <NationPage/>
+           <CapitalPage/>
          </Container>
        </main>
       
