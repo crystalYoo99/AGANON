@@ -6,19 +6,25 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 
+import teal from '@material-ui/core/colors/teal';
+
+
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
     position: 'relative',
     // backgroundColor: theme.palette.grey[800],warning.light
-    backgroundColor: theme.palette.success.light,
+
+    // backgroundColor: theme.palette.success.light,
+    backgroundColor:teal[800],
     color: theme.palette.common.white,
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(8),
     // backgroundImage: 'url(https://source.unsplash.com/random)',
     backgroundImage: 'url(https://source.unsplash.com/random)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     width:'111%',
+    // textAlign:'left',
     // height:'-30%',
   },
   overlay: {
@@ -33,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(3),
-      paddingLeft:'25%',
+      padding: theme.spacing(1),
+      paddingLeft:'-30%',
       paddingRight: 0,
     },
   },
@@ -52,7 +58,7 @@ export default function MainFeaturedPost(props) {
       <Grid container>
         <Grid item md={2}>
           <div className={classes.mainFeaturedPostContent}>
-            <Typography component="h1" variant="h4" color="inherit"  gutterBottom>
+            <Typography component="h1" variant="h6" color="inherit"  gutterBottom>
               {post.title}
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>

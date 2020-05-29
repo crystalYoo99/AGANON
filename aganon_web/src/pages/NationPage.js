@@ -40,6 +40,20 @@ import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
 import Icon from '@material-ui/core/Icon';
 import SaveIcon from '@material-ui/icons/Save';
 
+
+
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
+import ImageIcon from '@material-ui/icons/Image';
+import WorkIcon from '@material-ui/icons/Work';
+import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import Divider from '@material-ui/core/Divider';
+
+import brown from '@material-ui/core/colors/brown';
+
+
 const images = [
   {
     url: '/image/Nation.jpeg',
@@ -209,6 +223,26 @@ const useStyles = makeStyles((theme) => ({
           
           label4:{
             marginLeft:theme.spacing(5),
+          },
+
+          root5: {
+            width: '100%',
+            maxWidth: 360,
+            backgroundColor: theme.palette.background.paper,
+          },
+          list5:{
+            // flexDirection:'row'
+            padding: theme.spacing(30),
+          },
+          divide5:{
+            marginTop: theme.spacing(30),
+          },
+          section5:{
+            margin: theme.spacing(6),
+          },
+
+          listtext5:{
+            color:brown[300]
           }
     }
   }));
@@ -308,7 +342,7 @@ export default function Emergency() {
       <CssBaseline className={classes.base}/>
       <Container maxWidth="lg"> 
         <main>
-          {/* <MainFeaturedPost post={mainFeaturedPost} /> */}
+          <MainFeaturedPost post={mainFeaturedPost} />
 
 
     {/* <div className={classes.root1}>
@@ -344,41 +378,7 @@ export default function Emergency() {
       ))}
     </div> */}
 
-{/* 작은 카드 페이지 */}
-{/* <div className={classes.root2}>
-      <Paper className={classes.paper2}>
-        <Grid container spacing={140}>
-          <Grid item>
-            <ButtonBase className={classes.image2}>
-              <img className={classes.img2} alt="complex" src="/image/Nation.jpeg" />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-                <Typography gutterBottom variant="h4">
-                  Nation
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Full resolution 1920x1080 • JPEG
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  ID: 1030114
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                  Remove
-                </Typography>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Typography variant="subtitle1">$19.00</Typography>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Paper>
-    </div> */}
+
        {/* <div className={classes.root3}>{"This div's text looks like that of a button."}</div> */}
         </main>
       </Container>
@@ -395,6 +395,55 @@ export default function Emergency() {
       >
         SELECT                    
       </Button> */}
+
+
+
+
+        
+
+<List className={classes.root5}>
+      <div className={classes.section5}>
+      <ListItem className={classes.list5}>
+        <ListItemText className={classes.listtext5} primary="SELECT"  />
+        </ListItem>
+        <FormGroup row className={classes.checks}>
+        <FormControlLabel className={classes.label4}control={<Checkbox name="checkedA" />} label="nation_id" />
+      <FormControlLabel control={<Checkbox name="checkedB" />} label="nation_name" />
+      <FormControlLabel control={<Checkbox name="checkedC" />} label="latitude" />
+      <FormControlLabel control={<Checkbox name="checkedD" />} label="longitude" />
+    </FormGroup>
+    </div>
+      {/* </ListItem> */}
+      <div className={classes.section5}>
+      <Divider variant="inset" component="li" />
+      <ListItem>
+        <ListItemText className={classes.listtext5} primary="CONDITION"  />
+      </ListItem>
+      </div>
+
+    </List>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <FormGroup row className={classes.checks}>
       {/* <Typography row variant="h5" color="primary">
