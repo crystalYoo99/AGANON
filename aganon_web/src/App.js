@@ -5,10 +5,10 @@ import {
   Redirect,
   BrowserRouter as Router
 } from "react-router-dom";
-import Initial from "./pages/InitialPage";
-import Header from "./pages/Header";
+import Initial from "./pages/InitialPage.js";
+import Header from "./pages/Header.js";
 import logo from "./logo.svg";
-import Leftbar from "./pages/Leftbar";
+// import Leftbar from "./pages/Leftbar";
 import MapContainer from "./pages/Map.js";
 import Infrastructure from "./pages/InfrastructurePage.js";
 import ICTpage from "./pages/ICTPage.js";
@@ -21,22 +21,27 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="Body">
-        <Router>
-          <Leftbar />
-          <Switch>
-            <Route exact path="/" component={Initial} />
-            <Route exact path="/ict" component={ICTpage} />
+      {/* <Initial/> */}
+      {/* <Router> */}
+          {/* <Leftbar /> */}
+          {/* <Switch>
+            <Route exact path="/" component={Initial} /> */}
+            {/* <Route exact path="/ict" component={ICTpage} />
             <Route exact path="/mission" component={Mission} />
             <Route exact path="/infrastructure" component={Infrastructure} />
             <Route exact path="/economy" component={Economy} />
-            <Route exact path="/emergency" component={Emergency} />
-            <Redirect to="/" />
+            <Route exact path="/emergency" component={Emergency} /> */}
+            {/* <Redirect to="/" />
           </Switch>
-        </Router>
-      </div>
+        </Router> */}
+      {/* <div className="Body"> */}
+        
+      {/* </div> */}
     </div>
   );
 }
 
 export default App;
+
+
+

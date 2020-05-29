@@ -1,4 +1,4 @@
-.header {
+/* .header {
   height: 60px;
   align-items: center;
   justify-content: center;
@@ -6,4 +6,52 @@
   text-align: center;
   color: green;
   font-size: 30px;
+} */
+
+body{
+  margin:0;
+  font-family: 'Source Sans Pro';
 }
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.navbar{
+  flex-direction:column; 
+  align-items:flex-start;  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #263343;
+  padding:8px 12px; 
+}
+
+.navbar_logo{
+  font-size: 24px;
+  color: white;
+}
+
+.navbar_menu{
+  flex-direction:  column;
+  align-items:center;
+  width:100%;
+}
+
+.navbar_menu li{
+  width:100%;
+  padding: 8px, 12px;
+}
+
+
+.navbar_toogleBtn{
+  position: absolute;
+  right:32px;
+  font-size:24px;
+  /* color:#d49466 */
+}
+/* .navbar_menu li: hover{
+  background-color: #d49466;
+  border-radius:4px;
+} */
+
