@@ -35,8 +35,6 @@ import Link from '@material-ui/core/Link';
 // import ListItem from '@material-ui/core/ListItem';
 // import ListItemText from '@material-ui/core/ListItemText';
 
-import Emergency from "./EmergencyPage.js";
-
 // import { Link as RouterLink } from 'react-router-dom';
 
 

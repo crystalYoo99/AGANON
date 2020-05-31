@@ -27,8 +27,8 @@ import Icon from '@material-ui/core/Icon';
 // import { black } from '@material-ui/core/colors';
 import { FaGlobeAfrica, FaBorderNone } from 'react-icons/fa';
 import PublicIcon from '@material-ui/icons/Public';
-import EmergencyPage from './EmergencyPage';
 import CapitalPage from './CapitalPage';
+import Comoros from './Comoros';
 
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import green from '@material-ui/core/colors/green';
@@ -217,7 +217,8 @@ export default function Header() {
          <Container maxWidth="lg" className={classes.container}>
            {/* <InitialPage/> */}
            {/* <EmergencyPage/> */}
-           <CapitalPage/>
+           {/* <CapitalPage/> */}
+           <Comoros/>
          </Container>
        </main>
       

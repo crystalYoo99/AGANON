@@ -36,7 +36,7 @@ const GreenCheckbox = withStyles({
 
 
 const mainFeaturedPost = {
-  title: 'INFRASTRUCTURE',
+  title: 'EMERGENCY INFO',
   imgText: 'main image description',
 };
 
@@ -230,7 +230,7 @@ const useStyles = makeStyles((theme) => ({
   }
 
 
-export default function InfrastructurePage() {
+export default function Emergency_InfoPage() {
     const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -244,6 +244,7 @@ export default function InfrastructurePage() {
     checkedB: false,
     checkedC: false,
     checkedD: false,
+    checkedE: false,
   });
 
   const handleChange2 = (event) => {
@@ -295,11 +296,11 @@ export default function InfrastructurePage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="total flight" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="passengers" />
-          <FormControlLabel control={<Checkbox name="checkedE" />} label="total road" />
+          <FormControlLabel control={<Checkbox name="checkedA" />} label="info id" />
+          <FormControlLabel control={<Checkbox name="checkedB" />} label="embassy" />
+          <FormControlLabel control={<Checkbox name="checkedC" />} label="emergency medical service" />
+          <FormControlLabel control={<Checkbox name="checkedD" />} label="police" />
+          <FormControlLabel control={<Checkbox name="checkedE" />} label="fire station" />
         </FormGroup>
       </div>
     </List>
@@ -320,4 +321,3 @@ export default function InfrastructurePage() {
 
 
   
-

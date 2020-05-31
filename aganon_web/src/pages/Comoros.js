@@ -36,7 +36,7 @@ const GreenCheckbox = withStyles({
 
 
 const mainFeaturedPost = {
-  title: 'INFRASTRUCTURE',
+  title: 'Comoros',
   imgText: 'main image description',
 };
 
@@ -230,7 +230,7 @@ const useStyles = makeStyles((theme) => ({
   }
 
 
-export default function InfrastructurePage() {
+export default function Comoros() {
     const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -263,45 +263,47 @@ export default function InfrastructurePage() {
     <List className={classes.root5}>
       <div className={classes.section5}>
       <ListItem className={classes.list5}>
-        <ListItemText className={classes.listtext5} primary="NATION"  />
+        <ListItemText className={classes.listtext5} primary="INFORMATION"  />
       </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" />
-          <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti" />
-          <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea" />
-          <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia" />
-          <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya" />
-          <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles" />
-          <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia" />
-          <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland" />
-          <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania" />
-          <FormControlLabel control={<Checkbox name="checked10" />} label="Angola" />
-          <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana" />
-          <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini" />
-          <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho" />
-          <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar" />
-          <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi" />
-          <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius" />
-          <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique" />
-          <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia" />
-          <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa" />
-          <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia" />
-          <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" />
+          <FormControlLabel control={<Checkbox name="checked1" />} label="Capital" />
+          <FormControlLabel control={<Checkbox name="checked2" />} label="City" />
+          <FormControlLabel control={<Checkbox name="checked3" />} label="Climate" />
+          <FormControlLabel control={<Checkbox name="checked4" />} label="Disease" />
+          <FormControlLabel control={<Checkbox name="checked5" />} label="Economy" />
+          <FormControlLabel control={<Checkbox name="checked6" />} label="Education" />
+          <FormControlLabel control={<Checkbox name="checked7" />} label="Emergency_info" />
+          <FormControlLabel control={<Checkbox name="checked8" />} label="Energy" />
+          <FormControlLabel control={<Checkbox name="checked9" />} label="Gorv_type" />
+          <FormControlLabel control={<Checkbox name="checked10" />} label="Health" />
+          <FormControlLabel control={<Checkbox name="checked11" />} label="ICT" />
+          <FormControlLabel control={<Checkbox name="checked12" />} label="Infrastructure" />
+          <FormControlLabel control={<Checkbox name="checked13" />} label="Language" />
+          <FormControlLabel control={<Checkbox name="checked14" />} label="Literacy_rate" />
+          <FormControlLabel control={<Checkbox name="checked15" />} label="Mission_school" />
+          <FormControlLabel control={<Checkbox name="checked16" />} label="Missionary" />
+          <FormControlLabel control={<Checkbox name="checked17" />} label="Nation_capital" />
+          <FormControlLabel control={<Checkbox name="checked18" />} label="Nation_language" />
+          <FormControlLabel control={<Checkbox name="checked19" />} label="Nation_mission_school" />
+          <FormControlLabel control={<Checkbox name="checked20" />} label="Nation_missionary" />
+          <FormControlLabel control={<Checkbox name="checked21" />} label="Nation" />
+          <FormControlLabel control={<Checkbox name="checked22" />} label="Population" />
+          <FormControlLabel control={<Checkbox name="checked23" />} label="Religious_ratio" />
+          <FormControlLabel control={<Checkbox name="checked24" />} label="Symptom" />
+
         </FormGroup>
       </div>
-      <div className={classes.section5}>
+      {/* <div className={classes.section5}>
         <Divider variant="inset" component="li" />
         <ListItem>
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="total flight" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="passengers" />
-          <FormControlLabel control={<Checkbox name="checkedE" />} label="total road" />
+          <FormControlLabel control={<Checkbox name="checkedA" />} label="city id" />
+          <FormControlLabel control={<Checkbox name="checkedB" />} label="nation id" />
+          <FormControlLabel control={<Checkbox name="checkedC" />} label="city name" />
         </FormGroup>
-      </div>
+      </div> */}
     </List>
 
     <div className={classes.root6}>
@@ -320,4 +322,3 @@ export default function InfrastructurePage() {
 
 
   
-

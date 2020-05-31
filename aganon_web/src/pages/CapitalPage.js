@@ -4,17 +4,10 @@ import Container from '@material-ui/core/Container';
 import MainFeaturedPost from './MainFeaturedPost';
 
 // import React from 'react';
-import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import ListItemText from '@material-ui/core/ListItemText';
-import Select from '@material-ui/core/Select';
-import Checkbox from '@material-ui/core/Checkbox';
-import Chip from '@material-ui/core/Chip';
 
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import ListItemText from '@material-ui/core/ListItemText';
+import Checkbox from '@material-ui/core/Checkbox';
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -24,10 +17,6 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Avatar from '@material-ui/core/Avatar';
-import ImageIcon from '@material-ui/icons/Image';
-import WorkIcon from '@material-ui/icons/Work';
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
 import Divider from '@material-ui/core/Divider';
 
 import brown from '@material-ui/core/colors/brown';
@@ -71,10 +60,10 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(3),
     },
     checks:{
-        justifyContent: "center",
-        alignItems: "center",
+        justifyContent: "left",
+        alignItems: "left",
         marginBottom:0,
-    
+
     root1: {
         display: 'flex',
         flexWrap: 'wrap',
@@ -217,7 +206,7 @@ const useStyles = makeStyles((theme) => ({
           }
         },
     }
-  }));
+}));
   
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -229,43 +218,6 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   };
-
-  // const nation_id = [
-  //   '1',
-  //   '2',
-  //   '3',
-  //   '4',
-  //   '5',
-  //   '6',
-  //   '7',
-  //   '8',
-  //   '9',
-  //   '10',
-  // ];
-
-  // const nation_name = [
-  //   'South Africa',
-  //   'Comoros',
-  //   'Kenya',
-  //   'Malawi',
-  //   'Tanzania',
-  // ];
-
-  // const latitude = [
-  //   'lat:0-10',
-  //   '10-20',
-  //   '20-30',
-  //   '30-40',
-  //   '40-50',
-  // ];
-
-  // const longitude = [
-  //   '0-10',
-  //   '10-20',
-  //   '20-30',
-  //   '30-40',
-  //   '40-50',
-  // ];
 
 
   function getStyles(name, personName, theme) {
@@ -290,8 +242,6 @@ export default function CapitalPage() {
   const [state, setState] = React.useState({
     checkedA: false,
     checkedB: false,
-    checkedC: false,
-    checkedD: false,
   });
 
   const handleChange2 = (event) => {
@@ -354,120 +304,6 @@ export default function CapitalPage() {
         SHOW RESULTS
       </Button>
     </div> 
-
-
-
-
-      {/* <FormControl className={classes.formControl}>
-
-        <InputLabel id="demo-mutiple-checkbox-label">nation_id</InputLabel>
-        <Select
-          labelId="demo-mutiple-checkbox-label"
-          id="demo-mutiple-checkbox"
-          multiple
-          value={personName}
-          onChange={handleChange}
-          input={<Input />}
-          renderValue={(selected) => selected.join(', ')}
-          MenuProps={MenuProps}
-        >
-          {nation_id.map((name) => (
-            <MenuItem key={name} value={name}>
-              <Checkbox checked={personName.indexOf(name) > -1} />
-              <ListItemText primary={name} />
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-mutiple-checkbox-label">nation_name</InputLabel>
-        <Select
-          labelId="demo-mutiple-checkbox-label"
-          id="demo-mutiple-checkbox"
-          multiple
-          value={personName}
-          onChange={handleChange}
-          input={<Input />}
-          renderValue={(selected) => selected.join(', ')}
-          MenuProps={MenuProps}
-        >
-          {nation_name.map((name) => (
-            <MenuItem key={name} value={name}>
-              <Checkbox checked={personName.indexOf(name) > -1} />
-              <ListItemText primary={name} />
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-mutiple-checkbox-label">latitude</InputLabel>
-        <Select
-          labelId="demo-mutiple-checkbox-label"
-          id="demo-mutiple-checkbox"
-          multiple
-          value={personName}
-          onChange={handleChange}
-          input={<Input />}
-          renderValue={(selected) => selected.join(', ')}
-          MenuProps={MenuProps}
-        >
-          {latitude.map((name) => (
-            <MenuItem key={name} value={name}>
-              <Checkbox checked={personName.indexOf(name) > -1} />
-              <ListItemText primary={name} />
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-mutiple-checkbox-label">longitude</InputLabel>
-        <Select
-          labelId="demo-mutiple-checkbox-label"
-          id="demo-mutiple-checkbox"
-          multiple
-          value={personName}
-          onChange={handleChange}
-          input={<Input />}
-          renderValue={(selected) => selected.join(', ')}
-          MenuProps={MenuProps}
-        >
-          {longitude.map((name) => (
-            <MenuItem key={name} value={name}>
-              <Checkbox checked={personName.indexOf(name) > -1} />
-              <ListItemText primary={name} />
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-mutiple-chip-label">Condition</InputLabel>
-        <Select
-          labelId="demo-mutiple-chip-label"
-          id="demo-mutiple-chip"
-          multiple
-          value={personName}
-          onChange={handleChange}
-          input={<Input id="select-multiple-chip" />}
-          renderValue={(selected) => (
-            <div className={classes.chips}>
-              {selected.map((value) => (
-                <Chip key={value} label={value} className={classes.chip} />
-              ))}
-            </div>
-          )}
-          MenuProps={MenuProps}
-        >
-          {nation_id.map((name) => (
-            <MenuItem key={name} value={name} style={getStyles(name, personName, theme)}>
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl> */}
 
     </div>
 

@@ -36,7 +36,7 @@ const GreenCheckbox = withStyles({
 
 
 const mainFeaturedPost = {
-  title: 'INFRASTRUCTURE',
+  title: 'SYMPTOM',
   imgText: 'main image description',
 };
 
@@ -230,7 +230,7 @@ const useStyles = makeStyles((theme) => ({
   }
 
 
-export default function InfrastructurePage() {
+export default function SymptomPage() {
     const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -295,11 +295,8 @@ export default function InfrastructurePage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="total flight" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="passengers" />
-          <FormControlLabel control={<Checkbox name="checkedE" />} label="total road" />
+          <FormControlLabel control={<Checkbox name="checkedA" />} label="symptom id" />
+          <FormControlLabel control={<Checkbox name="checkedB" />} label="discription" />
         </FormGroup>
       </div>
     </List>
@@ -320,4 +317,3 @@ export default function InfrastructurePage() {
 
 
   
-

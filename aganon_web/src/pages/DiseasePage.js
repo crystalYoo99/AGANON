@@ -36,7 +36,7 @@ const GreenCheckbox = withStyles({
 
 
 const mainFeaturedPost = {
-  title: 'INFRASTRUCTURE',
+  title: 'DISEASE',
   imgText: 'main image description',
 };
 
@@ -230,7 +230,7 @@ const useStyles = makeStyles((theme) => ({
   }
 
 
-export default function InfrastructurePage() {
+export default function DiseasePage() {
     const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -295,11 +295,12 @@ export default function InfrastructurePage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="total flight" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="passengers" />
-          <FormControlLabel control={<Checkbox name="checkedE" />} label="total road" />
+          <FormControlLabel control={<Checkbox name="checkedA" />} label="disease id" />
+          <FormControlLabel control={<Checkbox name="checkedB" />} label="symptom id" />
+          <FormControlLabel control={<Checkbox name="checkedC" />} label="disease name" />
+          <FormControlLabel control={<Checkbox name="checkedD" />} label="disease type" />
+          <FormControlLabel control={<Checkbox name="checkedE" />} label="death rate" />
+          <FormControlLabel control={<Checkbox name="checkedF" />} label="incubation period" />
         </FormGroup>
       </div>
     </List>
@@ -320,4 +321,3 @@ export default function InfrastructurePage() {
 
 
   
-

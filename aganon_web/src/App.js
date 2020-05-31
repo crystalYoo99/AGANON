@@ -10,11 +10,6 @@ import Header from "./pages/Header.js";
 import logo from "./logo.svg";
 // import Leftbar from "./pages/Leftbar";
 import MapContainer from "./pages/Map.js";
-import Infrastructure from "./pages/InfrastructurePage.js";
-import ICTpage from "./pages/ICTPage.js";
-import Mission from "./pages/MissionPage.js";
-import Economy from "./pages/EconomyPage.js";
-import Emergency from "./pages/EmergencyPage.js";
 import "./App.css";
 
 function App() {
