@@ -246,7 +246,35 @@ export default function ICTPage() {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
-  function handleButtonClicked() {}
+  function handleButtonClicked() {
+    var data = {};
+    var url = 'http://localhost:4000/ict'
+    const options_post = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json;charset=UTF-8'
+      },
+      body: JSON.stringify({
+        a: 10,
+        b: 20
+      })
+    };
+
+    const options_get = {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
+      }
+    };
+
+    fetch(url, options_get)
+    .then(response => response.json())
+    .then(result => console.log(result));
+    
+  }
 
   return (
     <React.Fragment>
