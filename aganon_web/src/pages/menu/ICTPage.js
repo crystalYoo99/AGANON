@@ -272,7 +272,8 @@ export default function ICTPage() {
 
     fetch(url, options_get)
     .then(response => response.json())
-    .then(result => console.log(result));
+    .then(result => console.log(result)); 
+    //
     
   }
 
