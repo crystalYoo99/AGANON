@@ -14,6 +14,7 @@ import ICTpage from "./pages/menu/ICTPage.js";
 //import MapContainer from "./pages/Map.js";
 import mainListItems from "./pages/listitems.js";
 import "./App.css";
+import NationForm from "./pages/NationForm.js";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Header} />
           <Route exact path="/ict" component={ICTpage} />
+          <Route exact path="nation" component={NationForm} />
           {/*
           <Route exact path="/mission" component={Mission} />
           <Route exact path="/infrastructure" component={Infrastructure} />

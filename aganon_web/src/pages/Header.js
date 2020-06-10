@@ -7,10 +7,10 @@ import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-
+import NationForm from "./NationForm.js";
 import { Drawer } from "@material-ui/core";
 import MenuItem from "@material-ui/core/MenuItem";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // import { MemoryRouter as Router } from 'react-router';
 // import { Link as RouterLink } from 'react-router-dom';
@@ -147,6 +147,12 @@ export default function Header() {
 
   function countrySelected(selectedCountry) {
     setSelectedCountry(selectedCountry);
+    return (
+      <div>
+        <div>{selectedCountry}</div>
+        <Link to="/nation" />
+      </div>
+    );
   }
   return (
     <div className={classes.root}>
@@ -214,7 +220,8 @@ export default function Header() {
               inputProps={{ "aria-label": "search" }}
             />
             */}
-            <select onChange={countrySelected} defaultValue="default">
+            {/*<select onChange={countrySelected} defaultValue="default">*/}
+            <select onChange={value => countrySelected(value)}>
               <option value="default" disabled style={{ color: "#ccc" }}>
                 {"select country"}
               </option>
@@ -223,15 +230,14 @@ export default function Header() {
           </div>
         </Toolbar>
       </AppBar>
+      {/*
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          {/* <InitialPage/> */}
-          {/* <EmergencyPage/> */}
-          {/* <CapitalPage/> */}
           <Comoros />
         </Container>
       </main>
+      */}
     </div>
   );
 }

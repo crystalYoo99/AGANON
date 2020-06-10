@@ -2,6 +2,7 @@ import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import MainFeaturedPost from "../MainFeaturedPost";
+import Header from "../Header.js";
 
 // import React from 'react';
 
@@ -249,6 +250,7 @@ export default function ICTPage() {
 
   return (
     <React.Fragment>
+      <Header />
       <CssBaseline className={classes.base} />
       <Container maxWidth="lg">
         <main>
