@@ -5,16 +5,37 @@ import {
   Redirect,
   BrowserRouter as Router
 } from "react-router-dom";
-import Initial from "./pages/InitialPage.js";
+import InitialPage from "./pages/InitialPage.js";
 import Header from "./pages/Header.js";
 //import logo from "./logo.svg";
 import ICTpage from "./pages/menu/ICTPage.js";
-//import ICTpage from "./pages/menu/ICTPage.js";
+import NationPage from "./pages/menu/NationPage.js";
 // import Leftbar from "./pages/Leftbar";
 //import MapContainer from "./pages/Map.js";
 import mainListItems from "./pages/listitems.js";
 import "./App.css";
-import NationForm from "./pages/NationForm.js";
+//import NationForm from "./pages/menu/NationForm.js";
+import ClimatePage from "./pages/menu/ClimatePage.js";
+import Nation_CapitalPage from "./pages/menu/Nation_CapitalPage.js";
+import CityPage from "./pages/menu/CityPage.js";
+import DiseasePage from "./pages/menu/DiseasePage.js";
+import EconomyPage from "./pages/menu/EconomyPage.js";
+import EducationPage from "./pages/menu/EducationPage";
+import Emergency_infoPage from "./pages/menu/Emergency_infoPage";
+import EnergyPage from "./pages/menu/EnergyPage";
+import GorvtypePage from "./pages/menu/Gorv._Type Page";
+import HealthPage from "./pages/menu/HealthPage";
+import ICTPage from "./pages/menu/ICTPage";
+import InfrastructurePage from "./pages/menu/InfrastructurePage";
+import LanguagePage from "./pages/menu/LanguagePage";
+import Literacy_ratePage from "./pages/menu/Literacy_ratePage";
+import MissionaryPage from "./pages/menu/MissionaryPage";
+import Nation_M_SchoolPage from "./pages/menu/Nation_M_SchoolPage";
+import Nation_LanguagePage from "./pages/menu/Nation_LanguagePage";
+//import Nation_M_SchoolPage from "./pages/menu/Nation_M_SchoolPage";
+import PopulationPage from "./pages/menu/PopulationPage";
+import Religious_ratioPage from "./pages/menu/Religious_ratioPage";
+import SymptomPage from "./pages/menu/SymptomPage";
 
 function App() {
   return (
@@ -23,10 +44,46 @@ function App() {
       {/*<Initial />*/}
       <Router>
         <mainListItems />
+        <Header />
         <Switch>
-          <Route exact path="/" component={Header} />
+          <Route exact path="/" component={InitialPage} />
           <Route exact path="/ict" component={ICTpage} />
-          <Route exact path="nation" component={NationForm} />
+          <Route exact path="/nation" component={NationPage} />
+          <Route exact path="/capital" component={Nation_CapitalPage} />
+          <Route exact path="/city" component={CityPage} />
+          <Route exact path="/climate" component={ClimatePage} />
+          <Route exact path="/disease" component={DiseasePage} />
+          <Route exact path="/economy" component={EconomyPage} />
+          <Route exact path="/education" component={EducationPage} />
+          <Route exact path="/emergency-info" component={Emergency_infoPage} />
+          <Route exact path="/energy" component={EnergyPage} />
+          <Route exact path="/gorv._type" component={GorvtypePage} />
+          <Route exact path="/health" component={HealthPage} />
+          <Route exact path="/ict" component={ICTPage} />
+          <Route exact path="/infrastructure" component={InfrastructurePage} />
+          <Route exact path="/language" component={LanguagePage} />
+          <Route exact path="/literacy_rate" component={Literacy_ratePage} />
+          <Route exact path="/missionary" component={MissionaryPage} />
+          <Route exact path="/mission_school" component={Nation_M_SchoolPage} />
+          <Route exact path="/nation_capital" component={Nation_CapitalPage} />
+          <Route
+            exact
+            path="/nation_language"
+            component={Nation_LanguagePage}
+          />
+          <Route
+            exact
+            path="/nation_m_school"
+            component={Nation_M_SchoolPage}
+          />
+          <Route exact path="/population" component={PopulationPage} />
+          <Route
+            exact
+            path="/religious_ratio"
+            component={Religious_ratioPage}
+          />
+          <Route exact path="/symptom" component={SymptomPage} />
+
           {/*
           <Route exact path="/mission" component={Mission} />
           <Route exact path="/infrastructure" component={Infrastructure} />

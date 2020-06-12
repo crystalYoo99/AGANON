@@ -66,6 +66,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up("sm")]: {
       display: "block"
     }
+
     // '-apple-system',
     //   'BlinkMacSystemFont',
     //   '"Segoe UI"',
@@ -196,10 +197,15 @@ export default function Header() {
           </div>
           */}
           {/* <Icon className="fa fa-plus-circle" style={{ color: green[500] }} /> */}
-          <Typography className={classes.title} variant="h4" noWrap>
-            <PublicIcon className={classes.icon} />
-            Aganon
-          </Typography>
+          <Button>
+            <Typography className={classes.title} variant="h4" noWrap>
+              <PublicIcon className={classes.icon} />
+              <Link style={{ textDecoration: "none", color: "black" }} to="/">
+                Aganon
+              </Link>
+            </Typography>
+          </Button>
+
           {/* <a href=""><FaGlobeAfrica />  AGANON</a>
           {/* <div className={classes.title} variant="h6" noWrap>
             <a href=""><FaGlobeAfrica />  AGANON</a>

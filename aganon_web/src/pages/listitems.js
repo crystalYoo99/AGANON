@@ -144,146 +144,266 @@ export default function MainListItems() {
           </div>
           <Divider />
           <div>
-            <ListItem button component={Link} to="/capital">
+            <ListItem
+              button
+              component={Link}
+              to="/capital"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <LocationOnIcon />
               </ListItemIcon>
               <ListItemText primary="Capital" />
             </ListItem>
 
-            <ListItem button component={Link} to="/city">
+            <ListItem
+              button
+              component={Link}
+              to="/city"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <LocationCityIcon />
               </ListItemIcon>
               <ListItemText primary="City" />
             </ListItem>
-            <ListItem button component={Link} to="/climate">
+            <ListItem
+              button
+              component={Link}
+              to="/climate"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <OpacityIcon />
               </ListItemIcon>
               <ListItemText primary="Climate" />
             </ListItem>
-            <ListItem button component={Link} to="/disease">
+            <ListItem
+              button
+              component={Link}
+              to="/disease"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <LocalHospitalIcon />
               </ListItemIcon>
               <ListItemText primary="Disease" />
             </ListItem>
-            <ListItem button component={Link} to="/economy">
+            <ListItem
+              button
+              component={Link}
+              to="/economy"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <MonetizationOnIcon />
               </ListItemIcon>
               <ListItemText primary="Economy" />
             </ListItem>
-            <ListItem button component={Link} to="/education">
+            <ListItem
+              button
+              component={Link}
+              to="/education"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <BorderColorIcon />
               </ListItemIcon>
               <ListItemText primary="Education" />
             </ListItem>
-            <ListItem button component={Link} to="/emergency-info">
+            <ListItem
+              button
+              component={Link}
+              to="/emergency-info"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <AddIcCallIcon />
               </ListItemIcon>
               <ListItemText primary="Emergency-info" />
             </ListItem>
-            <ListItem button component={Link} to="/energy">
+            <ListItem
+              button
+              component={Link}
+              to="/energy"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <BatteryCharging80Icon />
               </ListItemIcon>
               <ListItemText primary="Energy" />
             </ListItem>
-            <ListItem button component={Link} to="/gorv._type">
+            <ListItem
+              button
+              component={Link}
+              to="/gorv._type"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <AccountBalanceIcon />
               </ListItemIcon>
               <ListItemText primary="Gorv._Type" />
             </ListItem>
-            <ListItem button component={Link} to="/health">
+            <ListItem
+              button
+              component={Link}
+              to="/health"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <FitnessCenterIcon />
               </ListItemIcon>
               <ListItemText primary="Health" />
             </ListItem>
-            <ListItem button component={Link} to="/ict">
+            <ListItem
+              button
+              component={Link}
+              to="/ict"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <ComputerIcon />
               </ListItemIcon>
               <ListItemText primary="ICT" />
             </ListItem>
-            <ListItem button component={Link} to="/infrastructure">
+            <ListItem
+              button
+              component={Link}
+              to="/infrastructure"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <AirplanemodeActiveIcon />
               </ListItemIcon>
               <ListItemText primary="Infrastructure" />
             </ListItem>
-            <ListItem button component={Link} to="/language">
+            <ListItem
+              button
+              component={Link}
+              to="/language"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <LanguageIcon />
               </ListItemIcon>
               <ListItemText primary="Language" />
             </ListItem>
-            <ListItem button component={Link} to="/literacy_rate">
+            <ListItem
+              button
+              component={Link}
+              to="/literacy_rate"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <TranslateIcon />
               </ListItemIcon>
               <ListItemText primary="Literacy_rate" />
             </ListItem>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to="/missionary"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <EmojiPeopleIcon />
               </ListItemIcon>
               <ListItemText primary="Missionary" />
             </ListItem>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to="/mission_school"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <SchoolIcon />
               </ListItemIcon>
               <ListItemText primary="Mission_school" />
             </ListItem>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to="/nation"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <ExploreIcon />
               </ListItemIcon>
               <ListItemText primary="Nation" />
             </ListItem>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to="/nation_capital"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <LocationOnIcon />
               </ListItemIcon>
               <ListItemText primary="Nation_Capital" />
             </ListItem>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to="/nation_language"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <LayersIcon />
               </ListItemIcon>
               <ListItemText primary="Nation_Language" />
             </ListItem>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to="/nation_missionary"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <LayersIcon />
               </ListItemIcon>
               <ListItemText primary="Nation_Missionary" />
             </ListItem>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to="/nation_m_school"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <LayersIcon />
               </ListItemIcon>
               <ListItemText primary="Nation_M_School" />
             </ListItem>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to="/population"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <PeopleIcon />
               </ListItemIcon>
               <ListItemText primary="Population" />
             </ListItem>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to="/religious_ratio"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <LoyaltyIcon />
               </ListItemIcon>
               <ListItemText primary="Religious_ratio" />
             </ListItem>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to="/symptom"
+              onClick={handleDrawerToggle}
+            >
               <ListItemIcon>
                 <DirectionsWalkIcon />
               </ListItemIcon>
