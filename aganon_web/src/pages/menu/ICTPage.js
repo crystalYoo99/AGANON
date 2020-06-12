@@ -236,10 +236,32 @@ export default function ICTPage() {
   };
 
   const [state, setState] = React.useState({
-    checkedA: false,
-    checkedB: false,
-    checkedC: false,
-    checkedD: false
+    'nation_id': false,
+    'year': false,
+    'internet_users': false,
+    'mobile_subscribers': false,
+    'main_telephone_lines': false,
+    'checked1': false,
+    'checked2': false,
+    'checked3': false,
+    'checked4': false,
+    'checked5': false,
+    'checked6': false,
+    'checked7': false,
+    'checked8': false,
+    'checked9': false,
+    'checked10': false,
+    'checked11': false,
+    'checked12': false,
+    'checked13': false,
+    'checked14': false,
+    'checked15': false,
+    'checked16': false,
+    'checked17': false,
+    'checked18': false,
+    'checked19': false,
+    'checked20': false,
+    'checked21': false,
   });
 
   const handleChange2 = event => {
@@ -248,17 +270,16 @@ export default function ICTPage() {
 
   function handleButtonClicked() {
     var data = {};
-    var url = 'http://localhost:4000/ict'
+    var url = 'http://localhost:4000/ict/';
+    console.log(url);
     const options_post = {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json;charset=UTF-8'
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
       },
-      body: JSON.stringify({
-        a: 10,
-        b: 20
-      })
+      body: JSON.stringify(state)
     };
 
     const options_get = {
@@ -270,9 +291,12 @@ export default function ICTPage() {
       }
     };
 
-    fetch(url, options_get)
+    console.log(state);
+    
+    fetch(url, options_post)
     .then(response => response.json())
-    .then(result => console.log(result));
+    .then(result => console.log(result)); 
+    //
     
   }
 
@@ -295,86 +319,107 @@ export default function ICTPage() {
               <FormControlLabel
                 control={<Checkbox name="checked1" />}
                 label="Comoros"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked2" />}
                 label="Djibouti"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked3" />}
                 label="Eritrea"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked4" />}
                 label="Ethiopia"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked5" />}
                 label="Kenya"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked6" />}
                 label="Seychelles"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked7" />}
                 label="Somalia"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked8" />}
                 label="Somaliland"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked9" />}
                 label="Tanzania"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked10" />}
                 label="Angola"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked11" />}
                 label="Botswana"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked12" />}
                 label="Eswatini"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked13" />}
                 label="Lesotho"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked14" />}
                 label="Madagascar"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked15" />}
                 label="Malawi"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked16" />}
                 label="Mauritius"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked17" />}
                 label="Mozambique"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked18" />}
                 label="Namibia"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked19" />}
                 label="South Africa"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked20" />}
                 label="Zambia"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked21" />}
                 label="Zimbabwe"
+                onChange = {handleChange2}
               />
             </FormGroup>
           </div>
@@ -385,24 +430,30 @@ export default function ICTPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
+                control={<Checkbox name="nation_id" />}
                 label="nation id"
+                onChange = {handleChange2}
+
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
+                control={<Checkbox name="year" />}
                 label="year"
+                onChange = {handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedC" />}
+                control={<Checkbox name="internet_users" />}
                 label="internet users"
+                onChange = {handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedD" />}
+                control={<Checkbox name="mobile_subscribers" />}
                 label="mobile subscribers"
+                onChange = {handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedE" />}
+                control={<Checkbox name="main_telephone_lines" />}
                 label="main telephone lines"
+                onChange = {handleChange2}
               />
             </FormGroup>
           </div>
