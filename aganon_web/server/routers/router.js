@@ -10,7 +10,7 @@ router.get('/api/getUsername', (req, res, next) => {
 });
 
 router.post('/ict', (req, res) => {
-    var sql;
+    var sql = "SELECT ?? ";
     console.log(req.body);
     var qry = [];
     req.body.nation_id ?  qry.push('nation_id'): '';
@@ -21,21 +21,15 @@ router.post('/ict', (req, res) => {
     
     if(qry.length == 0){
         res.send();
-    }else if(qry.length == 1){
-        sql = 'SELECT ?? FROM `ICT`';
-    } else if(qry.length == 2){
-        sql = 'SELECT ??, ?? FROM `ICT`';
-    } else if(qry.length == 3){
-        sql = 'SELECT ??, ??, ?? FROM `ICT`';
-    } else if(qry.length == 4){
-        sql = 'SELECT ??, ??, ??, ?? FROM `ICT`';
-    } else if(qry.length == 5){
-        sql = 'SELECT * FROM `ICT`';
+    }else{
+        for(var i = 1 ; i< qry.length; i++)
+            sql = sql + ", ?? "
     }
+    sql = sql + "FROM `ICT`";
     
     sql = mysql.format(sql, qry);
-    
     console.log(sql);
+    
     db.query(sql, (err, rows) => {
     if (!err) {
         res.send(rows);
