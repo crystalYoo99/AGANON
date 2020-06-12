@@ -10,7 +10,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions))
 app.use(express.static(path.join(__dirname, '..', 'src/')));
-
+app.use(express.json())
 app.use("/", router);
 
 app.listen(PORT, () => {

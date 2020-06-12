@@ -236,10 +236,11 @@ export default function ICTPage() {
   };
 
   const [state, setState] = React.useState({
-    checkedA: false,
-    checkedB: false,
-    checkedC: false,
-    checkedD: false
+    'nation_id': false,
+    'year': false,
+    'internet_users': false,
+    'mobile_subscribers': false,
+    'main_telephone_lines': false
   });
 
   const handleChange2 = event => {
@@ -248,17 +249,16 @@ export default function ICTPage() {
 
   function handleButtonClicked() {
     var data = {};
-    var url = 'http://localhost:4000/ict'
+    var url = 'http://localhost:4000/ict/';
+    console.log(url);
     const options_post = {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json;charset=UTF-8'
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
       },
-      body: JSON.stringify({
-        a: 10,
-        b: 20
-      })
+      body: JSON.stringify(state)
     };
 
     const options_get = {
@@ -270,7 +270,9 @@ export default function ICTPage() {
       }
     };
 
-    fetch(url, options_get)
+    console.log(state);
+    
+    fetch(url, options_post)
     .then(response => response.json())
     .then(result => console.log(result)); 
     //
@@ -386,24 +388,30 @@ export default function ICTPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
+                control={<Checkbox name="nation_id" />}
                 label="nation id"
+                onChange = {handleChange2}
+
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
+                control={<Checkbox name="year" />}
                 label="year"
+                onChange = {handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedC" />}
+                control={<Checkbox name="internet_users" />}
                 label="internet users"
+                onChange = {handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedD" />}
+                control={<Checkbox name="mobile_subscribers" />}
                 label="mobile subscribers"
+                onChange = {handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedE" />}
+                control={<Checkbox name="main_telephone_lines" />}
                 label="main telephone lines"
+                onChange = {handleChange2}
               />
             </FormGroup>
           </div>
