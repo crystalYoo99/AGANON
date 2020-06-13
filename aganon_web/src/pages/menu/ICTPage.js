@@ -230,7 +230,7 @@ export default function ICTPage() {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
   //const selectedNation =
-
+  const [ICT, setICT] = React.useState();
   const handleChange = event => {
     setPersonName(event.target.value);
   };

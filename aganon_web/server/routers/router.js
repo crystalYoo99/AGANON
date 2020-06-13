@@ -669,28 +669,7 @@ router.post('/Nation', (req, res) => {
 router.post('/AIM_contact', (req, res) => {
 
     var sql = "SELECT nation_name "
-    var nation = [];
-    req.body.checked1 ? nation.push('1') : '';
-    req.body.checked2 ? nation.push('2') : '';
-    req.body.checked3 ? nation.push('3') : '';
-    req.body.checked4 ? nation.push('4') : '';
-    req.body.checked5 ? nation.push('5') : '';
-    req.body.checked6 ? nation.push('6') : '';
-    req.body.checked7 ? nation.push('7') : '';
-    req.body.checked8 ? nation.push('8') : '';
-    req.body.checked9 ? nation.push('9') : '';
-    req.body.checked10 ? nation.push('10') : '';
-    req.body.checked11 ? nation.push('11') : '';
-    req.body.checked12 ? nation.push('12') : '';
-    req.body.checked13 ? nation.push('13') : '';
-    req.body.checked14 ? nation.push('14') : '';
-    req.body.checked15 ? nation.push('15') : '';
-    req.body.checked16 ? nation.push('16') : '';
-    req.body.checked17 ? nation.push('17') : '';
-    req.body.checked18 ? nation.push('18') : '';
-    req.body.checked19 ? nation.push('19') : '';
-    req.body.checked20 ? nation.push('20') : '';
-    req.body.checked21 ? nation.push('21') : '';
+    
 
     var qry = [];
 
@@ -727,8 +706,6 @@ router.post('/AIM_contact', (req, res) => {
 router.post('/ict', (req, res) => {
     var sql = "SELECT nation_name, ?? ";
     console.log(req.body);
-<<<<<<< Updated upstream
-=======
     var string_name;
     req.body.AIM_KOREA_M ? string_name = "AIM_KOREA_M" : '';
     req.body.City ? string_name = "City" : '';
@@ -748,7 +725,6 @@ router.post('/ict', (req, res) => {
 
     string_name = string_name + " INNER JOIN Nation USING(nation_id) "
 
->>>>>>> Stashed changes
     var nation = [];
     req.body.checked1 ? nation.push('1') : '';
     req.body.checked2 ? nation.push('2') : '';
@@ -772,17 +748,7 @@ router.post('/ict', (req, res) => {
     req.body.checked20 ? nation.push('20') : '';
     req.body.checked21 ? nation.push('21') : '';
 
-
     var qry = [];
-<<<<<<< Updated upstream
-    req.body.nation_id ?  qry.push('nation_id'): '';
-    req.body.year ?  qry.push('year') :  '';
-    req.body.internet_users ?  qry.push('internet_users') :  '';
-    req.body.mobile_subscribers ?  qry.push('mobile_subscribers') :  '';
-    req.body.main_telephone_lines ?  qry.push('main_telephone_lines') :  '';
-    if(nation.length == 0) res.send();
-    if(qry.length == 0){
-=======
     req.body.nation_id ? qry.push('nation_id') : '';
     req.body.nation_name ? qry.push('nation_name') : '';
     req.body.year ? qry.push('year') : '';
@@ -839,17 +805,12 @@ router.post('/ict', (req, res) => {
 
     if (nation.length == 0) res.send();
     if (qry.length == 0) {
->>>>>>> Stashed changes
         res.send();
     } else {
         for (var i = 1; i < qry.length; i++)
             sql = sql + ", ?? "
     }
-<<<<<<< Updated upstream
-    sql = sql + "FROM `ICT`";
-=======
     sql = sql + "FROM " + string_name;
->>>>>>> Stashed changes
     sql = sql + " WHERE ";
     for (var j = 0; j < nation.length - 1; j++) {
         sql = sql + "nation_id = " + nation[j] + " OR ";

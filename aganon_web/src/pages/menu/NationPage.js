@@ -1,7 +1,7 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import MainFeaturedPost from './MainFeaturedPost';
+import MainFeaturedPost from '../MainFeaturedPost';
 
 // import React from 'react';
 
@@ -240,12 +240,6 @@ export default function NationPage() {
   };
 
   const [state, setState] = React.useState({
-<<<<<<< Updated upstream
-    checkedA: false,
-    checkedB: false,
-    checkedC: false,
-    checkedD: false,
-=======
     'nation_name': false,
     'nation_id': false,
     'latitude': false,
@@ -276,15 +270,12 @@ export default function NationPage() {
     'checked21': false,
     ICT_:false,
     Nation:true
->>>>>>> Stashed changes
   });
 
   const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
-<<<<<<< Updated upstream
-=======
   function handleButtonClicked() {
     var data = {};
     var url = "http://localhost:4000/Nation/";
@@ -315,7 +306,6 @@ export default function NationPage() {
       .then(result => console.log(result));
     //
   }
->>>>>>> Stashed changes
   return (
     <React.Fragment>
       <CssBaseline className={classes.base}/>
@@ -325,37 +315,6 @@ export default function NationPage() {
         </main>
       </Container>
       <div>
-<<<<<<< Updated upstream
-
-    <List className={classes.root5}>
-      <div className={classes.section5}>
-      <ListItem className={classes.list5}>
-        <ListItemText className={classes.listtext5} primary="NATION"  />
-      </ListItem>
-        <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" />
-          <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti" />
-          <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea" />
-          <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia" />
-          <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya" />
-          <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles" />
-          <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia" />
-          <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland" />
-          <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania" />
-          <FormControlLabel control={<Checkbox name="checked10" />} label="Angola" />
-          <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana" />
-          <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini" />
-          <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho" />
-          <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar" />
-          <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi" />
-          <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius" />
-          <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique" />
-          <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia" />
-          <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa" />
-          <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia" />
-          <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" />
-        </FormGroup>
-=======
         <List className={classes.root5}>
           <div className={classes.section5}>
             <ListItem className={classes.list5}>
@@ -426,29 +385,8 @@ export default function NationPage() {
             SHOW RESULTS
           </Button>
         </div>
->>>>>>> Stashed changes
-      </div>
-      <div className={classes.section5}>
-        <Divider variant="inset" component="li" />
-        <ListItem>
-          <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
-        </ListItem>
-        <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="nation name" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="latitude" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="longitude" />
-          <FormControlLabel control={<Checkbox name="checkedE" />} label="info id" />
-          <FormControlLabel control={<Checkbox name="checkedF" />} label="gorvtype id" />
-        </FormGroup>
-      </div>
-    </List>
 
-    <div className={classes.root6}>
-      <Button className={classes.buttoncolor} variant="contained" >
-        SHOW RESULTS
-      </Button>
-    </div> 
+ 
 
     </div>
 
