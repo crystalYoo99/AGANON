@@ -289,12 +289,14 @@ export default function Nation_CapitalPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
-                label="nation id"
+                  control={<Checkbox name="nation_id" />}
+                  label="nation id"
+                  onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
+                control={<Checkbox name="capital_id" />}
                 label="capital id"
+                onChange={handleChange2}
               />
             </FormGroup>
           </div>

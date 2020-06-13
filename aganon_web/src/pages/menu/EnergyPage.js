@@ -289,20 +289,24 @@ export default function EnergyPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
+                control={<Checkbox name="energy_id" />}
                 label="energy id"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
+                control={<Checkbox name="year" />}
                 label="year"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedC" />}
+                control={<Checkbox name="nation_id" />}
                 label="nation id"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedD" />}
+                control={<Checkbox name="consumption" />}
                 label="consumption"
+                onChange={handleChange2}
               />
             </FormGroup>
           </div>

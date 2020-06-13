@@ -397,22 +397,27 @@ export default function ClimatePage() {
               <FormControlLabel
                 control={<Checkbox name="capital_id" />}
                 label="capital id"
+                onChange={handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="month" />}
                 label="month"
+                onChange={handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="type" />}
                 label="type"
+                onChange={handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="temp_high" />}
                 label="temp high"
+                onChange={handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="temp_low" />}
                 label="temp low"
+                onChange={handleChange2}
               />
             </FormGroup>
           </div>

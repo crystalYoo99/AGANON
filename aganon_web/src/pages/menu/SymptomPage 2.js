@@ -295,8 +295,8 @@ export default function SymptomPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="checkedA" />} label="symptom id" />
-              <FormControlLabel control={<Checkbox name="checkedB" />} label="discription" />
+              <FormControlLabel control={<Checkbox name="symptom_id" />} label="symptom id" onChange={handleChange2}/>
+              <FormControlLabel control={<Checkbox name="discription" />} label="discription" onChange={handleChange2}/>
             </FormGroup>
           </div>
         </List>

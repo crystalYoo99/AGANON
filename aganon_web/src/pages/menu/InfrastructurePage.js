@@ -295,11 +295,11 @@ export default function InfrastructurePage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="total flight" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="passengers" />
-          <FormControlLabel control={<Checkbox name="checkedE" />} label="total road" />
+          <FormControlLabel control={<Checkbox name="nation_id" />} label="nation id"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="year" />} label="year"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="total_freight" />} label="total freight"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="passengers" />} label="passengers"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="total_road" />} label="total road"     onChange={handleChange2}/>
         </FormGroup>
       </div>
     </List>

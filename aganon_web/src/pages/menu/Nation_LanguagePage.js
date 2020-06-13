@@ -289,12 +289,14 @@ export default function Nation_LanguagePage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
+                control={<Checkbox name="nation_id" />}
                 label="nation id"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
+                control={<Checkbox name="language_id" />}
                 label="language id"
+                onChange={handleChange2}
               />
             </FormGroup>
           </div>

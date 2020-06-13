@@ -295,12 +295,12 @@ export default function DiseasePage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="disease id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="symptom id" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="disease name" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="disease type" />
-          <FormControlLabel control={<Checkbox name="checkedE" />} label="death rate" />
-          <FormControlLabel control={<Checkbox name="checkedF" />} label="incubation period" />
+          <FormControlLabel control={<Checkbox name="disease_id" />} label="disease id"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="symptom_id" />} label="symptom id"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="disease_name" />} label="disease name"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="disease_type" />} label="disease type"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="death_rate" />} label="death rate"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="incubation_period" />} label="incubation period"     onChange={handleChange2}/>
         </FormGroup>
       </div>
     </List>

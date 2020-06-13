@@ -295,10 +295,10 @@ export default function MissionaryPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="missionary id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="name en" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="contact info" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="city id" />
+          <FormControlLabel control={<Checkbox name="missionary_id" />} label="missionary id"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="name_en" />} label="name en"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="contact_info" />} label="contact info"    onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="city_id" />} label="city id"     onChange={handleChange2}/>
         </FormGroup>
       </div>
     </List>

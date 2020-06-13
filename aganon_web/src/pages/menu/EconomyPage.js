@@ -295,10 +295,10 @@ export default function EconomyPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="gdp" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="gdp rank world" />
+          <FormControlLabel control={<Checkbox name="nation_id" />} label="nation id"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="year" />} label="year"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="gdp" />} label="gdp"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="gdp_rank_world" />} label="gdp rank world"     onChange={handleChange2}/>
         </FormGroup>
       </div>
     </List>

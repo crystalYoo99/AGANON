@@ -295,10 +295,10 @@ export default function EducationPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="children outschool" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="secondary outschool" />
+          <FormControlLabel control={<Checkbox name="nation_id" />} label="nation id"     onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="year" />} label="year"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="Children_outSchool" />} label="children outschool"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="Secondary_outSchool" />} label="secondary outschool"     onChange={handleChange2}/>
         </FormGroup>
       </div>
     </List>

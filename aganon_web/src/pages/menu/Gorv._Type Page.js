@@ -289,16 +289,19 @@ export default function GorvtypePage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
+                control={<Checkbox name="gorv_type_id" />}
                 label="gorv_type id"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
+                control={<Checkbox name="gorv_type_name" />}
                 label="gorv_type name"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedC" />}
+                control={<Checkbox name="description" />}
                 label="description"
+                onChange={handleChange2}
               />
             </FormGroup>
           </div>

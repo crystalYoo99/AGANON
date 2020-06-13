@@ -289,12 +289,14 @@ export default function Nation_M_SchoolPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
+                control={<Checkbox name="nation_id" />}
                 label="nation id"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
+                control={<Checkbox name="mission_school_id" />}
                 label="mission school id"
+                onChange={handleChange2}
               />
             </FormGroup>
           </div>

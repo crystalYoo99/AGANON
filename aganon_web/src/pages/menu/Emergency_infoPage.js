@@ -296,11 +296,11 @@ export default function Emergency_InfoPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="info id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="embassy" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="emergency medical service" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="police" />
-          <FormControlLabel control={<Checkbox name="checkedE" />} label="fire station" />
+          <FormControlLabel control={<Checkbox name="info_id" />} label="info id"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="embassy" />} label="embassy"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="emergency_medical_service" />} label="emergency medical service"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="police" />} label="police"    onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="fire_station" />} label="fire station"     onChange={handleChange2}/>
         </FormGroup>
       </div>
     </List>

@@ -289,28 +289,34 @@ export default function NationPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
+                control={<Checkbox name="nation_id" />}
                 label="nation id"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
+                control={<Checkbox name="nation_name" />}
                 label="nation name"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedC" />}
+                control={<Checkbox name="latitude" />}
                 label="latitude"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedD" />}
+                control={<Checkbox name="longitude" />}
                 label="longitude"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedE" />}
+                control={<Checkbox name="info_id" />}
                 label="info id"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedF" />}
+                control={<Checkbox name="gorv_type_id" />}
                 label="gorvtype id"
+                onChange={handleChange2}
               />
             </FormGroup>
           </div>

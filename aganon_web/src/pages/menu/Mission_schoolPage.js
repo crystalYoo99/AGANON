@@ -289,20 +289,24 @@ export default function Mission_schoolPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
+                control={<Checkbox name="mission_school_id" />}
                 label="mission school id"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
+                control={<Checkbox name="name" />}
                 label="name"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedC" />}
+                control={<Checkbox name="city_id" />}
                 label="city id"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedD" />}
+                control={<Checkbox name="foundation_year" />}
                 label="foundation year"
+                onChange={handleChange2}
               />
             </FormGroup>
           </div>
