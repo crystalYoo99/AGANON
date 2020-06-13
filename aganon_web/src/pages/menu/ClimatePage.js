@@ -234,10 +234,32 @@ export default function ClimatePage() {
   };
 
   const [state, setState] = React.useState({
-    checkedA: false,
-    checkedB: false,
-    checkedC: false,
-    checkedD: false
+    'capital_id': false,
+    'month': false,
+    'type': false,
+    'temp_high': false,
+    'temp_low': false,
+    'checked1': false,
+    'checked2': false,
+    'checked3': false,
+    'checked4': false,
+    'checked5': false,
+    'checked6': false,
+    'checked7': false,
+    'checked8': false,
+    'checked9': false,
+    'checked10': false,
+    'checked11': false,
+    'checked12': false,
+    'checked13': false,
+    'checked14': false,
+    'checked15': false,
+    'checked16': false,
+    'checked17': false,
+    'checked18': false,
+    'checked19': false,
+    'checked20': false,
+    'checked21': false,
   });
 
   const handleChange2 = event => {
@@ -262,86 +284,107 @@ export default function ClimatePage() {
               <FormControlLabel
                 control={<Checkbox name="checked1" />}
                 label="Comoros"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked2" />}
                 label="Djibouti"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked3" />}
                 label="Eritrea"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked4" />}
                 label="Ethiopia"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked5" />}
                 label="Kenya"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked6" />}
                 label="Seychelles"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked7" />}
                 label="Somalia"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked8" />}
                 label="Somaliland"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked9" />}
                 label="Tanzania"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked10" />}
                 label="Angola"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked11" />}
                 label="Botswana"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked12" />}
                 label="Eswatini"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked13" />}
                 label="Lesotho"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked14" />}
                 label="Madagascar"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked15" />}
                 label="Malawi"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked16" />}
                 label="Mauritius"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked17" />}
                 label="Mozambique"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked18" />}
                 label="Namibia"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked19" />}
                 label="South Africa"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked20" />}
                 label="Zambia"
+                onChange = {handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox name="checked21" />}
                 label="Zimbabwe"
+                onChange = {handleChange2}
               />
             </FormGroup>
           </div>
@@ -352,24 +395,29 @@ export default function ClimatePage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
+                control={<Checkbox name="capital_id" />}
                 label="capital id"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
+                control={<Checkbox name="month" />}
                 label="month"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedC" />}
+                control={<Checkbox name="type" />}
                 label="type"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedD" />}
+                control={<Checkbox name="temp_high" />}
                 label="temp high"
+                onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedE" />}
+                control={<Checkbox name="temp_low" />}
                 label="temp low"
+                onChange={handleChange2}
               />
             </FormGroup>
           </div>

@@ -240,11 +240,32 @@ export default function Emergency_InfoPage() {
   };
 
   const [state, setState] = React.useState({
-    checkedA: false,
-    checkedB: false,
-    checkedC: false,
-    checkedD: false,
-    checkedE: false,
+    'info_id': false,
+    'embassy': false,
+    'emergency_medical_service': false,
+    'police': false,
+    'fire_station': false,
+    'checked1': false,
+    'checked2': false,
+    'checked3': false,
+    'checked4': false,
+    'checked5': false,
+    'checked6': false,
+    'checked7': false,
+    'checked8': false,
+    'checked9': false,
+    'checked10': false,
+    'checked11': false,
+    'checked12': false,
+    'checked13': false,
+    'checked14': false,
+    'checked15': false,
+    'checked16': false,
+    'checked17': false,
+    'checked18': false,
+    'checked19': false,
+    'checked20': false,
+    'checked21': false,
   });
 
   const handleChange2 = (event) => {
@@ -267,27 +288,27 @@ export default function Emergency_InfoPage() {
         <ListItemText className={classes.listtext5} primary="NATION"  />
       </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" />
-          <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti" />
-          <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea" />
-          <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia" />
-          <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya" />
-          <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles" />
-          <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia" />
-          <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland" />
-          <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania" />
-          <FormControlLabel control={<Checkbox name="checked10" />} label="Angola" />
-          <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana" />
-          <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini" />
-          <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho" />
-          <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar" />
-          <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi" />
-          <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius" />
-          <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique" />
-          <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia" />
-          <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa" />
-          <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia" />
-          <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" />
+        <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros"  onChange = {handleChange2} />
+          <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti"  onChange = {handleChange2} />
+          <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea"   onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked10" />} label="Angola"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe"  onChange = {handleChange2}/>
         </FormGroup>
       </div>
       <div className={classes.section5}>
@@ -296,11 +317,11 @@ export default function Emergency_InfoPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="info id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="embassy" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="emergency medical service" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="police" />
-          <FormControlLabel control={<Checkbox name="checkedE" />} label="fire station" />
+          <FormControlLabel control={<Checkbox name="info_id" />} label="info id"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="embassy" />} label="embassy"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="emergency_medical_service" />} label="emergency medical service"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="police" />} label="police"    onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="fire_station" />} label="fire station"     onChange={handleChange2}/>
         </FormGroup>
       </div>
     </List>
