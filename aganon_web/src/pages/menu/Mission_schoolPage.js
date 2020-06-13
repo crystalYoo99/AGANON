@@ -249,6 +249,39 @@ export default function Mission_schoolPage() {
   const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
+<<<<<<< Updated upstream
+=======
+  function handleButtonClicked() {
+    var data = {};
+    var url = "http://localhost:4000/Mission_School/";
+    console.log(url);
+    const options_post = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      },
+      body: JSON.stringify(state)
+    };
+
+    const options_get = {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      }
+    };
+
+    console.log(state);
+
+    fetch(url, options_post)
+      .then(response => response.json())
+      .then(result => console.log(result));
+    //
+  }
+>>>>>>> Stashed changes
 
   return (
     <React.Fragment>
@@ -259,6 +292,7 @@ export default function Mission_schoolPage() {
         </main>
       </Container>
       <div>
+<<<<<<< Updated upstream
 
     <List className={classes.root5}>
       <div className={classes.section5}>
@@ -288,6 +322,73 @@ export default function Mission_schoolPage() {
           <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia" />
           <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" />
         </FormGroup>
+=======
+        <List className={classes.root5}>
+          <div className={classes.section5}>
+            <ListItem className={classes.list5}>
+              <ListItemText className={classes.listtext5} primary="NATION" />
+            </ListItem>
+            <FormGroup row className={classes.checks}>
+              <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros"  onChange = {handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti"  onChange = {handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea"   onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked10" />} label="Angola"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe"  onChange = {handleChange2}/>
+            </FormGroup>
+          </div>
+          <div className={classes.section5}>
+            <Divider variant="inset" component="li" />
+            <ListItem>
+              <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
+            </ListItem>
+            <FormGroup row className={classes.checks}>
+              <FormControlLabel
+                control={<Checkbox name="mission_school_id" />}
+                label="mission school id"
+                onChange={handleChange2}
+              />
+              <FormControlLabel
+                control={<Checkbox name="name" />}
+                label="name" 
+                onChange={handleChange2}
+              />
+              <FormControlLabel
+                control={<Checkbox name="city_id" />}
+                label="city id"
+                onChange={handleChange2}
+              />
+              <FormControlLabel
+                control={<Checkbox name="foundation_year" />}
+                label="foundation year"
+                onChange={handleChange2}
+              />
+            </FormGroup>
+          </div>
+        </List>
+
+        <div className={classes.root6}>
+          <Button className={classes.buttoncolor} variant="contained"
+          onClick={handleButtonClicked}>
+            SHOW RESULTS
+          </Button>
+        </div>
+>>>>>>> Stashed changes
       </div>
       <div className={classes.section5}>
         <Divider variant="inset" component="li" />

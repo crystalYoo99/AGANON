@@ -240,16 +240,70 @@ export default function EducationPage() {
   };
 
   const [state, setState] = React.useState({
+<<<<<<< Updated upstream
     checkedA: false,
     checkedB: false,
     checkedC: false,
     checkedD: false,
+=======
+    'year': false,
+    'Children_outSchool': false,
+    'Secondary_outSchool': false,
+    'checked1': false,
+    'checked2': false,
+    'checked3': false,
+    'checked4': false,
+    'checked5': false,
+    'checked6': false,
+    'checked7': false,
+    'checked8': false,
+    'checked9': false,
+    'checked10': false,
+    'checked11': false,
+    'checked12': false,
+    'checked13': false,
+    'checked14': false,
+    'checked15': false,
+    'checked16': false,
+    'checked17': false,
+    'checked18': false,
+    'checked19': false,
+    'checked20': false,
+    'checked21': false,
+    ICT_:false,
+    Education:true
+>>>>>>> Stashed changes
   });
 
   const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
+<<<<<<< Updated upstream
+=======
+  function handleButtonClicked() {
+    var data = {};
+    var url = "http://localhost:4000/Education/";
+    console.log(url);
+    const options_post = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      },
+      body: JSON.stringify(state)
+    };
+
+    console.log(state);
+
+    fetch(url, options_post)
+      .then(response => response.json())
+      .then(result => console.log(result));
+    //
+  }
+  
+>>>>>>> Stashed changes
   return (
     <React.Fragment>
       <CssBaseline className={classes.base}/>
@@ -295,10 +349,16 @@ export default function EducationPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
+<<<<<<< Updated upstream
           <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
           <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
           <FormControlLabel control={<Checkbox name="checkedC" />} label="children outschool" />
           <FormControlLabel control={<Checkbox name="checkedD" />} label="secondary outschool" />
+=======
+          <FormControlLabel control={<Checkbox name="year" />} label="year" onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="Children_outSchool" />} label="children outschool" onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="Secondary_outSchool" />} label="secondary outschool"onChange={handleChange2} />
+>>>>>>> Stashed changes
         </FormGroup>
       </div>
     </List>

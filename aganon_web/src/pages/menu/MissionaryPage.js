@@ -240,15 +240,78 @@ export default function MissionaryPage() {
   };
 
   const [state, setState] = React.useState({
+<<<<<<< Updated upstream
     checkedA: false,
     checkedB: false,
     checkedC: false,
     checkedD: false,
+=======
+    'missionary_id': false,
+    'name_en': false,
+    'contact_info': false,
+    'city_name': false,
+    'checked1': false,
+    'checked2': false,
+    'checked3': false,
+    'checked4': false,
+    'checked5': false,
+    'checked6': false,
+    'checked7': false,
+    'checked8': false,
+    'checked9': false,
+    'checked10': false,
+    'checked11': false,
+    'checked12': false,
+    'checked13': false,
+    'checked14': false,
+    'checked15': false,
+    'checked16': false,
+    'checked17': false,
+    'checked18': false,
+    'checked19': false,
+    'checked20': false,
+    'checked21': false,
+    ICT_:false,
+    Missionary: true
+>>>>>>> Stashed changes
   });
 
   const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
+<<<<<<< Updated upstream
+=======
+  function handleButtonClicked() {
+    var data = {};
+    var url = "http://localhost:4000/Missionary/";
+    console.log(url);
+    const options_post = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      },
+      body: JSON.stringify(state)
+    };
+
+    const options_get = {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      }
+    };
+
+    console.log(state);
+
+    fetch(url, options_post)
+      .then(response => response.json())
+      .then(result => console.log(result));
+    //
+  }
+>>>>>>> Stashed changes
 
   return (
     <React.Fragment>
@@ -295,10 +358,17 @@ export default function MissionaryPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
+<<<<<<< Updated upstream
           <FormControlLabel control={<Checkbox name="checkedA" />} label="missionary id" />
           <FormControlLabel control={<Checkbox name="checkedB" />} label="name en" />
           <FormControlLabel control={<Checkbox name="checkedC" />} label="contact info" />
           <FormControlLabel control={<Checkbox name="checkedD" />} label="city id" />
+=======
+          <FormControlLabel control={<Checkbox name="missionary_id" />} label="missionary id"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="name_en" />} label="name en"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="contact_info" />} label="contact info"    onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="city_name" />} label="city name"     onChange={handleChange2}/>
+>>>>>>> Stashed changes
         </FormGroup>
       </div>
     </List>

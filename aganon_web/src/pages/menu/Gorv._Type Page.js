@@ -240,11 +240,34 @@ export default function GorvtypePage() {
   };
 
   const [state, setState] = React.useState({
-    checkedA: false,
-    checkedB: false,
-    checkedC: false,
-    checkedD: false,
+    'contack': false,
+    'nation_name': false,
+    AIM_KOREA_M: true,
+    ICT_: false,
   });
+
+  function handleButtonClicked() {
+    var data = {};
+    var url = "http://localhost:4000/AIM_contact/";
+    console.log(url);
+    const options_post = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      },
+      body: JSON.stringify(state)
+    };
+
+    console.log(state);
+
+    fetch(url, options_post)
+      .then(response => response.json())
+      .then(result => console.log(result));
+    //
+  }
+  
 
   const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
@@ -262,48 +285,25 @@ export default function GorvtypePage() {
 
     <List className={classes.root5}>
       <div className={classes.section5}>
-      <ListItem className={classes.list5}>
-        <ListItemText className={classes.listtext5} primary="NATION"  />
-      </ListItem>
-        <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" />
-          <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti" />
-          <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea" />
-          <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia" />
-          <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya" />
-          <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles" />
-          <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia" />
-          <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland" />
-          <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania" />
-          <FormControlLabel control={<Checkbox name="checked10" />} label="Angola" />
-          <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana" />
-          <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini" />
-          <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho" />
-          <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar" />
-          <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi" />
-          <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius" />
-          <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique" />
-          <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia" />
-          <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa" />
-          <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia" />
-          <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" />
-        </FormGroup>
-      </div>
-      <div className={classes.section5}>
         <Divider variant="inset" component="li" />
         <ListItem>
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
+<<<<<<< Updated upstream:aganon_web/src/pages/menu/Gorv._Type Page.js
           <FormControlLabel control={<Checkbox name="checkedA" />} label="gorv_type id" />
           <FormControlLabel control={<Checkbox name="checkedB" />} label="gorv_type name" />
           <FormControlLabel control={<Checkbox name="checkedC" />} label="description" />
+=======
+          <FormControlLabel control={<Checkbox name="contack" />} label="contack"  onChange = {handleChange2}/>
+          <FormControlLabel control={<Checkbox name="nation_name" />} label="Section"  onChange = {handleChange2}/>
+>>>>>>> Stashed changes:aganon_web/src/pages/menu/AIM_contactPage.js
         </FormGroup>
       </div>
     </List>
 
     <div className={classes.root6}>
-      <Button className={classes.buttoncolor} variant="contained" >
+      <Button className={classes.buttoncolor} variant="contained" onClick={handleButtonClicked}>
         SHOW RESULTS
       </Button>
     </div> 

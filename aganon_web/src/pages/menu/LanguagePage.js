@@ -250,6 +250,40 @@ export default function LanguagePage() {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
+<<<<<<< Updated upstream
+=======
+  function handleButtonClicked() {
+    var data = {};
+    var url = "http://localhost:4000/language/";
+    console.log(url);
+    const options_post = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      },
+      body: JSON.stringify(state)
+    };
+
+    const options_get = {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      }
+    };
+
+    console.log(state);
+
+    fetch(url, options_post)
+      .then(response => response.json())
+      .then(result => console.log(result));
+    //
+  }
+  
+>>>>>>> Stashed changes
   return (
     <React.Fragment>
       <CssBaseline className={classes.base}/>

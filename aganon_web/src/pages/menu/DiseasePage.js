@@ -240,12 +240,69 @@ export default function DiseasePage() {
   };
 
   const [state, setState] = React.useState({
+<<<<<<< Updated upstream
     checkedA: false,
     checkedB: false,
     checkedC: false,
     checkedD: false,
   });
 
+=======
+    'disease_id': false,
+    'symptom_id': false,
+    'disease_name': false,
+    'disease_type': false,
+    'death_rate': false,
+    'incubation_period': false,
+    'discription' : false,
+    'checked1': false,
+    'checked2': false,
+    'checked3': false,
+    'checked4': false,
+    'checked5': false,
+    'checked6': false,
+    'checked7': false,
+    'checked8': false,
+    'checked9': false,
+    'checked10': false,
+    'checked11': false,
+    'checked12': false,
+    'checked13': false,
+    'checked14': false,
+    'checked15': false,
+    'checked16': false,
+    'checked17': false,
+    'checked18': false,
+    'checked19': false,
+    'checked20': false,
+    'checked21': false,
+    ICT_:false,
+    Disease: true
+  });
+
+  function handleButtonClicked() {
+    var data = {};
+    var url = "http://localhost:4000/Disease/";
+    console.log(url);
+    const options_post = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      },
+      body: JSON.stringify(state)
+    };
+
+    console.log(state);
+
+    fetch(url, options_post)
+      .then(response => response.json())
+      .then(result => console.log(result));
+    //
+  }
+
+>>>>>>> Stashed changes
   const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
@@ -260,6 +317,7 @@ export default function DiseasePage() {
       </Container>
       <div>
 
+<<<<<<< Updated upstream
     <List className={classes.root5}>
       <div className={classes.section5}>
       <ListItem className={classes.list5}>
@@ -308,6 +366,58 @@ export default function DiseasePage() {
     <div className={classes.root6}>
       <Button className={classes.buttoncolor} variant="contained" >
         SHOW RESULTS
+=======
+        <List className={classes.root5}>
+          <div className={classes.section5}>
+            <ListItem className={classes.list5}>
+              <ListItemText className={classes.listtext5} primary="NATION" />
+            </ListItem>
+            <FormGroup row className={classes.checks}>
+              <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked10" />} label="Angola" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" onChange={handleChange2} />
+            </FormGroup>
+          </div>
+          <div className={classes.section5}>
+            <Divider variant="inset" component="li" />
+            <ListItem>
+              <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
+            </ListItem>
+            <FormGroup row className={classes.checks}>
+              <FormControlLabel control={<Checkbox name="disease_id" />} label="disease id" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="symptom_id" />} label="symptom id" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="disease_name" />} label="disease name" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="disease_type" />} label="disease type" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="death_rate" />} label="death rate" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="incubation_period" />} label="incubation period" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="discription" />} label="discription" onChange={handleChange2} />
+            </FormGroup>
+          </div>
+        </List>
+
+        <div className={classes.root6}>
+          <Button className={classes.buttoncolor} variant="contained"
+            onClick={handleButtonClicked}>
+            SHOW RESULTS
+>>>>>>> Stashed changes
       </Button>
     </div> 
 
