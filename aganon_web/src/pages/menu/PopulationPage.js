@@ -261,6 +261,8 @@ export default function PopulationPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Population: true
   });
 
   const handleChange2 = event => {

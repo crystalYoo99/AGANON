@@ -23,7 +23,7 @@ router.post('/ict', (req, res) => {
     req.body.Education ? string_name = "Education": '';
     req.body.Emergency_info ? string_name = "Emergency_info": '';
     req.body.Energy ? string_name = "Energy": '';
-    req.body.Gorv_type ? string_name = "Gorv._type" : '';
+    req.body.Gorv_type ? string_name = "Gorv._Type" : '';
     req.body.Health ? string_name = "Health" : '';
     req.body.ICT_ ?  string_name = "ICT": '';
     req.body.Infrastructure ?  string_name = "Infrastructure": '';
@@ -42,7 +42,7 @@ router.post('/ict', (req, res) => {
     req.body.Symptom ? string_name =  "Symptom": '';
 
 
-
+    console.log(string_name);
  
 
     var nation = [];

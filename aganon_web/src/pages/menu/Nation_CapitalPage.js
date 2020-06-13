@@ -257,6 +257,8 @@ export default function Nation_CapitalPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Nation_Capital: true
   });
 
   const handleChange2 = event => {

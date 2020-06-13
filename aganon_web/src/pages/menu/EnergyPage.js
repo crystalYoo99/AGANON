@@ -259,6 +259,8 @@ export default function EnergyPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Energy:true
   });
 
   const handleChange2 = event => {

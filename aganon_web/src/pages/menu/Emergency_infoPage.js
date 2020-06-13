@@ -266,6 +266,8 @@ export default function Emergency_InfoPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Emergency_info:true
   });
 
   const handleChange2 = (event) => {

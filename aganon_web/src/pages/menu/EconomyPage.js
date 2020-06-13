@@ -264,7 +264,9 @@ export default function EconomyPage() {
     'checked18': false,
     'checked19': false,
     'checked20': false,
-    'checked21': false
+    'checked21': false,
+    ICT_:false,
+    Economy:true
   });
 
   function handleButtonClicked() {

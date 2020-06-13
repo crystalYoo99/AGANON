@@ -263,6 +263,8 @@ export default function HealthPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Health: true
   });
 
   const handleChange2 = (event) => {

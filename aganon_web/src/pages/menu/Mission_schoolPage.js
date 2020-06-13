@@ -259,6 +259,8 @@ export default function Mission_schoolPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Mission_School : true
   });
 
   const handleChange2 = event => {

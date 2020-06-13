@@ -264,6 +264,8 @@ export default function LiteracyPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Literacy_rate: true
   });
 
   const handleChange2 = (event) => {

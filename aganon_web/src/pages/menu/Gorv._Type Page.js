@@ -258,6 +258,8 @@ export default function GorvtypePage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Gorv_type : true
   });
 
   const handleChange2 = event => {

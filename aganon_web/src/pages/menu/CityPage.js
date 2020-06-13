@@ -258,6 +258,7 @@ export default function CityPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    City:true
   });
 
   const handleChange2 = event => {

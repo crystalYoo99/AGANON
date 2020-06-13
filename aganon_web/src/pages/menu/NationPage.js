@@ -263,6 +263,8 @@ export default function NationPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Nation:true
   });
 
   const handleChange2 = event => {

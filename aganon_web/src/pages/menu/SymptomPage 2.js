@@ -263,6 +263,8 @@ export default function SymptomPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Symptom:true
   });
 
   const handleChange2 = (event) => {

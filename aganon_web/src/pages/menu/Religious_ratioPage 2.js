@@ -265,6 +265,8 @@ export default function Religious_ratioPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Religious_ratio:true
   });
 
   const handleChange2 = (event) => {

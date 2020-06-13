@@ -260,6 +260,8 @@ export default function ClimatePage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    Climate:true,
+    ICT_:false,
   });
 
   const handleChange2 = event => {

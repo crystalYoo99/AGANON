@@ -265,6 +265,8 @@ export default function EducationPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Education:true
   });
 
   const handleChange2 = (event) => {

@@ -264,6 +264,8 @@ export default function LanguagePage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Language:true
   });
 
   const handleChange2 = (event) => {

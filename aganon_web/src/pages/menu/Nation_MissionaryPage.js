@@ -264,6 +264,8 @@ export default function Nation_MissionaryPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Nation_Missionary:true
   });
 
   const handleChange2 = (event) => {

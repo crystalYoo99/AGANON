@@ -257,6 +257,8 @@ export default function Nation_M_SchoolPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    ICT_:false,
+    Nation_M_School: true
   });
 
   const handleChange2 = event => {
