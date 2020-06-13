@@ -353,22 +353,18 @@ export default function PopulationPage() {
             <FormGroup row className={classes.checks}>
               <FormControlLabel
                 control={<Checkbox name="checkedA" />}
-                label="nation id"
-              />
-              <FormControlLabel
-                control={<Checkbox name="checkedB" />}
                 label="year"
               />
               <FormControlLabel
-                control={<Checkbox name="checkedC" />}
+                control={<Checkbox name="checkedB" />}
                 label="urban"
               />
               <FormControlLabel
-                control={<Checkbox name="checkedD" />}
+                control={<Checkbox name="checkedC" />}
                 label="rural"
               />
               <FormControlLabel
-                control={<Checkbox name="checkedE" />}
+                control={<Checkbox name="checkedD" />}
                 label="total"
               />
             </FormGroup>

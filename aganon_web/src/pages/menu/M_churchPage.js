@@ -32,7 +32,7 @@ const GreenCheckbox = withStyles({
 })(props => <Checkbox color="default" {...props} />);
 
 const mainFeaturedPost = {
-  title: "NATION CAPITAL",
+  title: "M_CHURCH",
   imgText: "main image description"
 };
 
@@ -224,7 +224,7 @@ function getStyles(name, personName, theme) {
   };
 }
 
-export default function Nation_CapitalPage() {
+export default function M_churchPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -352,8 +352,12 @@ export default function Nation_CapitalPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
-                label="capital id"
+                control={<Checkbox name="checkedA" />}
+                label="church id"
+              />
+              <FormControlLabel
+                control={<Checkbox name="checkedC" />}
+                label="name"
               />
             </FormGroup>
           </div>

@@ -2,6 +2,7 @@ import React from "react";
 // import Header from "./Header";
 import MapContainer from "./Map.js";
 import Header from "./Header";
+import Blog from "./Blog";
 import "../App.css";
 
 export default function InitialPage() {
@@ -10,7 +11,8 @@ export default function InitialPage() {
 
   return (
     <div className="content">
-      <MapContainer />
+      {/* <MapContainer /> */}
+      <Blog/>
     </div>
   );
 }

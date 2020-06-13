@@ -430,12 +430,6 @@ export default function ICTPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="nation_id" />}
-                label="nation id"
-                onChange = {handleChange2}
-
-              />
-              <FormControlLabel
                 control={<Checkbox name="year" />}
                 label="year"
                 onChange = {handleChange2}

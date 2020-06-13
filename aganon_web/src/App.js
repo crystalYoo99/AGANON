@@ -23,7 +23,7 @@ import EconomyPage from "./pages/menu/EconomyPage.js";
 import EducationPage from "./pages/menu/EducationPage";
 import Emergency_infoPage from "./pages/menu/Emergency_infoPage";
 import EnergyPage from "./pages/menu/EnergyPage";
-import GorvtypePage from "./pages/menu/Gorv._Type Page";
+import GorvtypePage from "./pages/menu/Gorv._TypePage";
 import HealthPage from "./pages/menu/HealthPage";
 import ICTPage from "./pages/menu/ICTPage";
 import InfrastructurePage from "./pages/menu/InfrastructurePage";

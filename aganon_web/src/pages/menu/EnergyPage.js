@@ -360,10 +360,6 @@ export default function EnergyPage() {
                 label="year"
               />
               <FormControlLabel
-                control={<Checkbox name="checkedC" />}
-                label="nation id"
-              />
-              <FormControlLabel
                 control={<Checkbox name="checkedD" />}
                 label="consumption"
               />

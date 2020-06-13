@@ -295,7 +295,6 @@ export default function EducationPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
           <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
           <FormControlLabel control={<Checkbox name="checkedC" />} label="children outschool" />
           <FormControlLabel control={<Checkbox name="checkedD" />} label="secondary outschool" />

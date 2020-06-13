@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
+// import Background form 
 
 import teal from '@material-ui/core/colors/teal';
 
@@ -46,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function MainFeaturedPost(props) {
   const classes = useStyles();
   const { post } = props;
@@ -77,3 +79,6 @@ export default function MainFeaturedPost(props) {
 MainFeaturedPost.propTypes = {
   post: PropTypes.object,
 };
+
+
+

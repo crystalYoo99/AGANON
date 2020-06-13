@@ -296,7 +296,6 @@ export default function LiteracyPage() {
         </ListItem>
         <FormGroup row className={classes.checks}>
           <FormControlLabel control={<Checkbox name="checkedA" />} label="year" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="nation id" />
           <FormControlLabel control={<Checkbox name="checkedC" />} label="total" />
         </FormGroup>
       </div>

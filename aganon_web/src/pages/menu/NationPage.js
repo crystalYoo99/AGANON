@@ -352,10 +352,6 @@ export default function NationPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedA" />}
-                label="nation id"
-              />
-              <FormControlLabel
                 control={<Checkbox name="checkedB" />}
                 label="nation name"
               />

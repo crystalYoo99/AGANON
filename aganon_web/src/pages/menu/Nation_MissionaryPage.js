@@ -295,7 +295,6 @@ export default function Nation_MissionaryPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
           <FormControlLabel control={<Checkbox name="checkedB" />} label="missionary id" />
         </FormGroup>
       </div>

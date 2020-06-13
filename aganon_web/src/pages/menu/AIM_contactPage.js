@@ -36,7 +36,7 @@ const GreenCheckbox = withStyles({
 
 
 const mainFeaturedPost = {
-  title: 'RELIGIOUS RATIO',
+  title: 'AIM_CONTACT',
   imgText: 'main image description',
 };
 
@@ -230,7 +230,7 @@ const useStyles = makeStyles((theme) => ({
   }
 
 
-export default function Religious_ratioPage() {
+export default function AIM_contactPage() {
     const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -295,9 +295,9 @@ export default function Religious_ratioPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="christianity" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="islam" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="etc" />
+          <FormControlLabel control={<Checkbox name="checkedA" />} label="AIM_contact_id" />
+          <FormControlLabel control={<Checkbox name="checkedB" />} label="contact" />
+          <FormControlLabel control={<Checkbox name="checkedC" />} label="nation_name" />
         </FormGroup>
       </div>
     </List>

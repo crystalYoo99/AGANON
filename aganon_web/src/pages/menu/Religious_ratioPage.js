@@ -295,10 +295,9 @@ export default function Religious_ratioPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedA" />} label="nation id" />
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="christianity" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="islam" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="etc" />
+          <FormControlLabel control={<Checkbox name="checkedA" />} label="christianity" />
+          <FormControlLabel control={<Checkbox name="checkedB" />} label="islam" />
+          <FormControlLabel control={<Checkbox name="checkedC" />} label="etc" />
         </FormGroup>
       </div>
     </List>

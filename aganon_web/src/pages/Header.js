@@ -41,7 +41,7 @@ import lime from "@material-ui/core/colors/lime";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   appbar: {
     backgroundColor: blueGrey[900],
@@ -60,9 +60,12 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+    alignItems:'center',
+    justifyContent: 'center',
     fontFamily: "Times New Roman",
     //fontFamily: "sans-serif",
     display: "none",
+    paddingLeft: theme.spacing(60),
     [theme.breakpoints.up("sm")]: {
       display: "block"
     }
@@ -89,37 +92,39 @@ const useStyles = makeStyles(theme => ({
     "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.25)
     },
-    marginLeft: 0,
+    // marginLeft: 0,
     width: "100%",
+    // paddingLeft: theme.spacing(30),
     [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
+      marginLeft: theme.spacing(60),
       width: "auto"
     }
   },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-  },
+  // searchIcon: {
+  //   // padding: theme.spacing(0, 2),
+  //   paddingLeft: theme.spacing(30),
+  //   height: "100%",
+  //   position: "absolute",
+  //   pointerEvents: "none",
+  //   display: "flex",
+  //   // alignItems: "center",
+  //   // justifyContent: "center"
+  // },
   inputRoot: {
     color: "inherit"
   },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch"
-      }
-    }
-  }
+  // inputInput: {
+  //   padding: theme.spacing(1, 1, 1, 0),
+  //   paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+  //   transition: theme.transitions.create("width"),
+  //   width: "100%",
+  //   [theme.breakpoints.up("sm")]: {
+  //     width: "12ch",
+  //     "&:focus": {
+  //       width: "20ch"
+  //     }
+  //   }
+  // }
 }));
 
 export default function Header() {
@@ -200,7 +205,7 @@ export default function Header() {
           <Button>
             <Typography className={classes.title} variant="h4" noWrap>
               <PublicIcon className={classes.icon} />
-              <Link style={{ textDecoration: "none", color: "black" }} to="/">
+              <Link style={{ textDecoration: "none", color: "white" }} to="/">
                 Aganon
               </Link>
             </Typography>
@@ -227,12 +232,16 @@ export default function Header() {
             />
             */}
             {/*<select onChange={countrySelected} defaultValue="default">*/}
+
+
             <select onChange={value => countrySelected(value)}>
               <option value="default" disabled style={{ color: "#ccc" }}>
                 {"select country"}
               </option>
               {countryList}
             </select>
+          
+          
           </div>
         </Toolbar>
       </AppBar>

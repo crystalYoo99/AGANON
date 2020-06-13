@@ -356,10 +356,6 @@ export default function CityPage() {
                 label="city id"
               />
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
-                label="nation id"
-              />
-              <FormControlLabel
                 control={<Checkbox name="checkedC" />}
                 label="city name"
               />

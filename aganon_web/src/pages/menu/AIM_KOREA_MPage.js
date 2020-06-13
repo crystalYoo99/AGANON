@@ -32,7 +32,7 @@ const GreenCheckbox = withStyles({
 })(props => <Checkbox color="default" {...props} />);
 
 const mainFeaturedPost = {
-  title: "NATION CAPITAL",
+  title: "AIM_KOREA_M",
   imgText: "main image description"
 };
 
@@ -224,7 +224,7 @@ function getStyles(name, personName, theme) {
   };
 }
 
-export default function Nation_CapitalPage() {
+export default function AIM_KOREA_MPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -237,7 +237,8 @@ export default function Nation_CapitalPage() {
     checkedA: false,
     checkedB: false,
     checkedC: false,
-    checkedD: false
+    checkedD: false,
+    checkedE: false
   });
 
   const handleChange2 = event => {
@@ -352,8 +353,20 @@ export default function Nation_CapitalPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
-                label="capital id"
+                control={<Checkbox name="checkedA" />}
+                label="AIM_K_M_id"
+              />
+              <FormControlLabel
+                control={<Checkbox name="checkedC" />}
+                label="name"
+              />
+              <FormControlLabel
+                control={<Checkbox name="checkedD" />}
+                label="start_date"
+              />
+              <FormControlLabel
+                control={<Checkbox name="checkedE" />}
+                label="location"
               />
             </FormGroup>
           </div>
