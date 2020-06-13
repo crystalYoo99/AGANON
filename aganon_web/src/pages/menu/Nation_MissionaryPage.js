@@ -25,14 +25,14 @@ import Button from '@material-ui/core/Button';
 
 
 const GreenCheckbox = withStyles({
-    root: {
-      color: green[400],
-      '&$checked': {
-        color: green[600],
-      },
+  root: {
+    color: green[400],
+    '&$checked': {
+      color: green[600],
     },
-    checked: {},
-  })((props) => <Checkbox color="default" {...props} />);
+  },
+  checked: {},
+})((props) => <Checkbox color="default" {...props} />);
 
 
 const mainFeaturedPost = {
@@ -41,197 +41,197 @@ const mainFeaturedPost = {
 };
 
 const useStyles = makeStyles((theme) => ({
-    base:{
-        backgroundColor:blueGrey[400]
-    },
-    formControl: {
-      margin: theme.spacing(1),
-      minWidth: 120,
-      maxWidth: 300,
-    },
-    chips: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    chip: {
-      margin: 2,
-    },
-    noLabel: {
-      marginTop: theme.spacing(3),
-    },
-    checks:{
-        justifyContent: "left",
-        alignItems: "left",
-        marginBottom:0,
+  base: {
+    backgroundColor: blueGrey[400]
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+    maxWidth: 300,
+  },
+  chips: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  chip: {
+    margin: 2,
+  },
+  noLabel: {
+    marginTop: theme.spacing(3),
+  },
+  checks: {
+    justifyContent: "left",
+    alignItems: "left",
+    marginBottom: 0,
 
     root1: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        minWidth: 300,
-        width: '100%',
+      display: 'flex',
+      flexWrap: 'wrap',
+      minWidth: 300,
+      width: '100%',
+    },
+    image: {
+      position: 'relative',
+      height: 200,
+      [theme.breakpoints.down('xs')]: {
+        width: '100% !important', // Overrides inline-style
+        height: 100,
+      },
+      '&:hover, &$focusVisible': {
+        zIndex: 1,
+        '& $imageBackdrop': {
+          opacity: 0.15,
         },
-        image: {
-        position: 'relative',
-        height: 200,
-        [theme.breakpoints.down('xs')]: {
-            width: '100% !important', // Overrides inline-style
-            height: 100,
+        '& $imageMarked': {
+          opacity: 0,
         },
-        '&:hover, &$focusVisible': {
-            zIndex: 1,
-            '& $imageBackdrop': {
-            opacity: 0.15,
-            },
-            '& $imageMarked': {
-            opacity: 0,
-            },
-            '& $imageTitle': {
-            border: '4px solid currentColor',
-            },
+        '& $imageTitle': {
+          border: '4px solid currentColor',
         },
-        },
-        focusVisible: {},
-        imageButton: {
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 0,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: theme.palette.common.white,
-        },
-        imageSrc: {
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 0,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center 40%',
-        },
-        imageBackdrop: {
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 0,
-        backgroundColor: theme.palette.common.black,
-        opacity: 0.4,
-        transition: theme.transitions.create('opacity'),
-        },
-        imageTitle: {
-        position: 'relative',
-        padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
-        },
-        imageMarked: {
-        height: 3,
-        width: 18,
-        backgroundColor: theme.palette.common.white,
-        position: 'absolute',
-        bottom: -2,
-        left: 'calc(50% - 9px)',
-        transition: theme.transitions.create('opacity'),
-        },
-
-        root2: {
-             flexGrow: 1,       
-          },
-          paper2: {
-            // padding: theme.spacing(2),
-            marginTop: theme.spacing(40),
-            // margin: 'auto',
-            maxWidth: 500,
-          },
-          image2: {
-            width: 128,
-            height: 128,
-          },
-          img2: {
-            margin: 'auto',
-            display: 'block',
-            maxWidth: '100%',
-            maxHeight: '100%',
-          },
-
-          root3: {
-            ...theme.typography.button,
-            backgroundColor: theme.palette.background.paper,
-            padding: theme.spacing(1),
-            // fontFamily:"Roboto"
-            // fontFamily : "Times New Roman"
-          },
-          row1:{
-            flexDirection: 'row',
-          },
-
-
-          button4: {
-            margin: theme.spacing(1),
-            marginRight:theme.spacing(3),
-          },
-          
-          label4:{
-            marginLeft:theme.spacing(5),
-          },
-
-          root5: {
-            width: '100%',
-            maxWidth: 360,
-            backgroundColor: theme.palette.background.paper,
-          },
-          list5:{
-            // flexDirection:'row'
-            padding: theme.spacing(30),
-          },
-          divide5:{
-            marginTop: theme.spacing(30),
-          },
-          section5:{
-            margin: theme.spacing(6),
-          },
-
-          listtext5:{
-            color:brown[300]
-          },
-
-          root6: {
-            '& > *': {
-              margin: theme.spacing(1),
-            },
-          buttoncolor:{
-            backgroundColor: blueGrey[900],
-            marginTop: theme.spacing(5),
-          }
-        },
-    }
-}));
-  
-  const ITEM_HEIGHT = 48;
-  const ITEM_PADDING_TOP = 8;
-  const MenuProps = {
-    PaperProps: {
-      style: {
-        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 250,
       },
     },
-  };
+    focusVisible: {},
+    imageButton: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: theme.palette.common.white,
+    },
+    imageSrc: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center 40%',
+    },
+    imageBackdrop: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      backgroundColor: theme.palette.common.black,
+      opacity: 0.4,
+      transition: theme.transitions.create('opacity'),
+    },
+    imageTitle: {
+      position: 'relative',
+      padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+    },
+    imageMarked: {
+      height: 3,
+      width: 18,
+      backgroundColor: theme.palette.common.white,
+      position: 'absolute',
+      bottom: -2,
+      left: 'calc(50% - 9px)',
+      transition: theme.transitions.create('opacity'),
+    },
+
+    root2: {
+      flexGrow: 1,
+    },
+    paper2: {
+      // padding: theme.spacing(2),
+      marginTop: theme.spacing(40),
+      // margin: 'auto',
+      maxWidth: 500,
+    },
+    image2: {
+      width: 128,
+      height: 128,
+    },
+    img2: {
+      margin: 'auto',
+      display: 'block',
+      maxWidth: '100%',
+      maxHeight: '100%',
+    },
+
+    root3: {
+      ...theme.typography.button,
+      backgroundColor: theme.palette.background.paper,
+      padding: theme.spacing(1),
+      // fontFamily:"Roboto"
+      // fontFamily : "Times New Roman"
+    },
+    row1: {
+      flexDirection: 'row',
+    },
 
 
-  function getStyles(name, personName, theme) {
-    return {
-      fontWeight:
-        personName.indexOf(name) === -1
-          ? theme.typography.fontWeightRegular
-          : theme.typography.fontWeightMedium,
-    };
+    button4: {
+      margin: theme.spacing(1),
+      marginRight: theme.spacing(3),
+    },
+
+    label4: {
+      marginLeft: theme.spacing(5),
+    },
+
+    root5: {
+      width: '100%',
+      maxWidth: 360,
+      backgroundColor: theme.palette.background.paper,
+    },
+    list5: {
+      // flexDirection:'row'
+      padding: theme.spacing(30),
+    },
+    divide5: {
+      marginTop: theme.spacing(30),
+    },
+    section5: {
+      margin: theme.spacing(6),
+    },
+
+    listtext5: {
+      color: brown[300]
+    },
+
+    root6: {
+      '& > *': {
+        margin: theme.spacing(1),
+      },
+      buttoncolor: {
+        backgroundColor: blueGrey[900],
+        marginTop: theme.spacing(5),
+      }
+    },
   }
+}));
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
+
+function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  };
+}
 
 
 export default function Nation_MissionaryPage() {
-    const classes = useStyles();
+  const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
 
@@ -240,20 +240,72 @@ export default function Nation_MissionaryPage() {
   };
 
   const [state, setState] = React.useState({
-    checkedA: false,
-    checkedB: false,
-    checkedC: false,
-    checkedD: false,
+    'nation_id': false,
+    'missionary_id': false,
+
+    'checked1': false,
+    'checked2': false,
+    'checked3': false,
+    'checked4': false,
+    'checked5': false,
+    'checked6': false,
+    'checked7': false,
+    'checked8': false,
+    'checked9': false,
+    'checked10': false,
+    'checked11': false,
+    'checked12': false,
+    'checked13': false,
+    'checked14': false,
+    'checked15': false,
+    'checked16': false,
+    'checked17': false,
+    'checked18': false,
+    'checked19': false,
+    'checked20': false,
+    'checked21': false,
+    ICT_:false,
+    Nation_Missionary:true
   });
 
   const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
+  function handleButtonClicked() {
+    var data = {};
+    var url = "http://localhost:4000/ict/";
+    console.log(url);
+    const options_post = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      },
+      body: JSON.stringify(state)
+    };
+
+    const options_get = {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      }
+    };
+
+    console.log(state);
+
+    fetch(url, options_post)
+      .then(response => response.json())
+      .then(result => console.log(result));
+    //
+  }
   return (
     <React.Fragment>
-      <CssBaseline className={classes.base}/>
-      <Container maxWidth="lg"> 
+      <CssBaseline className={classes.base} />
+      <Container maxWidth="lg">
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
         </main>
@@ -304,9 +356,9 @@ export default function Nation_MissionaryPage() {
       <Button className={classes.buttoncolor} variant="contained" >
         SHOW RESULTS
       </Button>
-    </div> 
+        </div>
 
-    </div>
+      </div>
 
     </React.Fragment>
   );
@@ -315,4 +367,4 @@ export default function Nation_MissionaryPage() {
 
 
 
-  
+
