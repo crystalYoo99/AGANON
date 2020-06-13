@@ -144,6 +144,58 @@ export default function MainListItems() {
           </div>
           <Divider />
           <div>
+
+          <ListItem
+              button
+              component={Link}
+              to="/aim-contact"
+              onClick={handleDrawerToggle}
+            >
+              <ListItemIcon>
+                <LocationCityIcon />
+              </ListItemIcon>
+              <ListItemText primary="AIM_contact" />
+            </ListItem>
+
+            <ListItem
+              button
+              component={Link}
+              to="/aim-korea-m"
+              onClick={handleDrawerToggle}
+            >
+              <ListItemIcon>
+                <LocationCityIcon />
+              </ListItemIcon>
+              <ListItemText primary="AIM_KOREA_M" />
+            </ListItem>
+
+
+            <ListItem
+              button
+              component={Link}
+              to="/climate"
+              onClick={handleDrawerToggle}
+            >
+              <ListItemIcon>
+                <MonetizationOnIcon />
+              </ListItemIcon>
+              <ListItemText primary="Climate" />
+              </ListItem>
+
+
+              <ListItem
+              button
+              component={Link}
+              to="/city"
+              onClick={handleDrawerToggle}
+            >
+              <ListItemIcon>
+                <LocationCityIcon />
+              </ListItemIcon>
+              <ListItemText primary="City" />
+            </ListItem>
+
+
             <ListItem
               button
               component={Link}
@@ -299,6 +351,21 @@ export default function MainListItems() {
               </ListItemIcon>
               <ListItemText primary="Literacy_rate" />
             </ListItem>
+
+
+            <ListItem
+              button
+              component={Link}
+              to="/m-church"
+              onClick={handleDrawerToggle}
+            >
+              <ListItemIcon>
+                <LocationCityIcon />
+              </ListItemIcon>
+              <ListItemText primary="M_church" />
+            </ListItem>
+
+
             <ListItem
               button
               component={Link}

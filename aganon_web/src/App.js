@@ -15,6 +15,9 @@ import NationPage from "./pages/menu/NationPage.js";
 import mainListItems from "./pages/listitems.js";
 import "./App.css";
 //import NationForm from "./pages/menu/NationForm.js";
+
+import AIM_contactPage from "./pages/menu/AIM_contactPage.js";
+import AIM_KOREA_MPage from "./pages/menu/AIM_KOREA_MPage.js";
 import ClimatePage from "./pages/menu/ClimatePage.js";
 import Nation_CapitalPage from "./pages/menu/Nation_CapitalPage.js";
 import CityPage from "./pages/menu/CityPage.js";
@@ -28,7 +31,8 @@ import HealthPage from "./pages/menu/HealthPage";
 import ICTPage from "./pages/menu/ICTPage";
 import InfrastructurePage from "./pages/menu/InfrastructurePage";
 import LanguagePage from "./pages/menu/LanguagePage";
-import Literacy_ratePage from "./pages/menu/Literacy_ratePage";
+import M_churchPage from "./pages/menu/M_churchPage";
+import Literacy_ratePage from "./pages/menu/Literacy_ratePage.js";
 import MissionaryPage from "./pages/menu/MissionaryPage";
 import Nation_M_SchoolPage from "./pages/menu/Nation_M_SchoolPage";
 import Nation_LanguagePage from "./pages/menu/Nation_LanguagePage";
@@ -66,6 +70,9 @@ function App() {
           <Route exact path="/missionary" component={MissionaryPage} />
           <Route exact path="/mission_school" component={Nation_M_SchoolPage} />
           <Route exact path="/nation_capital" component={Nation_CapitalPage} />
+          <Route exact path="/aim-contact" component={AIM_contactPage} />
+          <Route exact path="/aim-korea-m" component={AIM_KOREA_MPage} />
+          <Route exact path="/m-church" component={M_churchPage} />
           <Route
             exact
             path="/nation_language"
