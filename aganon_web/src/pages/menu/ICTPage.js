@@ -294,12 +294,6 @@ export default function ICTPage() {
     console.log(state);
     
     fetch(url, options_post)
-<<<<<<< Updated upstream
-    .then(response => response.json())
-    .then(result => console.log(result)); 
-    //
-    
-=======
       .then(response => response.json())
       .then((result) => {
       
@@ -311,7 +305,6 @@ export default function ICTPage() {
       // 비동기화 문제로 console.log(ICT)가 fetch가 끝나기도 전에 출력되서 한번 더 눌러야 지난 번 값이 log로 떠요.
       console.log(ICT);
   
->>>>>>> Stashed changes
   }
 
   return (
