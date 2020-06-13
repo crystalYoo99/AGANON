@@ -40,9 +40,6 @@ router.post('/ict', (req, res) => {
     req.body.Population ? string_name =  "Population": '';
     req.body.Religious_ratio ? string_name =  "Religious_ratio": '';
     req.body.Symptom ? string_name =  "Symptom": '';
-
-
-    console.log(string_name);
  
 
     var nation = [];
