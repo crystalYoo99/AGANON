@@ -267,6 +267,37 @@ export default function EconomyPage() {
     'checked21': false
   });
 
+  function handleButtonClicked() {
+    var data = {};
+    var url = "http://localhost:4000/ict/";
+    console.log(url);
+    const options_post = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      },
+      body: JSON.stringify(state)
+    };
+
+    const options_get = {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
+      }
+    };
+
+    console.log(state);
+
+    fetch(url, options_post)
+      .then(response => response.json())
+      .then(result => console.log(result));
+    //
+  }
+  
   const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
@@ -325,7 +356,8 @@ export default function EconomyPage() {
     </List>
 
     <div className={classes.root6}>
-      <Button className={classes.buttoncolor} variant="contained" >
+      <Button className={classes.buttoncolor} variant="contained" 
+      onClick={handleButtonClicked}>
         SHOW RESULTS
       </Button>
     </div> 
