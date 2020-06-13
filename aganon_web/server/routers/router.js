@@ -12,6 +12,39 @@ router.get('/api/getUsername', (req, res, next) => {
 router.post('/ict', (req, res) => {
     var sql = "SELECT ?? ";
     console.log(req.body);
+    var string_name;
+    req.body.AIM_contack ?  string_name = "AIM_contack": '';
+    req.body.AIM_KOREA_M ? string_name = "AIM_KOREA_M": '';
+    req.body.Capital ? string_name = "Capital": '';
+    req.body.City ? string_name = "City" : '';
+    req.body.Climate ? string_name = "Climate": '';
+    req.body.Disease ? string_name = "Disease" : '';
+    req.body.Economy ? string_name = "Economy": '';
+    req.body.Education ? string_name = "Education": '';
+    req.body.Emergency_info ? string_name = "Emergency_info": '';
+    req.body.Energy ? string_name = "Energy": '';
+    req.body.Gorv_type ? string_name = "Gorv._type" : '';
+    req.body.Health ? string_name = "Health" : '';
+    req.body.ICT_ ?  string_name = "ICT": '';
+    req.body.Infrastructure ?  string_name = "Infrastructure": '';
+    req.body.Language ?  string_name = "Language": '';
+    req.body.Literacy_rate ? string_name = "Literacy_rate": '';
+    req.body.M_church ? string_name = "M_church": '';
+    req.body.Missionary ? string_name = "Missionary": '';
+    req.body.Mission_School ? string_name =  "Mission_School": '';
+    req.body.Nation ? string_name =  "Nation": '';
+    req.body.Nation_Capital ? string_name =  "Nation_Capital": '';
+    req.body.Nation_Language ? string_name =  "Nation_Language" : '';
+    req.body.Nation_Missionary ? string_name =  "Nation_Missionary" : '';
+    req.body.Nation_M_School ? string_name =  "Nation_M_School" : '';
+    req.body.Population ? string_name =  "Population": '';
+    req.body.Religious_ratio ? string_name =  "Religious_ratio": '';
+    req.body.Symptom ? string_name =  "Symptom": '';
+
+
+
+ 
+
     var nation = [];
     req.body.checked1 ?  nation.push('1'): '';
     req.body.checked2 ?  nation.push('2'): '';
@@ -137,7 +170,7 @@ router.post('/ict', (req, res) => {
         for(var i = 1 ; i< qry.length; i++)
             sql = sql + ", ?? "
     }
-    sql = sql + "FROM `ICT`";
+    sql = sql + "FROM `"+string_name+"`";
     sql = sql + " WHERE ";
     for(var j = 0 ; j<nation.length-1; j++){
         sql = sql + "nation_id = " +nation[j] +" OR ";

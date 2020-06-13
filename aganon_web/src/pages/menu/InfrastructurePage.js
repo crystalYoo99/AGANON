@@ -240,7 +240,7 @@ export default function InfrastructurePage() {
   };
 
   const [state, setState] = React.useState({
-    'nation_id': false,
+    nation_id: false,
     'year': false,
     'total_freight': false,
     'passengers': false,
@@ -266,6 +266,8 @@ export default function InfrastructurePage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
+    Infrastructure: true,
+    ICT_:false,
   });
 
   const handleChange2 = (event) => {

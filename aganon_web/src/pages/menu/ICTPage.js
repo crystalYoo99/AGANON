@@ -261,7 +261,8 @@ export default function ICTPage() {
     checked18: false,
     checked19: false,
     checked20: false,
-    checked21: false
+    checked21: false,
+    ICT_: true,
   });
 
   const handleChange2 = event => {
