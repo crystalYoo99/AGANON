@@ -240,11 +240,32 @@ export default function Emergency_InfoPage() {
   };
 
   const [state, setState] = React.useState({
-    checkedA: false,
-    checkedB: false,
-    checkedC: false,
-    checkedD: false,
-    checkedE: false,
+    'info_id': false,
+    'embassy': false,
+    'emergency_medical_service': false,
+    'police': false,
+    'fire_station': false,
+    'checked1': false,
+    'checked2': false,
+    'checked3': false,
+    'checked4': false,
+    'checked5': false,
+    'checked6': false,
+    'checked7': false,
+    'checked8': false,
+    'checked9': false,
+    'checked10': false,
+    'checked11': false,
+    'checked12': false,
+    'checked13': false,
+    'checked14': false,
+    'checked15': false,
+    'checked16': false,
+    'checked17': false,
+    'checked18': false,
+    'checked19': false,
+    'checked20': false,
+    'checked21': false,
   });
 
   const handleChange2 = (event) => {
