@@ -228,7 +228,7 @@ export default function NationPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-
+  const [nation, setNation] = React.useState();
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -239,8 +239,7 @@ export default function NationPage() {
     'latitude': false,
     'longitude': false,
     'info_id': false,
-    'latitude': false,
-    'gorv_type_id': false,
+    'gorv_type': false,
 
     'checked1': false,
     'checked2': false,
@@ -267,13 +266,13 @@ export default function NationPage() {
     Nation:true
   });
 
-  const handleChange2 = event => {
+  const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
   function handleButtonClicked() {
     var data = {};
-    var url = "http://localhost:4000/ict/";
+    var url = "http://localhost:4000/Nation/";
     console.log(url);
     const options_post = {
       method: "POST",
@@ -285,20 +284,12 @@ export default function NationPage() {
       body: JSON.stringify(state)
     };
 
-    const options_get = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
-      }
-    };
-
-    console.log(state);
-
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result => {
+        setNation(result);
+       console.log(result);
+      });
     //
   }
   return (

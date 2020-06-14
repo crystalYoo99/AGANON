@@ -19,7 +19,7 @@ import "./App.css";
 import AIM_contactPage from "./pages/menu/AIM_contactPage.js";
 import AIM_KOREA_MPage from "./pages/menu/AIM_KOREA_MPage.js";
 import ClimatePage from "./pages/menu/ClimatePage.js";
-import Nation_CapitalPage from "./pages/menu/Nation_CapitalPage.js";
+import CapitalPage from "./pages/menu/CapitalPage.js";
 import CityPage from "./pages/menu/CityPage.js";
 import DiseasePage from "./pages/menu/DiseasePage.js";
 import EconomyPage from "./pages/menu/EconomyPage.js";
@@ -27,19 +27,15 @@ import EducationPage from "./pages/menu/EducationPage";
 import Emergency_infoPage from "./pages/menu/Emergency_infoPage";
 import EnergyPage from "./pages/menu/EnergyPage";
 import GorvtypePage from "./pages/menu/Gorv._TypePage";
-import HealthPage from "./pages/menu/HealthPage";
-import ICTPage from "./pages/menu/ICTPage";
 import InfrastructurePage from "./pages/menu/InfrastructurePage";
 import LanguagePage from "./pages/menu/LanguagePage";
 import M_churchPage from "./pages/menu/M_churchPage";
 import Literacy_ratePage from "./pages/menu/Literacy_ratePage.js";
 import MissionaryPage from "./pages/menu/MissionaryPage";
-import Nation_M_SchoolPage from "./pages/menu/Nation_M_SchoolPage";
-import Nation_LanguagePage from "./pages/menu/Nation_LanguagePage";
+import Mission_SchoolPage from "./pages/menu/Mission_SchoolPage";
 //import Nation_M_SchoolPage from "./pages/menu/Nation_M_SchoolPage";
 import PopulationPage from "./pages/menu/PopulationPage";
 import Religious_ratioPage from "./pages/menu/Religious_ratioPage";
-import SymptomPage from "./pages/menu/SymptomPage";
 
 function App() {
   return (
@@ -53,7 +49,7 @@ function App() {
           <Route exact path="/" component={InitialPage} />
           <Route exact path="/ict" component={ICTpage} />
           <Route exact path="/nation" component={NationPage} />
-          <Route exact path="/capital" component={Nation_CapitalPage} />
+          <Route exact path="/capital" component={CapitalPage} />
           <Route exact path="/city" component={CityPage} />
           <Route exact path="/climate" component={ClimatePage} />
           <Route exact path="/disease" component={DiseasePage} />
@@ -62,34 +58,16 @@ function App() {
           <Route exact path="/emergency-info" component={Emergency_infoPage} />
           <Route exact path="/energy" component={EnergyPage} />
           <Route exact path="/gorv._type" component={GorvtypePage} />
-          <Route exact path="/health" component={HealthPage} />
-          <Route exact path="/ict" component={ICTPage} />
           <Route exact path="/infrastructure" component={InfrastructurePage} />
           <Route exact path="/language" component={LanguagePage} />
           <Route exact path="/literacy_rate" component={Literacy_ratePage} />
           <Route exact path="/missionary" component={MissionaryPage} />
-          <Route exact path="/mission_school" component={Nation_M_SchoolPage} />
-          <Route exact path="/nation_capital" component={Nation_CapitalPage} />
+          <Route exact path="/mission_school" component={Mission_SchoolPage} />
           <Route exact path="/aim-contact" component={AIM_contactPage} />
           <Route exact path="/aim-korea-m" component={AIM_KOREA_MPage} />
           <Route exact path="/m-church" component={M_churchPage} />
-          <Route
-            exact
-            path="/nation_language"
-            component={Nation_LanguagePage}
-          />
-          <Route
-            exact
-            path="/nation_m_school"
-            component={Nation_M_SchoolPage}
-          />
           <Route exact path="/population" component={PopulationPage} />
-          <Route
-            exact
-            path="/religious_ratio"
-            component={Religious_ratioPage}
-          />
-          <Route exact path="/symptom" component={SymptomPage} />
+          <Route exact path="/religious_ratio" component={Religious_ratioPage} />
 
           {/*
           <Route exact path="/mission" component={Mission} />

@@ -228,7 +228,7 @@ export default function GorvtypePage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-
+  const [gorv, setGorv] = React.useState();
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -268,7 +268,7 @@ export default function GorvtypePage() {
 
   function handleButtonClicked() {
     var data = {};
-    var url = "http://localhost:4000/ict/";
+    var url = "http://localhost:4000/Gorv/";
     console.log(url);
     const options_post = {
       method: "POST",
@@ -293,9 +293,13 @@ export default function GorvtypePage() {
 
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result => {
+        setGorv(result);
+       console.log(result)
+      });
     //
   }
+  
   
 
   return (
@@ -342,7 +346,7 @@ export default function GorvtypePage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel
+            <FormControlLabel
                 control={<Checkbox name="gorv_type_id" />}
                 label="gorv_type id"
                 onChange={handleChange2}

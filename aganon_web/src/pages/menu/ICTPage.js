@@ -230,39 +230,39 @@ export default function ICTPage() {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
   //const selectedNation =
-
+  const [ICT, setICT] = React.useState();
   const handleChange = event => {
     setPersonName(event.target.value);
   };
 
   const [state, setState] = React.useState({
-    nation_id: false,
-    year: false,
-    internet_users: false,
-    mobile_subscribers: false,
-    main_telephone_lines: false,
-    checked1: false,
-    checked2: false,
-    checked3: false,
-    checked4: false,
-    checked5: false,
-    checked6: false,
-    checked7: false,
-    checked8: false,
-    checked9: false,
-    checked10: false,
-    checked11: false,
-    checked12: false,
-    checked13: false,
-    checked14: false,
-    checked15: false,
-    checked16: false,
-    checked17: false,
-    checked18: false,
-    checked19: false,
-    checked20: false,
-    checked21: false,
-    ICT_: true,
+    'nation_id': false,
+    'year': false,
+    'internet_users': false,
+    'mobile_subscribers': false,
+    'main_telephone_lines': false,
+    'checked1': false,
+    'checked2': false,
+    'checked3': false,
+    'checked4': false,
+    'checked5': false,
+    'checked6': false,
+    'checked7': false,
+    'checked8': false,
+    'checked9': false,
+    'checked10': false,
+    'checked11': false,
+    'checked12': false,
+    'checked13': false,
+    'checked14': false,
+    'checked15': false,
+    'checked16': false,
+    'checked17': false,
+    'checked18': false,
+    'checked19': false,
+    'checked20': false,
+    'checked21': false,
+    'ICT_': true
   });
 
   const handleChange2 = event => {
@@ -271,34 +271,43 @@ export default function ICTPage() {
 
   function handleButtonClicked() {
     var data = {};
-    var url = "http://localhost:4000/ict/";
+    var url = 'http://localhost:4000/ict/';
     console.log(url);
     const options_post = {
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
+        'Accept': 'application/json',
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
       },
       body: JSON.stringify(state)
     };
 
     const options_get = {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
+        'Accept': 'application/json',
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
       }
     };
 
     console.log(state);
-
+    
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
-    //
+      .then((result) => {
+      
+        setICT(result);
+        console.log(result);
+        console.log(ICT);
+      });
+
+      // 비동기화 문제로 console.log(ICT)가 fetch가 끝나기도 전에 출력되서 한번 더 눌러야 지난 번 값이 log로 떠요.
+      console.log(ICT);
+  
   }
+
 
   return (
     <React.Fragment>

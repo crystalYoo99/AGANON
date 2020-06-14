@@ -32,7 +32,7 @@ const GreenCheckbox = withStyles({
 })(props => <Checkbox color="default" {...props} />);
 
 const mainFeaturedPost = {
-  title: "NATION LANGUAGE",
+  title: "NATION CAPITAL",
   imgText: "main image description"
 };
 
@@ -224,18 +224,17 @@ function getStyles(name, personName, theme) {
   };
 }
 
-export default function Nation_LanguagePage() {
+export default function Nation_CapitalPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-
+  const [capital, setCapital] = React.useState([]);
   const handleChange = event => {
     setPersonName(event.target.value);
   };
 
-  const [state, setState] = React.useState({
-    'nation_id': false,
-    'language_id': false,
+  const [state, setState] = React.useState({ 
+    'capital_name': false,
     'checked1': false,
     'checked2': false,
     'checked3': false,
@@ -257,16 +256,16 @@ export default function Nation_LanguagePage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
-    ICT_:false,
-    Nation_Language: true
+    ICT_: false,
+    Nation_Capital: true
   });
 
-  const handleChange2 = event => {
+  const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
   function handleButtonClicked() {
     var data = {};
-    var url = "http://localhost:4000/ict/";
+    var url = "http://localhost:4000/capital/";
     console.log(url);
     const options_post = {
       method: "POST",
@@ -278,23 +277,15 @@ export default function Nation_LanguagePage() {
       body: JSON.stringify(state)
     };
 
-    const options_get = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
-      }
-    };
-
     console.log(state);
 
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result => {
+        setCapital(result);
+        console.log(result)} );
     //
   }
-
   return (
     <React.Fragment>
       <CssBaseline className={classes.base} />
@@ -310,27 +301,27 @@ export default function Nation_LanguagePage() {
               <ListItemText className={classes.listtext5} primary="NATION" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros"  onChange = {handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti"  onChange = {handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea"   onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked10" />} label="Angola"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked10" />} label="Angola" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" onChange={handleChange2} />
             </FormGroup>
           </div>
           <div className={classes.section5}>
@@ -338,10 +329,10 @@ export default function Nation_LanguagePage() {
             <ListItem>
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
-            <FormGroup row className={classes.checks}>
+            <FormGroup row className={classes.checks}> 
               <FormControlLabel
-                control={<Checkbox name="checkedB" />}
-                label="language id"
+                control={<Checkbox name="capital_name" />}
+                label="capital name"
                 onChange={handleChange2}
               />
             </FormGroup>
@@ -350,7 +341,7 @@ export default function Nation_LanguagePage() {
 
         <div className={classes.root6}>
           <Button className={classes.buttoncolor} variant="contained"
-          onClick={handleButtonClicked}>
+            onClick={handleButtonClicked}>
             SHOW RESULTS
           </Button>
         </div>

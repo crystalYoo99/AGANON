@@ -386,7 +386,7 @@ export default function MainListItems() {
               <ListItemIcon>
                 <SchoolIcon />
               </ListItemIcon>
-              <ListItemText primary="Mission_school" />
+              <ListItemText primary="Mission_School" />
             </ListItem>
             <ListItem
               button

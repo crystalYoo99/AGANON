@@ -232,9 +232,9 @@ export default function ClimatePage() {
   const handleChange = event => {
     setPersonName(event.target.value);
   };
+  const [climate, setClimate] =  React.useState();
 
   const [state, setState] = React.useState({
-    'capital_id': false,
     'month': false,
     'type': false,
     'temp_high': false,
@@ -294,7 +294,7 @@ export default function ClimatePage() {
 
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result => {setClimate(result);console.log(result)} );
     //
   }
 
@@ -426,11 +426,6 @@ export default function ClimatePage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel
-                control={<Checkbox name="capital_id" />}
-                label="capital id"
-                onChange={handleChange2}
-              />
               <FormControlLabel
                 control={<Checkbox name="month" />}
                 label="month"

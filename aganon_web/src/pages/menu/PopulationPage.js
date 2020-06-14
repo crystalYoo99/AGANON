@@ -228,7 +228,7 @@ export default function PopulationPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-
+  const [population, setPopulation] = React.useState();
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -261,14 +261,9 @@ export default function PopulationPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
-    ICT_:false,
+    ICT_: false,
     Population: true
   });
-
-  const handleChange2 = event => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
-
   function handleButtonClicked() {
     var data = {};
     var url = "http://localhost:4000/ict/";
@@ -283,22 +278,21 @@ export default function PopulationPage() {
       body: JSON.stringify(state)
     };
 
-    const options_get = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
-      }
-    };
 
     console.log(state);
 
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result => {
+        setPopulation(result);
+      console.log(result);
+    });
     //
   }
+  const handleChange2 = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
+
   return (
     <React.Fragment>
       <CssBaseline className={classes.base} />
@@ -344,6 +338,11 @@ export default function PopulationPage() {
             </ListItem>
             <FormGroup row className={classes.checks}>
               <FormControlLabel
+                control={<Checkbox name="nation_id" />}
+                label="nation id"
+                onChange={handleChange2}
+              />
+              <FormControlLabel
                 control={<Checkbox name="year" />}
                 label="year"
                 onChange={handleChange2}
@@ -363,13 +362,14 @@ export default function PopulationPage() {
                 label="total"
                 onChange={handleChange2}
               />
+
             </FormGroup>
           </div>
         </List>
 
         <div className={classes.root6}>
           <Button className={classes.buttoncolor} variant="contained"
-          onClick={handleButtonClicked}>
+            onClick={handleButtonClicked}>
             SHOW RESULTS
           </Button>
         </div>

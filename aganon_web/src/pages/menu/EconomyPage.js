@@ -234,7 +234,7 @@ export default function EconomyPage() {
     const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-
+  const [economy, setEconomy] = React.useState();
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
@@ -271,7 +271,7 @@ export default function EconomyPage() {
 
   function handleButtonClicked() {
     var data = {};
-    var url = "http://localhost:4000/ict/";
+    var url = "http://localhost:4000/Economy/";
     console.log(url);
     const options_post = {
       method: "POST",
@@ -283,21 +283,15 @@ export default function EconomyPage() {
       body: JSON.stringify(state)
     };
 
-    const options_get = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
-      }
-    };
 
     console.log(state);
 
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
-    //
+      .then(result => {
+        setEconomy(result);
+        console.log(result);
+      });
   }
   
   const handleChange2 = (event) => {
@@ -349,9 +343,9 @@ export default function EconomyPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="gdp" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="gdp rank world" />
+        <FormControlLabel control={<Checkbox name="year" />} label="year"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="gdp" />} label="gdp"     onChange={handleChange2}/>
+          <FormControlLabel control={<Checkbox name="gdp_rank_world" />} label="gdp rank world"     onChange={handleChange2}/>
         </FormGroup>
       </div>
     </List>

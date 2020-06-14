@@ -234,7 +234,7 @@ export default function Religious_ratioPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-
+  const [ratio, setRatio] = React.useState();
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
@@ -265,13 +265,9 @@ export default function Religious_ratioPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
-    ICT_:false,
-    Religious_ratio:true
+    ICT_: false,
+    Religious_ratio: true
   });
-
-  const handleChange2 = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
   function handleButtonClicked() {
     var data = {};
     var url = "http://localhost:4000/ict/";
@@ -286,22 +282,20 @@ export default function Religious_ratioPage() {
       body: JSON.stringify(state)
     };
 
-    const options_get = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
-      }
-    };
 
     console.log(state);
 
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result => {
+        setRatio(result);
+        console.log(result);
+      });
     //
   }
+  const handleChange2 = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
 
   return (
     <React.Fragment>
@@ -348,17 +342,17 @@ export default function Religious_ratioPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="nation_id" />} label="nation id" onChange={handleChange2}/>
-              <FormControlLabel control={<Checkbox name="christianity" />} label="christianity" onChange={handleChange2}/>
-              <FormControlLabel control={<Checkbox name="islam" />} label="islam" onChange={handleChange2}/>
-              <FormControlLabel control={<Checkbox name="etc" />} label="etc" onChange={handleChange2}/>
+              <FormControlLabel control={<Checkbox name="nation_id" />} label="nation id" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="christianity" />} label="christianity" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="islam" />} label="islam" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="etc" />} label="etc" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
 
         <div className={classes.root6}>
           <Button className={classes.buttoncolor} variant="contained"
-          onClick={handleButtonClicked} >
+            onClick={handleButtonClicked} >
             SHOW RESULTS
       </Button>
         </div>

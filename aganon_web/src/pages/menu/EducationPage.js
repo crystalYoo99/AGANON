@@ -234,15 +234,14 @@ export default function EducationPage() {
     const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-
+  const [education, setEducation]= React.useState();
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
 
   const [state, setState] = React.useState({
-    'Children_outSchool': false,
-    'nation_id': false,
     'year': false,
+    'Children_outSchool': false,
     'Secondary_outSchool': false,
     'checked1': false,
     'checked2': false,
@@ -275,7 +274,7 @@ export default function EducationPage() {
 
   function handleButtonClicked() {
     var data = {};
-    var url = "http://localhost:4000/ict/";
+    var url = "http://localhost:4000/Education/";
     console.log(url);
     const options_post = {
       method: "POST",
@@ -287,20 +286,14 @@ export default function EducationPage() {
       body: JSON.stringify(state)
     };
 
-    const options_get = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
-      }
-    };
-
     console.log(state);
 
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result => {
+        setEducation(result);
+        console.log(result);
+      });
     //
   }
   
@@ -349,9 +342,9 @@ export default function EducationPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-          <FormControlLabel control={<Checkbox name="checkedB" />} label="year" />
-          <FormControlLabel control={<Checkbox name="checkedC" />} label="children outschool" />
-          <FormControlLabel control={<Checkbox name="checkedD" />} label="secondary outschool" />
+        <FormControlLabel control={<Checkbox name="year" />} label="year" onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="Children_outSchool" />} label="children outschool" onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="Secondary_outSchool" />} label="secondary outschool"onChange={handleChange2} />
         </FormGroup>
       </div>
     </List>

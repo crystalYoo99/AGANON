@@ -228,7 +228,7 @@ export default function EnergyPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-
+  const [energy, setEnerg] = React.useState();
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -262,11 +262,7 @@ export default function EnergyPage() {
     ICT_:false,
     Energy:true
   });
-
-  const handleChange2 = event => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
-
+  
   function handleButtonClicked() {
     var data = {};
     var url = "http://localhost:4000/ict/";
@@ -294,10 +290,15 @@ export default function EnergyPage() {
 
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result => {
+        setEnerg(result);
+      console.log(result)
+    });
     //
   }
-
+  const handleChange2 = event => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
   return (
     <React.Fragment>
       <CssBaseline className={classes.base} />
@@ -342,7 +343,7 @@ export default function EnergyPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel
+            <FormControlLabel
                 control={<Checkbox name="energy_id" />}
                 label="energy id"
                 onChange={handleChange2}
@@ -353,7 +354,12 @@ export default function EnergyPage() {
                 onChange={handleChange2}
               />
               <FormControlLabel
-                control={<Checkbox name="checkedD" />}
+                control={<Checkbox name="nation_id" />}
+                label="nation id"
+                onChange={handleChange2}
+              />
+              <FormControlLabel
+                control={<Checkbox name="consumption" />}
                 label="consumption"
                 onChange={handleChange2}
               />
