@@ -162,7 +162,6 @@ router.post('/language', (req, res) => {
 
     req.body.language_id ? qry.push('name') : '';
     req.body.language_id ? qry.push('language_id') : '';
-    if (nation.length == 0) res.send();
     if (qry.length == 0) {
         res.send();
     } else {
@@ -171,11 +170,14 @@ router.post('/language', (req, res) => {
     }
     sql = sql + "FROM (SELECT * FROM Nation INNER JOIN Nation_Language USING(nation_id)) AS na INNER JOIN Language USING(language_id)";
 
-    sql = sql + " WHERE ";
-    for (var j = 0; j < nation.length - 1; j++) {
-        sql = sql + "nation_id = " + nation[j] + " OR ";
+    if (nation.length != 0){
+        sql = sql + " WHERE ";
+        for (var j = 0; j < nation.length - 1; j++) {
+            sql = sql + "nation_id = " + nation[j] + " OR ";
+        }
+        sql = sql + "nation_id = " + nation[nation.length - 1];
     }
-    sql = sql + "nation_id = " + nation[nation.length - 1];
+
     sql = mysql.format(sql, qry);
     console.log(sql);
 
