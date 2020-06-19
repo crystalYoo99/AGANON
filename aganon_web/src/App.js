@@ -32,7 +32,7 @@ import LanguagePage from "./pages/menu/LanguagePage";
 import M_churchPage from "./pages/menu/M_churchPage";
 import Literacy_ratePage from "./pages/menu/Literacy_ratePage.js";
 import MissionaryPage from "./pages/menu/MissionaryPage";
-import Mission_SchoolPage from "./pages/menu/Mission_schoolPage";
+import Mission_SchoolPage from "./pages/menu/Mission_SchoolPage";
 //import Nation_M_SchoolPage from "./pages/menu/Nation_M_SchoolPage";
 import PopulationPage from "./pages/menu/PopulationPage";
 import Religious_ratioPage from "./pages/menu/Religious_ratioPage";

@@ -23,6 +23,15 @@ import brown from '@material-ui/core/colors/brown';
 import Button from '@material-ui/core/Button';
 
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
 
 const GreenCheckbox = withStyles({
     root: {
@@ -234,7 +243,7 @@ export default function EducationPage() {
     const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [education, setEducation]= React.useState();
+  const [education, setEducation]= React.useState([]);
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
@@ -342,9 +351,9 @@ export default function EducationPage() {
           <ListItemText className={classes.listtext5} primary="ATTRIBUTE"  />
         </ListItem>
         <FormGroup row className={classes.checks}>
-        <FormControlLabel control={<Checkbox name="year" />} label="year" onChange={handleChange2} />
-          <FormControlLabel control={<Checkbox name="Children_outSchool" />} label="children outschool" onChange={handleChange2} />
-          <FormControlLabel control={<Checkbox name="Secondary_outSchool" />} label="secondary outschool"onChange={handleChange2} />
+        <FormControlLabel control={<Checkbox name="year" />} label="Year" onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="Children_outSchool" />} label="# of Children OutSchool(Person)" onChange={handleChange2} />
+          <FormControlLabel control={<Checkbox name="Secondary_outSchool" />} label="# of Secondary OutSchool(Person)"onChange={handleChange2} />
         </FormGroup>
       </div>
     </List>
@@ -354,6 +363,35 @@ export default function EducationPage() {
       onClick={handleButtonClicked} >
         SHOW RESULTS
       </Button>
+    
+      <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  {/* <TableCell>Month </TableCell> */}
+                  <TableCell align="left">{state.year || state.Children_outSchool || state.Secondary_outSchool ? 'Nation Name' : ''}&nbsp;</TableCell>
+                  <TableCell align="left">{state.year ? 'Year' : ''}</TableCell>
+                  <TableCell align="left">{state.Children_outSchool ? '# of Children OutSchool(Person)' : ''}</TableCell>
+                  <TableCell align="left">{state.Secondary_outSchool ? '# of Secondary OutSchool(Person)' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {education.map((info) => (
+                  <TableRow key={info.name}>
+                    {/* <TableCell component="th" scope="row">
+                {info.name}
+              </TableCell>     */}
+                    <TableCell align="left">{state.year || state.Children_outSchool || state.Secondary_outSchool ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.year ? info.year : ''}</TableCell>
+                    <TableCell align="left">{state.Children_outSchool ? info.Children_outSchool : ''}</TableCell>
+                    <TableCell align="left">{state.Secondary_outSchool ? info.Secondary_outSchool : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+
     </div> 
 
     </div>

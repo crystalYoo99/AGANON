@@ -370,8 +370,8 @@ export default function Nation_CapitalPage() {
               {/* <TableCell component="th" scope="row">
                 {info.name}
               </TableCell>     */}
-            <TableCell align="left">{state.capital_name ? 'Nation Name'  : ''}</TableCell>
-            <TableCell align="left">{state.capital_name ? 'Capital Name'  : ''}</TableCell>
+            <TableCell align="left">{state.capital_name ? info.nation_name  : ''}</TableCell>
+            <TableCell align="left">{state.capital_name ? info.name  : ''}</TableCell>
             </TableRow>
           ))}
         </TableBody>

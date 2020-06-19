@@ -22,6 +22,18 @@ import Divider from "@material-ui/core/Divider";
 import brown from "@material-ui/core/colors/brown";
 import Button from "@material-ui/core/Button";
 
+
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
+
+
 const GreenCheckbox = withStyles({
   root: {
     color: green[400],
@@ -230,7 +242,7 @@ export default function ICTPage() {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
   //const selectedNation =
-  const [ICT, setICT] = React.useState();
+  const [ICT, setICT] = React.useState([]);
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -293,19 +305,19 @@ export default function ICTPage() {
     };
 
     console.log(state);
-    
+
     fetch(url, options_post)
       .then(response => response.json())
       .then((result) => {
-      
+
         setICT(result);
         console.log(result);
         console.log(ICT);
       });
 
-      // 비동기화 문제로 console.log(ICT)가 fetch가 끝나기도 전에 출력되서 한번 더 눌러야 지난 번 값이 log로 떠요.
-      console.log(ICT);
-  
+    // 비동기화 문제로 console.log(ICT)가 fetch가 끝나기도 전에 출력되서 한번 더 눌러야 지난 번 값이 log로 떠요.
+    console.log(ICT);
+
   }
 
 
@@ -437,26 +449,10 @@ export default function ICTPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel
-                control={<Checkbox name="year" />}
-                label="year"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="internet_users" />}
-                label="internet users"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="mobile_subscribers" />}
-                label="mobile subscribers"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="main_telephone_lines" />}
-                label="main telephone lines"
-                onChange={handleChange2}
-              />
+              <FormControlLabel control={<Checkbox name="year" />} label="Year" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="internet_users" />} label="Internet Users" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="mobile_subscribers" />} label="Mobile Subscribers" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="main_telephone_lines" />} label="Main Telephone Lines" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -469,6 +465,35 @@ export default function ICTPage() {
           >
             SHOW RESULTS
           </Button>
+
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{state.year || state.internet_users || state.mobile_subscribers || state.main_telephone_lines ? 'Nation Name' : ''}&nbsp;</TableCell>
+                  <TableCell align="left">{state.year ? 'Year' : ''}</TableCell>
+                  <TableCell align="left">{state.internet_users ? 'Internet Users' : ''}</TableCell>
+                  <TableCell align="left">{state.mobile_subscribers ? 'Mobile Subscribers' : ''}</TableCell>
+                  <TableCell align="left">{state.main_telephone_lines ? 'Main Telephone Lines' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {ICT.map((info) => (
+                  <TableRow key={info.name}>
+                    <TableCell align="left">{state.year || state.internet_users || state.mobile_subscribers || state.main_telephone_lines ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.year ? info.year : ''}</TableCell>
+                    <TableCell align="left">{state.internet_users ? info.internet_users : ''}</TableCell>
+                    <TableCell align="left">{state.mobile_subscribers ? info.mobile_subscribers : ''}</TableCell>
+                    <TableCell align="left">{state.main_telephone_lines ? info.main_telephone_lines : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+
+
         </div>
       </div>
     </React.Fragment>

@@ -356,8 +356,6 @@ export default function DiseasePage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="disease_id" />} label="disease id" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="symptom_id" />} label="symptom id" onChange={handleChange2} />
               <FormControlLabel control={<Checkbox name="disease_name" />} label="disease name" onChange={handleChange2} />
               <FormControlLabel control={<Checkbox name="disease_type" />} label="disease type" onChange={handleChange2} />
               <FormControlLabel control={<Checkbox name="death_rate" />} label="death rate" onChange={handleChange2} />

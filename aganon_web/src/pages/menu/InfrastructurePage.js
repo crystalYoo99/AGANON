@@ -23,6 +23,16 @@ import brown from '@material-ui/core/colors/brown';
 import Button from '@material-ui/core/Button';
 
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
+
 
 const GreenCheckbox = withStyles({
   root: {
@@ -234,7 +244,7 @@ export default function InfrastructurePage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [infra, setInfra]= React.useState();
+  const [infra, setInfra]= React.useState([]);
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
@@ -353,10 +363,10 @@ export default function InfrastructurePage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="year" />} label="year" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="total_freight" />} label="total flight" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="passengers" />} label="passengers" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="total_road" />} label="total road" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="year" />} label="Year" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="total_freight" />} label="Total # of Flight" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="passengers" />} label="Passengers" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="total_road" />} label="Total Length Of Road" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -366,6 +376,33 @@ export default function InfrastructurePage() {
             onClick={handleButtonClicked} >
             SHOW RESULTS
       </Button>
+
+
+      
+      <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{state.year || state.total_freight || state.passengers || state.total_road ? 'Nation Name' : ''}&nbsp;</TableCell>
+                  <TableCell align="left">{state.year ? 'Year' : ''}</TableCell>
+                  <TableCell align="left">{state.total_freight ? 'Total # of Flight' : ''}</TableCell>
+                  <TableCell align="left">{state.passengers ? 'Passengers' : ''}</TableCell>
+                  <TableCell align="left">{state.total_road ? 'Total Length Of Road(km)' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {infra.map((info) => (
+                  <TableRow key={info.name}>
+                    <TableCell align="left">{state.year || state.total_freight || state.passengers || state.total_road ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.year ? info.year : ''}</TableCell>
+                    <TableCell align="left">{state.total_freight ? info.total_freight : ''}</TableCell>
+                    <TableCell align="left">{state.passengers ? info.passengers : ''}</TableCell>
+                    <TableCell align="left">{state.total_road ? info.total_road : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
         </div>
 
       </div>

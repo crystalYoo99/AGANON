@@ -23,6 +23,15 @@ import brown from '@material-ui/core/colors/brown';
 import Button from '@material-ui/core/Button';
 
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
 
 const GreenCheckbox = withStyles({
   root: {
@@ -234,7 +243,7 @@ export default function Emergency_InfoPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [emer_info, setEmer_info] = React.useState();
+  const [emer_info, setEmer_info] = React.useState([]);
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
@@ -355,11 +364,10 @@ export default function Emergency_InfoPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="info_id" />} label="info id" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="embassy" />} label="embassy" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="emergency_medical_service" />} label="emergency medical service" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="police" />} label="police" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="fire_station" />} label="fire station" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="embassy" />} label="Embassy" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="emergency_medical_service" />} label="Emergency Medical Service" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="police" />} label="Police" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="fire_station" />} label="Fire Station" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -369,6 +377,38 @@ export default function Emergency_InfoPage() {
             onClick={handleButtonClicked} >
             SHOW RESULTS
       </Button>
+
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  {/* <TableCell>Month </TableCell> */}
+                  <TableCell align="left">{state.embassy || state.emergency_medical_service || state.police || state.fire_station ? 'Nation Name' : ''}&nbsp;</TableCell>
+                  <TableCell align="left">{state.embassy ? 'Emabassy' : ''}</TableCell>
+                  <TableCell align="left">{state.emergency_medical_service ? 'Emergency Medical Service' : ''}</TableCell>
+                  <TableCell align="left">{state.police ? 'Police' : ''}</TableCell>
+                  <TableCell align="left">{state.fire_station ? 'Fire Station' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {emer_info.map((info) => (
+                  <TableRow key={info.name}>
+                    {/* <TableCell component="th" scope="row">
+                {info.name}
+              </TableCell>     */}
+                    <TableCell align="left">{state.embassy || state.emergency_medical_service || state.police || state.fire_station  ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.embassy ? info.embassy : ''}</TableCell>
+                    <TableCell align="left">{state.emergency_medical_service ? info.emergency_medical_service : ''}</TableCell>
+                    <TableCell align="left">{state.police ? info.police : ''}</TableCell>
+                    <TableCell align="left">{state.fire_station ? info.fire_station : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+
         </div>
 
       </div>

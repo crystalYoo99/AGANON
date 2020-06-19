@@ -21,6 +21,17 @@ import Divider from "@material-ui/core/Divider";
 import brown from "@material-ui/core/colors/brown";
 import Button from "@material-ui/core/Button";
 
+
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
+
 const GreenCheckbox = withStyles({
   root: {
     color: green[400],
@@ -228,7 +239,7 @@ export default function EnergyPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [energy, setEnerg] = React.useState();
+  const [energy, setEnerg] = React.useState([]);
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -259,13 +270,13 @@ export default function EnergyPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
-    ICT_:false,
-    Energy:true
+    ICT_: false,
+    Energy: true
   });
-  
+
   function handleButtonClicked() {
     var data = {};
-    var url = "http://localhost:4000/ict/";
+    var url = "http://localhost:4000/Energy/";
     console.log(url);
     const options_post = {
       method: "POST",
@@ -292,8 +303,8 @@ export default function EnergyPage() {
       .then(response => response.json())
       .then(result => {
         setEnerg(result);
-      console.log(result);
-    });
+        console.log(result);
+      });
     //
   }
   const handleChange2 = event => {
@@ -314,27 +325,27 @@ export default function EnergyPage() {
               <ListItemText className={classes.listtext5} primary="NATION" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros"  onChange = {handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti"  onChange = {handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea"   onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked10" />} label="Angola"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia"  onChange = {handleChange2}/>
-              <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe"  onChange = {handleChange2}/>
+              <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked10" />} label="Angola" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" onChange={handleChange2} />
             </FormGroup>
           </div>
           <div className={classes.section5}>
@@ -343,35 +354,43 @@ export default function EnergyPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-            <FormControlLabel
-                control={<Checkbox name="energy_id" />}
-                label="energy id"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="year" />}
-                label="year"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="nation_id" />}
-                label="nation id"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="consumption" />}
-                label="consumption"
-                onChange={handleChange2}
-              />
+              <FormControlLabel control={<Checkbox name="year" />} label="Year" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="consumption" />} label="Consumption" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
 
         <div className={classes.root6}>
           <Button className={classes.buttoncolor} variant="contained"
-          onClick={handleButtonClicked}>
+            onClick={handleButtonClicked}>
             SHOW RESULTS
           </Button>
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{state.year || state.consumption ? 'Nation Name' : ''}&nbsp;</TableCell>
+                  <TableCell align="left">{state.year ? 'Year' : ''}</TableCell>
+                  <TableCell align="left">{state.consumption ? 'Consumption' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {energy.map((info) => (
+                  <TableRow key={info.name}>
+                    {/* <TableCell component="th" scope="row">
+                {info.name}
+              </TableCell>     */}
+                    <TableCell align="left">{state.year || state.consumption ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.year ? info.year : ''}</TableCell>
+                    <TableCell align="left">{state.consumption ? info.consumption : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+
         </div>
       </div>
     </React.Fragment>

@@ -23,6 +23,15 @@ import brown from '@material-ui/core/colors/brown';
 import Button from '@material-ui/core/Button';
 
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
 
 const GreenCheckbox = withStyles({
   root: {
@@ -234,15 +243,12 @@ export default function LanguagePage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [lang, setLang] = React.useState();
+  const [lang, setLang] = React.useState([]);
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
 
   const [state, setState] = React.useState({
-    'language_id': false,
-    'name': false,
-
     'checked1': false,
     'checked2': false,
     'checked3': false,
@@ -263,9 +269,7 @@ export default function LanguagePage() {
     'checked18': false,
     'checked19': false,
     'checked20': false,
-    'checked21': false,
-    ICT_: false,
-    Language: true
+    'checked21': false
   });
 
   const handleChange2 = (event) => {
@@ -286,24 +290,22 @@ export default function LanguagePage() {
       body: JSON.stringify(state)
     };
 
-    const options_get = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
-      }
-    };
-
     console.log(state);
 
-    fetch(url, options_post)
-      .then(response => response.json())
-      .then(result => {
-        setLang(result);
-       console.log(result);
-      });
-    //
+    var resOfquery = async () => fetch(url, options_post)
+    .then(response => {
+      const d = response.json();
+      console.log(d);
+      return d;
+    })
+
+    
+
+    resOfquery().then((www) => {
+    // printprint(result);
+    // test1(result);
+    setLang((www));
+  })
   }
   return (
     <React.Fragment>
@@ -350,8 +352,6 @@ export default function LanguagePage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="language_id" />} label="language id" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="name" />} label="name" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -361,6 +361,26 @@ export default function LanguagePage() {
             onClick={handleButtonClicked} >
             SHOW RESULTS
       </Button>
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{'Nation Name'}</TableCell>
+                  <TableCell align="left">{'Language'}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {lang.map((info) => (
+                  <TableRow key={info.name}>
+                    <TableCell align="left">{info.nation_name}</TableCell>
+                    <TableCell align="left">{info.name}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
         </div>
 
       </div>

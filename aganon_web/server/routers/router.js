@@ -9,68 +9,6 @@ router.get('/api/getUsername', (req, res, next) => {
     res.send({ username: os.userInfo().username });
 });
 
-//추후 작업 요망 to jisu
-router.post('/AIM_contack', (req, res) => {
-
-    var sql = "SELECT nation_name "
-    var nation = [];
-    req.body.checked1 ? nation.push('1') : '';
-    req.body.checked2 ? nation.push('2') : '';
-    req.body.checked3 ? nation.push('3') : '';
-    req.body.checked4 ? nation.push('4') : '';
-    req.body.checked5 ? nation.push('5') : '';
-    req.body.checked6 ? nation.push('6') : '';
-    req.body.checked7 ? nation.push('7') : '';
-    req.body.checked8 ? nation.push('8') : '';
-    req.body.checked9 ? nation.push('9') : '';
-    req.body.checked10 ? nation.push('10') : '';
-    req.body.checked11 ? nation.push('11') : '';
-    req.body.checked12 ? nation.push('12') : '';
-    req.body.checked13 ? nation.push('13') : '';
-    req.body.checked14 ? nation.push('14') : '';
-    req.body.checked15 ? nation.push('15') : '';
-    req.body.checked16 ? nation.push('16') : '';
-    req.body.checked17 ? nation.push('17') : '';
-    req.body.checked18 ? nation.push('18') : '';
-    req.body.checked19 ? nation.push('19') : '';
-    req.body.checked20 ? nation.push('20') : '';
-    req.body.checked21 ? nation.push('21') : '';
-
-    var qry = [];
-    //Language
-
-    req.body.language_id ? qry.push('name') : '';
-    req.body.language_id ? qry.push('language_id') : '';
-
-    if (qry.length == 0) {
-        res.send();
-    } else {
-        for (var i = 1; i < qry.length; i++)
-            sql = sql + ", ?? "
-    }
-    sql = sql + "FROM (SELECT * FROM Nation INNER JOIN Nation_Language USING(nation_id)) AS na INNER JOIN Language USING(language_id)";
-
-    if (nation.length != 0) {
-        sql = sql + " WHERE ";
-        for (var j = 0; j < nation.length - 1; j++) {
-            sql = sql + "nation_id = " + nation[j] + " OR ";
-        }
-        sql = sql + "nation_id = " + nation[nation.length - 1];
-    }
-
-    sql = mysql.format(sql, qry);
-    console.log(sql);
-
-    db.query(sql, (err, rows) => {
-        if (!err) {
-            res.send(rows);
-        } else {
-            console.log(`query error : ${err}`);
-            res.send(err);
-        }
-    });
-});
-
 router.post('/capital', (req, res) => {
     var sql = "SELECT nation_name "
     var nation = [];
@@ -133,7 +71,7 @@ router.post('/capital', (req, res) => {
 });
 
 router.post('/language', (req, res) => {
-    var sql = "SELECT nation_name "
+    var sql = "SELECT na.nation_name, `name` "
     var nation = [];
     req.body.checked1 ? nation.push('1') : '';
     req.body.checked2 ? nation.push('2') : '';
@@ -157,18 +95,7 @@ router.post('/language', (req, res) => {
     req.body.checked20 ? nation.push('20') : '';
     req.body.checked21 ? nation.push('21') : '';
 
-    var qry = [];
-    //Language
-
-    req.body.language_id ? qry.push('name') : '';
-    req.body.language_id ? qry.push('language_id') : '';
-    if (qry.length == 0) {
-        res.send();
-    } else {
-        for (var i = 1; i < qry.length; i++)
-            sql = sql + ", ?? "
-    }
-    sql = sql + "FROM (SELECT * FROM Nation INNER JOIN Nation_Language USING(nation_id)) AS na INNER JOIN Language USING(language_id)";
+    sql = sql + "FROM (SELECT * FROM Nation INNER JOIN Nation_Language USING(nation_id)) AS na INNER JOIN Language ON (na.language_id = Language.language_id)";
 
     if (nation.length != 0){
         sql = sql + " WHERE ";
@@ -178,7 +105,6 @@ router.post('/language', (req, res) => {
         sql = sql + "nation_id = " + nation[nation.length - 1];
     }
 
-    sql = mysql.format(sql, qry);
     console.log(sql);
 
     db.query(sql, (err, rows) => {
@@ -532,7 +458,7 @@ router.post('/Economy', (req, res) => {
     //Economy
     req.body.gdp ? qry.push('gdp') : '';
     req.body.gdp_rank_world ? qry.push('gdp_rank_world') : '';
-
+    req.body.year ? qry.push('year') : '';
 
     if (qry.length == 0) {
         res.send();
@@ -763,6 +689,69 @@ router.post('/M_Church', (req, res) => {
     });
 });
 
+
+router.post('/Energy', (req, res) => {
+
+    var sql = "SELECT nation_name "
+    var nation = [];
+    req.body.checked1 ? nation.push('1') : '';
+    req.body.checked2 ? nation.push('2') : '';
+    req.body.checked3 ? nation.push('3') : '';
+    req.body.checked4 ? nation.push('4') : '';
+    req.body.checked5 ? nation.push('5') : '';
+    req.body.checked6 ? nation.push('6') : '';
+    req.body.checked7 ? nation.push('7') : '';
+    req.body.checked8 ? nation.push('8') : '';
+    req.body.checked9 ? nation.push('9') : '';
+    req.body.checked10 ? nation.push('10') : '';
+    req.body.checked11 ? nation.push('11') : '';
+    req.body.checked12 ? nation.push('12') : '';
+    req.body.checked13 ? nation.push('13') : '';
+    req.body.checked14 ? nation.push('14') : '';
+    req.body.checked15 ? nation.push('15') : '';
+    req.body.checked16 ? nation.push('16') : '';
+    req.body.checked17 ? nation.push('17') : '';
+    req.body.checked18 ? nation.push('18') : '';
+    req.body.checked19 ? nation.push('19') : '';
+    req.body.checked20 ? nation.push('20') : '';
+    req.body.checked21 ? nation.push('21') : '';
+
+    var qry = [];
+
+    req.body.year ? qry.push('year') : '';
+    req.body.consumption ? qry.push('consumption') : '';
+
+
+
+    if (qry.length == 0) {
+        res.send();
+    } else {
+        for (var i = 0; i < qry.length; i++)
+            sql = sql + ", ?? "
+    }
+    sql = sql + " FROM `Energy` INNER JOIN Nation USING(nation_id) ";
+
+    if (nation.length != 0) {
+        sql = sql + " WHERE ";
+        for (var j = 0; j < nation.length - 1; j++) {
+            sql = sql + "nation_id = " + nation[j] + " OR ";
+        }
+        sql = sql + "nation_id = " + nation[nation.length - 1];
+    }
+    sql = mysql.format(sql, qry);
+    console.log(sql);
+
+    db.query(sql, (err, rows) => {
+        if (!err) {
+            res.send(rows);
+        } else {
+            console.log(`query error : ${err}`);
+            res.send(err);
+        }
+    });
+});
+
+
 router.post('/ict', (req, res) => {
     var sql = "SELECT nation_name, ?? ";
     console.log(req.body);
@@ -835,8 +824,8 @@ router.post('/ict', (req, res) => {
     req.body.energy_id ? qry.push('energy_id') : '';
     //Infrastructure
     req.body.total_freight ? qry.push('total_freight') : '';
-    req.body.passenges ? qry.push('passenges') : '';
-    req.body.total_road_km ? qry.push('total_road_km') : '';
+    req.body.passengers ? qry.push('passengers') : '';
+    req.body.total_road ? qry.push('total_road') : '';
 
     //Literacy_rate
     req.body.total ? qry.push('total') : '';

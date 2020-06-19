@@ -21,6 +21,17 @@ import Divider from "@material-ui/core/Divider";
 import brown from "@material-ui/core/colors/brown";
 import Button from "@material-ui/core/Button";
 
+
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
+
 const GreenCheckbox = withStyles({
   root: {
     color: green[400],
@@ -228,7 +239,7 @@ export default function GorvtypePage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [gorv, setGorv] = React.useState();
+  const [gorv, setGorv] = React.useState([]);
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -346,21 +357,8 @@ export default function GorvtypePage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-            <FormControlLabel
-                control={<Checkbox name="gorv_type_id" />}
-                label="gorv_type id"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="gorv_type_name" />}
-                label="gorv_type name"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="description" />}
-                label="description"
-                onChange={handleChange2}
-              />
+              <FormControlLabel control={<Checkbox name="gorv_type_name" />} label="Gorverment Type name" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="description" />} label="Description" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -370,6 +368,33 @@ export default function GorvtypePage() {
           onClick={handleButtonClicked}>
             SHOW RESULTS
           </Button>
+
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>                  
+                  <TableCell align="left">{state.gorv_type_name || state.description ? 'Nation Name' : ''}&nbsp;</TableCell>
+                  <TableCell align="left">{state.gorv_type_name ? 'Gorverment Type' : ''}</TableCell>
+                  <TableCell align="left">{state.description ? 'Description' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {gorv.map((info) => (
+                  <TableRow key={info.name}>
+                    {/* <TableCell component="th" scope="row">
+                {info.name}
+              </TableCell>     */}
+                    <TableCell align="left">{state.gorv_type_name || state.description ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.gorv_type_name ? info.gorv_type_name : ''}</TableCell>
+                    <TableCell align="left">{state.description ? info.description : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+
         </div>
       </div>
     </React.Fragment>
