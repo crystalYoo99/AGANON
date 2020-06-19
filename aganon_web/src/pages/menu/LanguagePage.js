@@ -302,8 +302,6 @@ export default function LanguagePage() {
     
 
     resOfquery().then((www) => {
-    // printprint(result);
-    // test1(result);
     setLang((www));
   })
   }

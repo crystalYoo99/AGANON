@@ -41,9 +41,7 @@ router.post('/capital', (req, res) => {
     req.body.capital_name ? qry.push('name') : '';
 
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
+    if (qry.length != 0) {
         for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
@@ -150,10 +148,8 @@ router.post('/Missionary', (req, res) => {
     req.body.city_name ? qry.push('city_name') : '';
 
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
-        for (var i = 1; i < qry.length; i++)
+    if (qry.length != 0) {
+        for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
     sql = sql + " FROM (SELECT * FROM (SELECT * FROM Nation INNER JOIN City USING (nation_id)) AS A INNER JOIN Missionary USING( city_id)) AS B ";
@@ -211,9 +207,7 @@ router.post('/Emergency_info', (req, res) => {
     req.body.fire_station ? qry.push('fire_station') : ''; //+info_id
 
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
+    if (qry.length != 0) {
         for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
@@ -273,9 +267,7 @@ router.post('/Gorv', (req, res) => {
     req.body.description ? qry.push('description') : ''; //+gorv_type_id
 
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
+    if (qry.length != 0) {
         for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
@@ -339,9 +331,7 @@ router.post('/Disease', (req, res) => {
     req.body.symptom_id ? qry.push('symptom_id') : '';
     req.body.discription ? qry.push('discription') : '';
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
+    if (qry.length != 0) {
         for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
@@ -399,9 +389,7 @@ router.post('/Mission_School', (req, res) => {
     req.body.city_name ? qry.push('city_name') : '';
     req.body.name ? qry.push('name') : '';
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
+    if (qry.length != 0) {
         for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
@@ -460,9 +448,7 @@ router.post('/Economy', (req, res) => {
     req.body.gdp_rank_world ? qry.push('gdp_rank_world') : '';
     req.body.year ? qry.push('year') : '';
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
+    if (qry.length != 0) {
         for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
@@ -523,9 +509,7 @@ router.post('/Education', (req, res) => {
 
 
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
+    if (qry.length != 0) {
         for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
@@ -585,9 +569,7 @@ router.post('/Nation', (req, res) => {
 
 
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
+    if (qry.length != 0) {
         for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
@@ -621,9 +603,7 @@ router.post('/AIM_contact', (req, res) => {
     req.body.nation_name ? qry.push('nation_name') : '';
     req.body.contact ? qry.push('contact') : '';
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
+    if (qry.length != 0) {
         for (var i = 1; i < qry.length; i++)
             sql = sql + ", ?? "
     }
@@ -723,9 +703,7 @@ router.post('/Energy', (req, res) => {
 
 
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
+    if (qry.length != 0) {
         for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
@@ -753,7 +731,7 @@ router.post('/Energy', (req, res) => {
 
 
 router.post('/ict', (req, res) => {
-    var sql = "SELECT nation_name, ?? ";
+    var sql = "SELECT nation_name ";
     console.log(req.body);
     var string_name;
     req.body.AIM_KOREA_M ? string_name = "AIM_KOREA_M" : '';
@@ -850,10 +828,8 @@ router.post('/ict', (req, res) => {
 
 
 
-    if (qry.length == 0) {
-        res.send();
-    } else {
-        for (var i = 1; i < qry.length; i++)
+    if (qry.length != 0) {
+        for (var i = 0; i < qry.length; i++)
             sql = sql + ", ?? "
     }
     sql = sql + "FROM " + string_name;

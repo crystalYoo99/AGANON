@@ -23,6 +23,16 @@ import brown from '@material-ui/core/colors/brown';
 import Button from '@material-ui/core/Button';
 
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
+
 
 const GreenCheckbox = withStyles({
   root: {
@@ -234,7 +244,7 @@ export default function LiteracyPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [rate, setRate]= React.useState([]);
+  const [rate, setRate] = React.useState([]);
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
@@ -286,24 +296,21 @@ export default function LiteracyPage() {
       body: JSON.stringify(state)
     };
 
-    const options_get = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
-      }
-    };
 
     console.log(state);
 
-    fetch(url, options_post)
-      .then(response => response.json())
-      .then(result => {
-        setRate(result);
-       console.log(result);
-      });
-    //
+    var resOfquery = async () => fetch(url, options_post)
+    .then(response => {
+      const d = response.json();
+      console.log(d);
+      return d;
+    })
+
+    
+
+    resOfquery().then((www) => {
+    setRate(www);
+  })
   }
 
   return (
@@ -351,8 +358,8 @@ export default function LiteracyPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="year" />} label="year" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="total" />} label="total" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="year" />} label="Year" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="total" />} label="Literacy Rate" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -362,6 +369,28 @@ export default function LiteracyPage() {
             onClick={handleButtonClicked}>
             SHOW RESULTS
       </Button>
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{state.year || state.literacy ? 'Nation Name' : ''}</TableCell>
+                  <TableCell align="left">{state.year ? 'Year' : ''}</TableCell>
+                  <TableCell align="left">{state.total ? 'Literacy Rate' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rate.map((info) => (
+                  <TableRow key={info.name}>
+                    <TableCell align="left">{state.year || state.total ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.year ? info.year : ''}</TableCell>
+                    <TableCell align="left">{state.total ? info.total : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
         </div>
 
       </div>
