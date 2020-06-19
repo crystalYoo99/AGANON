@@ -32,7 +32,7 @@ import LanguagePage from "./pages/menu/LanguagePage";
 import M_churchPage from "./pages/menu/M_churchPage";
 import Literacy_ratePage from "./pages/menu/Literacy_ratePage.js";
 import MissionaryPage from "./pages/menu/MissionaryPage";
-import Mission_SchoolPage from "./pages/menu/Mission_SchoolPage";
+import Mission_schoolPage from "./pages/menu/Mission_schoolPage";
 //import Nation_M_SchoolPage from "./pages/menu/Nation_M_SchoolPage";
 import PopulationPage from "./pages/menu/PopulationPage";
 import Religious_ratioPage from "./pages/menu/Religious_ratioPage";
@@ -62,12 +62,16 @@ function App() {
           <Route exact path="/language" component={LanguagePage} />
           <Route exact path="/literacy_rate" component={Literacy_ratePage} />
           <Route exact path="/missionary" component={MissionaryPage} />
-          <Route exact path="/mission_school" component={Mission_SchoolPage} />
+          <Route exact path="/mission_school" component={Mission_schoolPage} />
           <Route exact path="/aim-contact" component={AIM_contactPage} />
           <Route exact path="/aim-korea-m" component={AIM_KOREA_MPage} />
           <Route exact path="/m-church" component={M_churchPage} />
           <Route exact path="/population" component={PopulationPage} />
-          <Route exact path="/religious_ratio" component={Religious_ratioPage} />
+          <Route
+            exact
+            path="/religious_ratio"
+            component={Religious_ratioPage}
+          />
 
           {/*
           <Route exact path="/mission" component={Mission} />
