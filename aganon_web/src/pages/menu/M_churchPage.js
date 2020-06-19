@@ -228,7 +228,7 @@ export default function M_churchPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-
+  const [church, setChurch] = React.useState();
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -277,7 +277,10 @@ export default function M_churchPage() {
 
     fetch(url, options_post)
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result => {
+        setChurch(result);
+       console.log(result);
+      });
     //
   }
 

@@ -21,6 +21,15 @@ import Divider from "@material-ui/core/Divider";
 import brown from "@material-ui/core/colors/brown";
 import Button from "@material-ui/core/Button";
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
 const GreenCheckbox = withStyles({
   root: {
     color: green[400],
@@ -276,15 +285,6 @@ export default function AIM_KOREA_MPage() {
       body: JSON.stringify(state)
     };
 
-    const options_get = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
-      }
-    };
-
     console.log(state);
 
     fetch(url, options_post)
@@ -367,6 +367,34 @@ export default function AIM_KOREA_MPage() {
           <Button className={classes.buttoncolor} variant="contained" onClick={handleButtonClicked}>
             SHOW RESULTS
           </Button>
+
+          <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            {/* <TableCell>Month </TableCell> */}
+            <TableCell align="left">{state.start_date || state.name || state.location ? 'Nation Name'  : ''}&nbsp;</TableCell>
+            <TableCell align="left">{state.start_date? 'Start Date'  : ''}</TableCell>
+            <TableCell align="left">{state.name? 'Name'  : ''}</TableCell>
+            <TableCell align="left">{state.location? 'Location'  : ''}</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {aim_kor_m.map((info) => (
+            <TableRow key={info.name}>
+              {/* <TableCell component="th" scope="row">
+                {info.name}
+              </TableCell>     */}
+              <TableCell align="left">{state.start_date || state.name || state.location ? 'Nation Name'  : ''}&nbsp;</TableCell>
+              <TableCell align="left">{state.start_date? info.start_date: ''}</TableCell>
+              <TableCell align="left">{state.name? info.name: ''}</TableCell>
+              <TableCell align="left">{state.location? info.location: ''}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+          
         </div>
       </div>
     </React.Fragment>

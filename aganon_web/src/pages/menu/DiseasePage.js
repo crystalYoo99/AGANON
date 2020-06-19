@@ -23,6 +23,15 @@ import brown from '@material-ui/core/colors/brown';
 import Button from '@material-ui/core/Button';
 
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
 
 const GreenCheckbox = withStyles({
   root: {
@@ -231,6 +240,7 @@ function getStyles(name, personName, theme) {
 
 
 export default function DiseasePage() {
+  const [diseasep, setDisease] = React.useState([]);
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -238,7 +248,7 @@ export default function DiseasePage() {
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
-  const [disease, setDisease] = React.useState();
+  
 
   const [state, setState] = React.useState({
     'disease_id': false,
@@ -247,7 +257,7 @@ export default function DiseasePage() {
     'disease_type': false,
     'death_rate': false,
     'incubation_period': false,
-    'discription' : false,
+    'discription': false,
     'checked1': false,
     'checked2': false,
     'checked3': false,
@@ -269,7 +279,7 @@ export default function DiseasePage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
-    ICT_:false,
+    ICT_: false,
     Disease: true
   });
 
@@ -292,7 +302,7 @@ export default function DiseasePage() {
     fetch(url, options_post)
       .then(response => response.json())
       .then(result => {
-        setDisease(result); 
+        setDisease(result);
         console.log(result);
       });
     //
@@ -352,6 +362,7 @@ export default function DiseasePage() {
               <FormControlLabel control={<Checkbox name="disease_type" />} label="disease type" onChange={handleChange2} />
               <FormControlLabel control={<Checkbox name="death_rate" />} label="death rate" onChange={handleChange2} />
               <FormControlLabel control={<Checkbox name="incubation_period" />} label="incubation period" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="discription" />} label="Discription" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -361,6 +372,40 @@ export default function DiseasePage() {
             onClick={handleButtonClicked}>
             SHOW RESULTS
       </Button>
+
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  {/* <TableCell>Month </TableCell> */}
+                  <TableCell align="left">{state.disease_name || state.disease_type || state.death_rate || state.incubation_period || state.discription ? 'Nation Name' : ''}&nbsp;</TableCell>
+                  <TableCell align="left">{state.disease_name ? 'Disease Name' : ''}</TableCell>
+                  <TableCell align="left">{state.disease_type ? 'Disease Type' : ''}</TableCell>
+                  <TableCell align="left">{state.death_rate ? 'Death Rate' : ''}</TableCell>
+                  <TableCell align="left">{state.incubation_period ? 'Incubation Period' : ''}</TableCell>
+                  <TableCell align="left">{state.discription ? 'Discription' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {diseasep.map((info) => (
+                  <TableRow key={info.name}>
+                    {/* <TableCell component="th" scope="row">
+                {info.name}
+              </TableCell>     */}
+                    <TableCell align="left">{state.disease_name || state.death_rate || state.death_rate || state.incubation_period || state.discription ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.disease_name ? info.disease_name : ''}</TableCell>  
+                    <TableCell align="left">{state.disease_type ? info.disease_type : ''}</TableCell>
+                    <TableCell align="left">{state.death_rate ? info.death_rate : ''}</TableCell>
+                    <TableCell align="left">{state.incubation_period ? info.incubation_period : ''}</TableCell>
+                    <TableCell align="left">{state.discription ? info.discription : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+
         </div>
 
       </div>

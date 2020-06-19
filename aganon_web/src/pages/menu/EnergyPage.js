@@ -292,7 +292,7 @@ export default function EnergyPage() {
       .then(response => response.json())
       .then(result => {
         setEnerg(result);
-      console.log(result)
+      console.log(result);
     });
     //
   }

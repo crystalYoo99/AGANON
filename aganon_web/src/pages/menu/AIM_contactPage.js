@@ -22,7 +22,15 @@ import Divider from '@material-ui/core/Divider';
 import brown from '@material-ui/core/colors/brown';
 import Button from '@material-ui/core/Button';
 
-
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
 
 const GreenCheckbox = withStyles({
   root: {
@@ -231,6 +239,7 @@ function getStyles(name, personName, theme) {
 
 
 export default function AIM_contactPage() {
+  const [list, setList] = React.useState([]);
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -351,10 +360,33 @@ export default function AIM_contactPage() {
           <Button className={classes.buttoncolor} variant="contained" onClick={handleButtonClicked}>
             SHOW RESULTS
       </Button>
+
+      <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            {/* <TableCell>Month </TableCell> */}
+            <TableCell align="left">{state.contact? 'Contact'  : ''}</TableCell>
+            <TableCell align="left">{state.nation_name? 'Nation Name'  : ''}</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {contact_info.map((info) => (
+            <TableRow key={info.name}>
+              {/* <TableCell component="th" scope="row">
+                {info.name}
+              </TableCell>     */}
+              <TableCell align="left">{state.contact? info.contact: ''}</TableCell>
+              <TableCell align="left">{state.nation_name? info.nation_name: ''}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+
+
         </div>
-
       </div>
-
     </React.Fragment>
   );
 }
