@@ -23,6 +23,15 @@ import brown from '@material-ui/core/colors/brown';
 import Button from '@material-ui/core/Button';
 
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
 
 const GreenCheckbox = withStyles({
   root: {
@@ -234,7 +243,7 @@ export default function MissionaryPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [missionary, setMissionary] = React.useState();
+  const [missionary, setMissionary] = React.useState([]);
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
@@ -286,24 +295,18 @@ export default function MissionaryPage() {
       body: JSON.stringify(state)
     };
 
-    const options_get = {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "http://localhost:3000"
-      }
-    };
-
     console.log(state);
 
-    fetch(url, options_post)
-      .then(response => response.json())
-      .then(result => {
-        setMissionary(result);
-       console.log(result);
-      });
-    //
+    var resOfquery = async () => fetch(url, options_post)
+      .then(response => {
+        const d = response.json();
+        console.log(d);
+        return d;
+      })
+
+    resOfquery().then((www) => {
+      setMissionary(www);
+    })
   }
 
   return (
@@ -351,10 +354,10 @@ export default function MissionaryPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="missionary_id" />} label="missionary id" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="name_en" />} label="name en" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="contact_info" />} label="contact info" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="city_name" />} label="city name" onChange={handleChange2} />
+
+              <FormControlLabel control={<Checkbox name="city_name" />} label="City" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="name_en" />} label="Eng Name" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="contact_info" />} label="Contact Info." onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -364,6 +367,30 @@ export default function MissionaryPage() {
             onClick={handleButtonClicked}>
             SHOW RESULTS
       </Button>
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{state.name_en || state.contact_info || state.city_name ? 'Nation Name' : ''}</TableCell>
+                  <TableCell align="left">{state.city_name ? 'City' : ''}</TableCell>
+                  <TableCell align="left">{state.name_en ? 'Eng Name' : ''}</TableCell>
+                  <TableCell align="left">{state.contact_info ? 'Contact Info.' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {missionary.map((info) => (
+                  <TableRow key={info.name}>
+                    <TableCell align="left">{state.name_en || state.contact_info || state.city_name ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.city_name ? info.city_name : ''}</TableCell>
+                    <TableCell align="left">{state.name_en ? info.name_en : ''}</TableCell>
+                    <TableCell align="left">{state.contact_info ? info.contact_info : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
         </div>
 
       </div>

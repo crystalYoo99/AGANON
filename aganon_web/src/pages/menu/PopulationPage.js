@@ -21,6 +21,16 @@ import Divider from "@material-ui/core/Divider";
 import brown from "@material-ui/core/colors/brown";
 import Button from "@material-ui/core/Button";
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
+
 const GreenCheckbox = withStyles({
   root: {
     color: green[400],
@@ -228,7 +238,7 @@ export default function PopulationPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [population, setPopulation] = React.useState();
+  const [population, setPopulation] = React.useState([]);
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -281,13 +291,16 @@ export default function PopulationPage() {
 
     console.log(state);
 
-    fetch(url, options_post)
-      .then(response => response.json())
-      .then(result => {
-        setPopulation(result);
-      console.log(result);
+    var resOfquery = async () => fetch(url, options_post)
+      .then(response => {
+        const d = response.json();
+        console.log(d);
+        return d;
+      });
+
+    resOfquery().then((www) => {
+      setPopulation(www);
     });
-    //
   }
   const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
@@ -337,32 +350,10 @@ export default function PopulationPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel
-                control={<Checkbox name="nation_id" />}
-                label="nation id"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="year" />}
-                label="year"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="urban" />}
-                label="urban"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="rural" />}
-                label="rural"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="total" />}
-                label="total"
-                onChange={handleChange2}
-              />
-
+              <FormControlLabel control={<Checkbox name="year" />} label="Year" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="urban" />} label="Urban" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="rural" />} label="Rural" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="total" />} label="Total" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -372,6 +363,32 @@ export default function PopulationPage() {
             onClick={handleButtonClicked}>
             SHOW RESULTS
           </Button>
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{state.year || state.urban || state.rural || state.total ? 'Nation Name' : ''}</TableCell>
+                  <TableCell align="left">{state.year ? 'Year' : ''}</TableCell>
+                  <TableCell align="left">{state.urban ? 'Urban' : ''}</TableCell>
+                  <TableCell align="left">{state.rural ? 'Rural' : ''}</TableCell>
+                  <TableCell align="left">{state.total ? 'Total' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {population.map((info) => (
+                  <TableRow key={info.name}>
+                    <TableCell align="left">{state.year || state.urban || state.rural || state.total? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.year ? info.year : ''}</TableCell>
+                    <TableCell align="left">{state.urban ? info.urban : ''}</TableCell>
+                    <TableCell align="left">{state.rural ? info.rural : ''}</TableCell>
+                    <TableCell align="left">{state.total ? info.total : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
         </div>
       </div>
     </React.Fragment>

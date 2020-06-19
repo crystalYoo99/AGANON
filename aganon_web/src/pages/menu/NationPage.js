@@ -21,6 +21,17 @@ import Divider from "@material-ui/core/Divider";
 import brown from "@material-ui/core/colors/brown";
 import Button from "@material-ui/core/Button";
 
+
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
+
 const GreenCheckbox = withStyles({
   root: {
     color: green[400],
@@ -228,7 +239,7 @@ export default function NationPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [nation, setNation] = React.useState();
+  const [nation, setNation] = React.useState([]);
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -262,8 +273,8 @@ export default function NationPage() {
     'checked19': false,
     'checked20': false,
     'checked21': false,
-    ICT_:false,
-    Nation:true
+    ICT_: false,
+    Nation: true
   });
 
   const handleChange2 = (event) => {
@@ -284,13 +295,16 @@ export default function NationPage() {
       body: JSON.stringify(state)
     };
 
-    fetch(url, options_post)
-      .then(response => response.json())
-      .then(result => {
-        setNation(result);
-       console.log(result);
+    var resOfquery = async () => fetch(url, options_post)
+      .then(response => {
+        const d = response.json();
+        console.log(d);
+        return d;
       });
-    //
+
+    resOfquery().then((www) => {
+      setNation(www);
+    });
   }
   return (
     <React.Fragment>
@@ -336,40 +350,40 @@ export default function NationPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel
-                control={<Checkbox name="checkedB" />}
-                label="nation name"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="latitude" />}
-                label="latitude"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="longitude" />}
-                label="longitude"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="info_id" />}
-                label="info id"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="gorv_type_id" />}
-                label="gorvtype id"
-                onChange={handleChange2}
-              />
+              <FormControlLabel control={<Checkbox name="latitude" />} label="Latitude" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="longitude" />} label="Longitude"  onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
 
         <div className={classes.root6}>
           <Button className={classes.buttoncolor} variant="contained"
-          onClick={handleButtonClicked}>
+            onClick={handleButtonClicked}>
             SHOW RESULTS
           </Button>
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{state.latitude || state.longitude ? 'Nation Name' : ''}</TableCell>
+                  <TableCell align="left">{state.latitude ? 'Latitude' : ''}</TableCell>
+                  <TableCell align="left">{state.longitude ? 'Longitude' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {nation.map((info) => (
+                  <TableRow key={info.name}>
+                    <TableCell align="left">{state.latitude || state.longitude ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.latitude ? info.latitude : ''}</TableCell>
+                    <TableCell align="left">{state.longitude ? info.longitude : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+
         </div>
       </div>
     </React.Fragment>

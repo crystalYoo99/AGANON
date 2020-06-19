@@ -21,6 +21,17 @@ import Divider from "@material-ui/core/Divider";
 import brown from "@material-ui/core/colors/brown";
 import Button from "@material-ui/core/Button";
 
+
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
+
 const GreenCheckbox = withStyles({
   root: {
     color: green[400],
@@ -228,7 +239,7 @@ export default function Mission_schoolPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [mission_schoold, setMission_School] = React.useState();
+  const [mission_schoold, setMission_School] = React.useState([]);
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -282,13 +293,18 @@ export default function Mission_schoolPage() {
    
     console.log(state);
 
-    fetch(url, options_post)
-      .then(response => response.json())
-      .then(result => {
-        setMission_School(result);
-       console.log(result);
-      });
-    //
+    var resOfquery = async () => fetch(url, options_post)
+    .then(response => {
+      const d = response.json();
+      console.log(d);
+      return d;
+    })
+
+    
+
+    resOfquery().then((www) => {
+      setMission_School(www);
+  })
   }
 
   return (
@@ -335,9 +351,9 @@ export default function Mission_schoolPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="name" />} label="name" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="city_name" />} label="city name"onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="foundation_year" />} label="foundation year" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="name" />} label="Name" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="city_name" />} label="City"onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="foundation_year" />} label="Foundation Year" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -347,6 +363,30 @@ export default function Mission_schoolPage() {
             onClick={handleButtonClicked}>
             SHOW RESULTS
           </Button>
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{state.name || state.city_name || state.foundation_year ? 'Nation Name' : ''}</TableCell>
+                  <TableCell align="left">{state.name ? 'Name' : ''}</TableCell>
+                  <TableCell align="left">{state.city_name ? 'City' : ''}</TableCell>
+                  <TableCell align="left">{state.foundation_year ? 'Foundation Year' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {mission_schoold.map((info) => (
+                  <TableRow key={info.name}>
+                    <TableCell align="left">{state.name || state.city_name || state.foundation_year ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.name ? info.name : ''}</TableCell>
+                    <TableCell align="left">{state.city_name ? info.city_name : ''}</TableCell>
+                    <TableCell align="left">{state.foundation_year ? info.foundation_year : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
         </div>
       </div>
     </React.Fragment>

@@ -23,6 +23,15 @@ import brown from '@material-ui/core/colors/brown';
 import Button from '@material-ui/core/Button';
 
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
 
 const GreenCheckbox = withStyles({
   root: {
@@ -234,7 +243,7 @@ export default function Religious_ratioPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [ratio, setRatio] = React.useState();
+  const [ratio, setRatio] = React.useState([]);
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
@@ -285,13 +294,16 @@ export default function Religious_ratioPage() {
 
     console.log(state);
 
-    fetch(url, options_post)
-      .then(response => response.json())
-      .then(result => {
-        setRatio(result);
-        console.log(result);
+    var resOfquery = async () => fetch(url, options_post)
+      .then(response => {
+        const d = response.json();
+        console.log(d);
+        return d;
       });
-    //
+
+    resOfquery().then((www) => {
+      setRatio(www);
+    });
   }
   const handleChange2 = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
@@ -342,10 +354,9 @@ export default function Religious_ratioPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="nation_id" />} label="nation id" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="christianity" />} label="christianity" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="islam" />} label="islam" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="etc" />} label="etc" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="christianity" />} label="Christianity" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="islam" />} label="Islam" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="etc" />} label="Etc" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -355,6 +366,30 @@ export default function Religious_ratioPage() {
             onClick={handleButtonClicked} >
             SHOW RESULTS
       </Button>
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{state.christianity || state.islam || state.etc ? 'Nation Name' : ''}</TableCell>
+                  <TableCell align="left">{state.christianity ? 'Christianity' : ''}</TableCell>
+                  <TableCell align="left">{state.islam ? 'Islam' : ''}</TableCell>
+                  <TableCell align="left">{state.etc ? 'Etc' : ''}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {ratio.map((info) => (
+                  <TableRow key={info.name}>
+                    <TableCell align="left">{state.christianity || state.islam || state.etc ? info.nation_name : ''}</TableCell>
+                    <TableCell align="left">{state.christianity ? info.christianity : ''}</TableCell>
+                    <TableCell align="left">{state.islam ? info.islam : ''}</TableCell>
+                    <TableCell align="left">{state.etc ? info.etc : ''}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
         </div>
 
       </div>

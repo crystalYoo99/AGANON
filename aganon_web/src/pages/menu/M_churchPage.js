@@ -21,6 +21,17 @@ import Divider from "@material-ui/core/Divider";
 import brown from "@material-ui/core/colors/brown";
 import Button from "@material-ui/core/Button";
 
+
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { render } from "@testing-library/react";
+
 const GreenCheckbox = withStyles({
   root: {
     color: green[400],
@@ -228,7 +239,7 @@ export default function M_churchPage() {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
-  const [church, setChurch] = React.useState();
+  const [church, setChurch] = React.useState([]);
   const handleChange = event => {
     setPersonName(event.target.value);
   };
@@ -275,13 +286,18 @@ export default function M_churchPage() {
 
     console.log(state);
 
-    fetch(url, options_post)
-      .then(response => response.json())
-      .then(result => {
-        setChurch(result);
-       console.log(result);
-      });
-    //
+    var resOfquery = async () => fetch(url, options_post)
+      .then(response => {
+        const d = response.json();
+        console.log(d);
+        return d;
+      })
+
+
+
+    resOfquery().then((www) => {
+      setChurch(www);
+    })
   }
 
   const handleChange2 = event => {
@@ -303,7 +319,7 @@ export default function M_churchPage() {
               <ListItemText className={classes.listtext5} primary="NATION" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-            <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" onChange={handleChange2} />
               <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti" onChange={handleChange2} />
               <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea" onChange={handleChange2} />
               <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia" onChange={handleChange2} />
@@ -326,13 +342,32 @@ export default function M_churchPage() {
               <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" onChange={handleChange2} />
             </FormGroup>
           </div>
-         
+
         </List>
 
         <div className={classes.root6}>
-        <Button className={classes.buttoncolor} variant="contained" onClick={handleButtonClicked}>
+          <Button className={classes.buttoncolor} variant="contained" onClick={handleButtonClicked}>
             SHOW RESULTS
           </Button>
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="left">{'Nation Name'}</TableCell>
+                  <TableCell align="left">{'Name'}</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {church.map((info) => (
+                  <TableRow key={info.name}>
+                    <TableCell align="left">{info.nation_name}</TableCell>
+                    <TableCell align="left">{info.name}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
         </div>
       </div>
     </React.Fragment>
