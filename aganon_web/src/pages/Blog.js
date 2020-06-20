@@ -13,6 +13,7 @@ import Main from "./Main";
 // import Sidebar from './Sidebar';
 import Footer from "./Footer";
 import jisu from "../images/jisu.jpeg";
+import africamap from "../images/africamap.png";
 // import post1 from './blog-post.1.md';
 // import post2 from './blog-post.2.md';
 // import post3 from './blog-post.3.md';
@@ -40,7 +41,7 @@ const initialFeaturedPost = {
   //   title: 'AGANON',
   description:
     '"Four people who have never been to Africa, discuss African missions"',
-  image: "../images/jisu.jpeg",
+  image: "../images/africamap.png",
   imgText: "main image description"
   //   linkText: 'Continue reading…',
 };
@@ -50,8 +51,8 @@ const featuredPosts = [
     title: "About",
     date: " aganon",
     description:
-      "This website provides information about Africa Mission. 우리가 가지고 있는 정보들이나 여러 설명 조금 추가할 것.",
-    image: "../images/jisu.jpeg",
+      "This website provides information about Southeast Africa mission in various fields, including basic information, population, economy, religion, education and industry. Therefore, it provides convenience when missionaries who are preparing to go to mission work and people interested in Africa collect data.",
+    image: "../images/africamap",
     imageText: "Image Text"
   }
   /*

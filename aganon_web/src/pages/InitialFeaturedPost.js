@@ -5,7 +5,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
-import nation1 from "../images/nation1.jpg";
+import nation1 from "../images/ss.jpeg";
 // import Background form
 
 import teal from "@material-ui/core/colors/teal";

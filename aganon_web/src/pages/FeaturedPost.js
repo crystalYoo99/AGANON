@@ -8,7 +8,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Hidden from "@material-ui/core/Hidden";
-import jisu from "../images/jisu.jpeg";
+import africamap from "../images/africamap.png";
 
 const useStyles = makeStyles({
   card: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     flex: 1
   },
   cardMedia: {
-    width: 160
+    width: 180
   }
 });
 
@@ -27,7 +27,7 @@ export default function FeaturedPost(props) {
   const { post } = props;
 
   return (
-    <Grid item xs={12} md={6}>
+    <Grid item xs={12} md={18}>
       <CardActionArea component="a" href="#">
         <Card className={classes.card}>
           <div className={classes.cardDetails}>
@@ -46,7 +46,7 @@ export default function FeaturedPost(props) {
           <Hidden xsDown>
             <CardMedia
               className={classes.cardMedia}
-              image={jisu}
+              image={africamap}
               title={post.imageTitle}
             />
           </Hidden>

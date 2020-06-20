@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import Avatar from "@material-ui/core/Avatar";
 import sukun from "../images/sukun.jpeg";
-import hyerim from "../images/hyerim.png";
+import hyelim from "../images/hyelim.png";
 import jisu from "../images/jisu.jpeg";
 
 const useStyles = makeStyles(theme => ({
@@ -84,7 +84,7 @@ export default function Footer(props) {
             </div>
           </div>
           <div>
-            <Avatar alt="Lee Hyerim" src={hyerim} className={classes.large} />
+            <Avatar alt="Lee Hyelim" src={hyelim} className={classes.large} />
             <div className={classes.devName}>
               <div>Lee</div>
               <div>Hyerim</div>
