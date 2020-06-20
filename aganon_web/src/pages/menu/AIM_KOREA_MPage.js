@@ -344,21 +344,9 @@ export default function AIM_KOREA_MPage() {
               <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
             </ListItem>
             <FormGroup row className={classes.checks}>
-              <FormControlLabel
-                control={<Checkbox name="start date" />}
-                label="start_date"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="name" />}
-                label="name"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="location" />}
-                label="location"
-                onChange={handleChange2}
-              />
+              <FormControlLabel control={<Checkbox name="start_date" />} label="Start Date" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="name" />} label="Eng Name" onChange={handleChange2} />
+              <FormControlLabel control={<Checkbox name="location" />} label="Location" onChange={handleChange2} />
             </FormGroup>
           </div>
         </List>
@@ -374,8 +362,8 @@ export default function AIM_KOREA_MPage() {
           <TableRow>
             {/* <TableCell>Month </TableCell> */}
             <TableCell align="left">{state.start_date || state.name || state.location ? 'Nation Name'  : ''}&nbsp;</TableCell>
-            <TableCell align="left">{state.start_date? 'Start Date'  : ''}</TableCell>
-            <TableCell align="left">{state.name? 'Name'  : ''}</TableCell>
+            <TableCell align="left">{state.start_date? 'Start Date(YYYYMM)'  : ''}</TableCell>
+            <TableCell align="left">{state.name? 'Eng Name'  : ''}</TableCell>
             <TableCell align="left">{state.location? 'Location'  : ''}</TableCell>
           </TableRow>
         </TableHead>
@@ -385,7 +373,7 @@ export default function AIM_KOREA_MPage() {
               {/* <TableCell component="th" scope="row">
                 {info.name}
               </TableCell>     */}
-              <TableCell align="left">{state.start_date || state.name || state.location ? 'Nation Name'  : ''}&nbsp;</TableCell>
+              <TableCell align="left">{state.start_date || state.name || state.location ? info.nation_name  : ''}&nbsp;</TableCell>
               <TableCell align="left">{state.start_date? info.start_date: ''}</TableCell>
               <TableCell align="left">{state.name? info.name: ''}</TableCell>
               <TableCell align="left">{state.location? info.location: ''}</TableCell>
