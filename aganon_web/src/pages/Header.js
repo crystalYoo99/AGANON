@@ -203,7 +203,7 @@ export default function Header() {
           */}
           {/* <Icon className="fa fa-plus-circle" style={{ color: green[500] }} /> */}
           <Button>
-            <Typography className={classes.title} variant="h4" noWrap>
+            <Typography className={classes.title} variant="h4">
               <PublicIcon className={classes.icon} />
               <Link style={{ textDecoration: "none", color: "white" }} to="/">
                 Aganon

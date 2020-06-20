@@ -41,7 +41,7 @@ const initialFeaturedPost = {
   //   title: 'AGANON',
   description:
     '"Four people who have never been to Africa, discuss African missions"',
-  image: "../images/africamap.png",
+  image: "../images/aboutImage.jpg",
   imgText: "main image description"
   //   linkText: 'Continue reading…',
 };
