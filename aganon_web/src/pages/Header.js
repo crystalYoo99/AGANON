@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "Times New Roman",
     //fontFamily: "sans-serif",
     display: "none",
-    paddingLeft: theme.spacing(60),
+    //paddingLeft: theme.spacing(60),
     [theme.breakpoints.up("sm")]: {
       display: "block"
     }
@@ -84,6 +84,10 @@ const useStyles = makeStyles(theme => ({
     // textDecoration:FaBorderNone,
     // text-decoration: none,
     // color: green,
+  },
+  homeButton: {
+    border: 0,
+    outline: 0
   },
   search: {
     position: "relative",
@@ -202,26 +206,29 @@ export default function Header() {
           </div>
           */}
           {/* <Icon className="fa fa-plus-circle" style={{ color: green[500] }} /> */}
-          <Button>
-            <Typography className={classes.title} variant="h4">
-              <PublicIcon className={classes.icon} />
-              <Link style={{ textDecoration: "none", color: "white" }} to="/">
-                Aganon
-              </Link>
-            </Typography>
-          </Button>
+
+          <div className={classes.title}>
+            <Button className={classes.homeButton}>
+              <Typography className={classes.title} variant="h4">
+                <PublicIcon className={classes.icon} />
+                <Link style={{ textDecoration: "none", color: "white" }} to="/">
+                  Aganon
+                </Link>
+              </Typography>
+            </Button>
+          </div>
 
           {/* <a href=""><FaGlobeAfrica />  AGANON</a>
           {/* <div className={classes.title} variant="h6" noWrap>
             <a href=""><FaGlobeAfrica />  AGANON</a>
           </div> */}
-          <div className={classes.search}>
-            {/*}
+          {/*<div className={classes.search}>*/}
+          {/*}
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
         */}
-            {/*
+          {/*
             <InputBase
               placeholder="Search…"
               classes={{
@@ -231,15 +238,15 @@ export default function Header() {
               inputProps={{ "aria-label": "search" }}
             />
             */}
-            {/*<select onChange={countrySelected} defaultValue="default">*/}
+          {/*<select onChange={countrySelected} defaultValue="default">*/}
 
-            {/* <select onChange={value => countrySelected(value)}>
+          {/* <select onChange={value => countrySelected(value)}>
               <option value="default" disabled style={{ color: "#ccc" }}>
                 {"select country"}
               </option>
               {countryList}
             </select> */}
-          </div>
+          {/*</div>*/}
         </Toolbar>
       </AppBar>
       {/*
