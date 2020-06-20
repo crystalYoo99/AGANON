@@ -9,6 +9,8 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Hidden from "@material-ui/core/Hidden";
 import africamap from "../images/africamap.png";
+import headImage from "../images/headImage.jpg";
+import aboutImage from "../images/aboutImage.jpg";
 
 const useStyles = makeStyles({
   card: {
@@ -46,7 +48,7 @@ export default function FeaturedPost(props) {
           <Hidden xsDown>
             <CardMedia
               className={classes.cardMedia}
-              image={africamap}
+              image={aboutImage}
               title={post.imageTitle}
             />
           </Hidden>

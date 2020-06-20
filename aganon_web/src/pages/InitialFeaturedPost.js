@@ -5,7 +5,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
-import nation1 from "../images/ss.jpeg";
+import nation1 from "../images/headImage.jpg";
 // import Background form
 
 import teal from "@material-ui/core/colors/teal";
@@ -23,6 +23,7 @@ const useStyles = makeStyles(theme => ({
     backgroundPosition: "center"
     //width:'111%'
   },
+
   overlay: {
     position: "absolute",
     top: 0,
@@ -60,6 +61,7 @@ export default function MainFeaturedPost(props) {
         />
       }
       <div className={classes.overlay} />
+
       <Grid container>
         <Grid item md={12}>
           <div className={classes.mainFeaturedPostContent}>
@@ -71,10 +73,10 @@ export default function MainFeaturedPost(props) {
             >
               {post.title}
             </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
-              {post.description}
-            </Typography>
           </div>
+          <Typography variant="h5" color="inherit" paragraph>
+            {post.description}
+          </Typography>
         </Grid>
       </Grid>
     </Paper>

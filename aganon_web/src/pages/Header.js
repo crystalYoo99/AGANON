@@ -41,7 +41,7 @@ import lime from "@material-ui/core/colors/lime";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   appbar: {
     backgroundColor: blueGrey[900],
@@ -60,8 +60,8 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
-    alignItems:'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     fontFamily: "Times New Roman",
     //fontFamily: "sans-serif",
     display: "none",
@@ -112,7 +112,7 @@ const useStyles = makeStyles(theme => ({
   // },
   inputRoot: {
     color: "inherit"
-  },
+  }
   // inputInput: {
   //   padding: theme.spacing(1, 1, 1, 0),
   //   paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
@@ -202,14 +202,16 @@ export default function Header() {
           </div>
           */}
           {/* <Icon className="fa fa-plus-circle" style={{ color: green[500] }} /> */}
-          <Button>
-            <Typography className={classes.title} variant="h4" noWrap>
-              <PublicIcon className={classes.icon} />
-              <Link style={{ textDecoration: "none", color: "white" }} to="/">
-                Aganon
-              </Link>
-            </Typography>
-          </Button>
+          <div>
+            <Button>
+              <Typography className={classes.title} variant="h4">
+                <PublicIcon className={classes.icon} />
+                <Link style={{ textDecoration: "none", color: "white" }} to="/">
+                  Aganon
+                </Link>
+              </Typography>
+            </Button>
+          </div>
 
           {/* <a href=""><FaGlobeAfrica />  AGANON</a>
           {/* <div className={classes.title} variant="h6" noWrap>
@@ -233,15 +235,12 @@ export default function Header() {
             */}
             {/*<select onChange={countrySelected} defaultValue="default">*/}
 
-
             <select onChange={value => countrySelected(value)}>
               <option value="default" disabled style={{ color: "#ccc" }}>
                 {"select country"}
               </option>
               {countryList}
             </select>
-          
-          
           </div>
         </Toolbar>
       </AppBar>
