@@ -5,6 +5,9 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import Avatar from "@material-ui/core/Avatar";
+import sukun from "../images/sukun.jpeg";
+import hyerim from "../images/hyerim.png";
+import jisu from "../images/jisu.jpeg";
 
 const useStyles = makeStyles(theme => ({
   footer: {
@@ -29,6 +32,9 @@ const useStyles = makeStyles(theme => ({
     width: theme.spacing(7),
     height: theme.spacing(7),
     align: "center"
+  },
+  devName: {
+    fontSize: "0.7rem"
   }
 }));
 
@@ -52,23 +58,19 @@ export default function Footer(props) {
             Developers
           </Typography>
           <div>
-            <Avatar
-              alt="Kang Suk-un"
-              src="/images/Nation.jpeg"
-              className={classes.large}
-            />
-            <div>Kang</div>
-            <div>Suk-un</div>
+            <Avatar alt="Kang Suk-un" src={sukun} className={classes.large} />
+            <div className={classes.devName}>
+              <div>Kang</div>
+              <div>Seokun</div>
+            </div>
           </div>
 
           <div>
-            <Avatar
-              alt="Kim Jisu"
-              src="/static/images/avatar/1.jpg"
-              className={classes.large}
-            />
-            <div>Kim</div>
-            <div>Jisu</div>
+            <Avatar alt="Kim Jisu" src={jisu} className={classes.large} />
+            <div className={classes.devName}>
+              <div>Kim</div>
+              <div>Jisu</div>
+            </div>
           </div>
           <div>
             <Avatar
@@ -76,14 +78,18 @@ export default function Footer(props) {
               src="/static/images/avatar/1.jpg"
               className={classes.large}
             />
-            <div>Yoo</div>
-            <div>Sujeong</div>
+            <div className={classes.devName}>
+              <div>Yoo</div>
+              <div>Sujeong</div>
+            </div>
           </div>
-          <Avatar
-            alt="Lee Hyerim"
-            src="/static/images/avatar/1.jpg"
-            className={classes.large}
-          />
+          <div>
+            <Avatar alt="Lee Hyerim" src={hyerim} className={classes.large} />
+            <div className={classes.devName}>
+              <div>Lee</div>
+              <div>Hyerim</div>
+            </div>
+          </div>
         </div>
       </Container>
     </footer>
