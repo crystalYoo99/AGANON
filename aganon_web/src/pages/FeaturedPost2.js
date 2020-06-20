@@ -10,7 +10,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Hidden from "@material-ui/core/Hidden";
 import africamap from "../images/africamap.png";
 import headImage from "../images/headImage.jpg";
-import aboutImage from "../images/aboutImage.jpg";
+import mainImage from "../images/aganonMain.png";
 
 const useStyles = makeStyles({
   card: {
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function FeaturedPost(props) {
+export default function FeaturedPost2(props) {
   const classes = useStyles();
   const { post } = props;
 
@@ -47,12 +47,15 @@ export default function FeaturedPost(props) {
               <Typography variant="overline" paragraph>
                 {post.description2}
               </Typography>
+              <Typography variant="overline" paragraph>
+                {post.description3}
+              </Typography>
             </CardContent>
           </div>
           <Hidden xsDown>
             <CardMedia
               className={classes.cardMedia}
-              image={aboutImage}
+              image={mainImage}
               title={post.imageTitle}
             />
           </Hidden>
@@ -62,6 +65,6 @@ export default function FeaturedPost(props) {
   );
 }
 
-FeaturedPost.propTypes = {
+FeaturedPost2.propTypes = {
   post: PropTypes.object
 };

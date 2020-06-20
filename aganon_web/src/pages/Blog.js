@@ -8,6 +8,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import Header from "./Header";
 import InitialFeaturedPost from "./InitialFeaturedPost";
+import FeaturedPost2 from "./FeaturedPost2";
 import FeaturedPost from "./FeaturedPost";
 import Main from "./Main";
 // import Sidebar from './Sidebar';
@@ -51,20 +52,24 @@ const featuredPosts = [
     title: "About",
     date: " aganon",
     description:
-      "This website provides information about Southeast Africa mission in various fields, including basic information, population, economy, religion, education and industry. Therefore, it provides convenience when missionaries who are preparing to go to mission work and people interested in Africa collect data.",
+      "This website provides information about Southeast Africa mission in various fields, including basic information, population, economy, religion, education and industry.",
+    description2:
+      "Therefore, it provides convenience when missionaries who are preparing to go to mission work and people interested in Africa collect data.",
     image: "../images/africamap",
     imageText: "Image Text"
   }
-  /*
+];
+const featuredPosts2 = [
   {
-    title: "Post title",
-    date: "Nov 11",
-    description:
-      "This is a wider card with supporting text below as a natural lead-in to additional content.",
-    image: "https://source.unsplash.com/random",
+    title: "How to use this website",
+    date: "aganon",
+    description: "1. First, click on the menu bar at the top left.",
+    description2: "2. Click on the menu you want from the menu.",
+    description3:
+      "3. On the page of each menu, you can select the country, condition, etc. for which you want information.",
+    image: "../images/aganonMain",
     imageText: "Image Text"
   }
-  */
 ];
 
 // const posts = [post1, post2, post3];
@@ -101,11 +106,28 @@ export default function Blog() {
       <CssBaseline />
       <Container maxWidth="lg">
         {/* <Header title="Blog" sections={sections} /> */}
+
         <main>
           <InitialFeaturedPost post={initialFeaturedPost} />
+
           <Grid container spacing={4}>
             {featuredPosts.map(post => (
               <FeaturedPost key={post.title} post={post} />
+            ))}
+          </Grid>
+          <Grid container spacing={5} className={classes.mainGrid}>
+            {/* <Main title="From the firehose" posts={posts} /> */}
+            {/* <Sidebar
+              title={sidebar.title}
+              description={sidebar.description}
+              archives={sidebar.archives}
+              social={sidebar.social}
+            /> */}
+          </Grid>
+
+          <Grid container spacing={4}>
+            {featuredPosts2.map(post => (
+              <FeaturedPost2 key={post.title} post={post} />
             ))}
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
