@@ -144,8 +144,7 @@ export default function MainListItems() {
           </div>
           <Divider />
           <div>
-
-          <ListItem
+            <ListItem
               button
               component={Link}
               to="/aim-contact"
@@ -169,7 +168,6 @@ export default function MainListItems() {
               <ListItemText primary="AIM_KOREA_M" />
             </ListItem>
 
-
             <ListItem
               button
               component={Link}
@@ -180,10 +178,9 @@ export default function MainListItems() {
                 <MonetizationOnIcon />
               </ListItemIcon>
               <ListItemText primary="Climate" />
-              </ListItem>
+            </ListItem>
 
-
-              <ListItem
+            <ListItem
               button
               component={Link}
               to="/city"
@@ -194,7 +191,6 @@ export default function MainListItems() {
               </ListItemIcon>
               <ListItemText primary="City" />
             </ListItem>
-
 
             <ListItem
               button
@@ -296,7 +292,7 @@ export default function MainListItems() {
               </ListItemIcon>
               <ListItemText primary="Gorv._Type" />
             </ListItem>
-            <ListItem
+            {/* <ListItem
               button
               component={Link}
               to="/health"
@@ -306,7 +302,7 @@ export default function MainListItems() {
                 <FitnessCenterIcon />
               </ListItemIcon>
               <ListItemText primary="Health" />
-            </ListItem>
+            </ListItem> */}
             <ListItem
               button
               component={Link}
@@ -352,7 +348,6 @@ export default function MainListItems() {
               <ListItemText primary="Literacy_rate" />
             </ListItem>
 
-
             <ListItem
               button
               component={Link}
@@ -364,7 +359,6 @@ export default function MainListItems() {
               </ListItemIcon>
               <ListItemText primary="M_church" />
             </ListItem>
-
 
             <ListItem
               button
@@ -399,7 +393,7 @@ export default function MainListItems() {
               </ListItemIcon>
               <ListItemText primary="Nation" />
             </ListItem>
-            <ListItem
+            {/* <ListItem
               button
               component={Link}
               to="/nation_capital"
@@ -409,8 +403,8 @@ export default function MainListItems() {
                 <LocationOnIcon />
               </ListItemIcon>
               <ListItemText primary="Nation_Capital" />
-            </ListItem>
-            <ListItem
+            </ListItem> */}
+            {/* <ListItem
               button
               component={Link}
               to="/nation_language"
@@ -437,12 +431,12 @@ export default function MainListItems() {
               component={Link}
               to="/nation_m_school"
               onClick={handleDrawerToggle}
-            >
-              <ListItemIcon>
+            > */}
+            {/* <ListItemIcon>
                 <LayersIcon />
               </ListItemIcon>
               <ListItemText primary="Nation_M_School" />
-            </ListItem>
+            </ListItem> */}
             <ListItem
               button
               component={Link}
@@ -465,7 +459,7 @@ export default function MainListItems() {
               </ListItemIcon>
               <ListItemText primary="Religious_ratio" />
             </ListItem>
-            <ListItem
+            {/* <ListItem
               button
               component={Link}
               to="/symptom"
@@ -475,7 +469,7 @@ export default function MainListItems() {
                 <DirectionsWalkIcon />
               </ListItemIcon>
               <ListItemText primary="Symptom" />
-            </ListItem>
+            </ListItem> */}
           </div>
           <Divider />
         </Drawer>

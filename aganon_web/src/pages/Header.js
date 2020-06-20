@@ -133,7 +133,7 @@ export default function Header() {
   const [open, setOpen] = React.useState(true);
   const [close, setClose] = React.useState(true);
   const [selectedCountry, setSelectedCountry] = React.useState();
-  const country = ["Angola", "Botswana", "Comoros"];
+  // const country = ["Angola", "Botswana", "Comoros"];
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -145,21 +145,21 @@ export default function Header() {
     setToggle(t => !t);
   }
 
-  let countryList =
-    country.length > 0 &&
-    country.map((item, i) => {
-      return <option key={i}>{item}</option>;
-    }, this);
+  // let countryList =
+  //   country.length > 0 &&
+  //   country.map((item, i) => {
+  //     return <option key={i}>{item}</option>;
+  //   }, this);
 
-  function countrySelected(selectedCountry) {
-    setSelectedCountry(selectedCountry);
-    return (
-      <div>
-        <div>{selectedCountry}</div>
-        <Link to="/nation" />
-      </div>
-    );
-  }
+  // function countrySelected(selectedCountry) {
+  //   setSelectedCountry(selectedCountry);
+  //   return (
+  //     <div>
+  //       <div>{selectedCountry}</div>
+  //       <Link to="/nation" />
+  //     </div>
+  //   );
+  // }
   return (
     <div className={classes.root}>
       <primary />
@@ -202,16 +202,14 @@ export default function Header() {
           </div>
           */}
           {/* <Icon className="fa fa-plus-circle" style={{ color: green[500] }} /> */}
-          <div>
-            <Button>
-              <Typography className={classes.title} variant="h4">
-                <PublicIcon className={classes.icon} />
-                <Link style={{ textDecoration: "none", color: "white" }} to="/">
-                  Aganon
-                </Link>
-              </Typography>
-            </Button>
-          </div>
+          <Button>
+            <Typography className={classes.title} variant="h4" noWrap>
+              <PublicIcon className={classes.icon} />
+              <Link style={{ textDecoration: "none", color: "white" }} to="/">
+                Aganon
+              </Link>
+            </Typography>
+          </Button>
 
           {/* <a href=""><FaGlobeAfrica />  AGANON</a>
           {/* <div className={classes.title} variant="h6" noWrap>
@@ -235,12 +233,12 @@ export default function Header() {
             */}
             {/*<select onChange={countrySelected} defaultValue="default">*/}
 
-            <select onChange={value => countrySelected(value)}>
+            {/* <select onChange={value => countrySelected(value)}>
               <option value="default" disabled style={{ color: "#ccc" }}>
                 {"select country"}
               </option>
               {countryList}
-            </select>
+            </select> */}
           </div>
         </Toolbar>
       </AppBar>

@@ -8,6 +8,7 @@ import Avatar from "@material-ui/core/Avatar";
 import sukun from "../images/sukun.jpeg";
 import hyelim from "../images/hyelim.png";
 import jisu from "../images/jisu.jpeg";
+import sujeong from "../images/sujeong.jpeg";
 
 const useStyles = makeStyles(theme => ({
   footer: {
@@ -73,11 +74,7 @@ export default function Footer(props) {
             </div>
           </div>
           <div>
-            <Avatar
-              alt="Yoo Sujeong"
-              src="/static/images/avatar/1.jpg"
-              className={classes.large}
-            />
+            <Avatar alt="Yoo Sujeong" src={sujeong} className={classes.large} />
             <div className={classes.devName}>
               <div>Yoo</div>
               <div>Sujeong</div>
