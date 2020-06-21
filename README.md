@@ -2,8 +2,8 @@
  
 ### 1. Introduction
  
-AFRICA Search Service
-20-1 Database System Final Project
+AFRICA Search Service 
+20-1 Database System Final Project 
 
 "AGANON Provides information about southeast africa mission in various fields, including basic information, population, economy, religion, education and industry. Therefore, it provides convenience when missionaries who are preparing to go to mission work and people interested in africa collect data."
 
@@ -26,9 +26,9 @@ AFRICA Search Service
  
 ### 4. Used Tools
 
-[react](https://ko.reactjs.org/)
-[AWS](https://aws.amazon.com/ko/)
-[Node.js](https://nodejs.org/ko/)
+[react](https://ko.reactjs.org/)  
+[AWS](https://aws.amazon.com/ko/)  
+[Node.js](https://nodejs.org/ko/) 
  
  
  
