@@ -21,14 +21,14 @@ import Divider from "@material-ui/core/Divider";
 import brown from "@material-ui/core/colors/brown";
 import Button from "@material-ui/core/Button";
 
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 import { render } from "@testing-library/react";
 
 const GreenCheckbox = withStyles({
@@ -47,6 +47,10 @@ const mainFeaturedPost = {
 };
 
 const useStyles = makeStyles(theme => ({
+  baseCase: {
+    marginLeft: 30,
+    marginRight: 30
+  },
   base: {
     backgroundColor: blueGrey[400]
   },
@@ -244,33 +248,33 @@ export default function PopulationPage() {
   };
 
   const [state, setState] = React.useState({
-    'nation_id': false,
-    'year': false,
-    'urban': false,
-    'total': false,
-    'rural': false,
+    nation_id: false,
+    year: false,
+    urban: false,
+    total: false,
+    rural: false,
 
-    'checked1': false,
-    'checked2': false,
-    'checked3': false,
-    'checked4': false,
-    'checked5': false,
-    'checked6': false,
-    'checked7': false,
-    'checked8': false,
-    'checked9': false,
-    'checked10': false,
-    'checked11': false,
-    'checked12': false,
-    'checked13': false,
-    'checked14': false,
-    'checked15': false,
-    'checked16': false,
-    'checked17': false,
-    'checked18': false,
-    'checked19': false,
-    'checked20': false,
-    'checked21': false,
+    checked1: false,
+    checked2: false,
+    checked3: false,
+    checked4: false,
+    checked5: false,
+    checked6: false,
+    checked7: false,
+    checked8: false,
+    checked9: false,
+    checked10: false,
+    checked11: false,
+    checked12: false,
+    checked13: false,
+    checked14: false,
+    checked15: false,
+    checked16: false,
+    checked17: false,
+    checked18: false,
+    checked19: false,
+    checked20: false,
+    checked21: false,
     ICT_: false,
     Population: true
   });
@@ -288,21 +292,20 @@ export default function PopulationPage() {
       body: JSON.stringify(state)
     };
 
-
     console.log(state);
 
-    var resOfquery = async () => fetch(url, options_post)
-      .then(response => {
+    var resOfquery = async () =>
+      fetch(url, options_post).then(response => {
         const d = response.json();
         console.log(d);
         return d;
       });
 
-    resOfquery().then((www) => {
+    resOfquery().then(www => {
       setPopulation(www);
     });
   }
-  const handleChange2 = (event) => {
+  const handleChange2 = event => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
@@ -315,80 +318,211 @@ export default function PopulationPage() {
         </main>
       </Container>
       <div>
-        <List className={classes.root5}>
-          <div className={classes.section5}>
-            <ListItem className={classes.list5}>
-              <ListItemText className={classes.listtext5} primary="NATION" />
-            </ListItem>
-            <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="checked1" />} label="Comoros" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked2" />} label="Djibouti" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked3" />} label="Eritrea" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked4" />} label="Ethiopia" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked5" />} label="Kenya" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked6" />} label="Seychelles" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked7" />} label="Somalia" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked8" />} label="Somaliland" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked9" />} label="Tanzania" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked10" />} label="Angola" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked11" />} label="Botswana" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked12" />} label="Eswatini" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked13" />} label="Lesotho" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked14" />} label="Madagascar" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked15" />} label="Malawi" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked16" />} label="Mauritius" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked17" />} label="Mozambique" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked18" />} label="Namibia" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked19" />} label="South Africa" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked20" />} label="Zambia" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="checked21" />} label="Zimbabwe" onChange={handleChange2} />
-            </FormGroup>
-          </div>
-          <div className={classes.section5}>
-            <Divider variant="inset" component="li" />
-            <ListItem>
-              <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
-            </ListItem>
-            <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="year" />} label="Year" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="urban" />} label="Urban" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="rural" />} label="Rural" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="total" />} label="Total" onChange={handleChange2} />
-            </FormGroup>
-          </div>
-        </List>
+        <div className={classes.baseCase}>
+          <List className={classes.root5}>
+            <div className={classes.section5}>
+              <ListItem className={classes.list5}>
+                <ListItemText className={classes.listtext5} primary="NATION" />
+              </ListItem>
+              <FormGroup row className={classes.checks}>
+                <FormControlLabel
+                  control={<Checkbox name="checked1" />}
+                  label="Comoros"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked2" />}
+                  label="Djibouti"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked3" />}
+                  label="Eritrea"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked4" />}
+                  label="Ethiopia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked5" />}
+                  label="Kenya"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked6" />}
+                  label="Seychelles"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked7" />}
+                  label="Somalia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked8" />}
+                  label="Somaliland"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked9" />}
+                  label="Tanzania"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked10" />}
+                  label="Angola"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked11" />}
+                  label="Botswana"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked12" />}
+                  label="Eswatini"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked13" />}
+                  label="Lesotho"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked14" />}
+                  label="Madagascar"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked15" />}
+                  label="Malawi"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked16" />}
+                  label="Mauritius"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked17" />}
+                  label="Mozambique"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked18" />}
+                  label="Namibia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked19" />}
+                  label="South Africa"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked20" />}
+                  label="Zambia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked21" />}
+                  label="Zimbabwe"
+                  onChange={handleChange2}
+                />
+              </FormGroup>
+            </div>
+            <div className={classes.section5}>
+              <Divider variant="inset" component="li" />
+              <ListItem>
+                <ListItemText
+                  className={classes.listtext5}
+                  primary="ATTRIBUTE"
+                />
+              </ListItem>
+              <FormGroup row className={classes.checks}>
+                <FormControlLabel
+                  control={<Checkbox name="year" />}
+                  label="Year"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="urban" />}
+                  label="Urban"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="rural" />}
+                  label="Rural"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="total" />}
+                  label="Total"
+                  onChange={handleChange2}
+                />
+              </FormGroup>
+            </div>
+          </List>
 
-        <div className={classes.root6}>
-          <Button className={classes.buttoncolor} variant="contained"
-            onClick={handleButtonClicked}>
-            SHOW RESULTS
-          </Button>
+          <div className={classes.root6}>
+            <Button
+              className={classes.buttoncolor}
+              variant="contained"
+              onClick={handleButtonClicked}
+            >
+              SHOW RESULTS
+            </Button>
 
-          <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell align="left">{state.year || state.urban || state.rural || state.total ? 'Nation Name' : ''}</TableCell>
-                  <TableCell align="left">{state.year ? 'Year' : ''}</TableCell>
-                  <TableCell align="left">{state.urban ? 'Urban' : ''}</TableCell>
-                  <TableCell align="left">{state.rural ? 'Rural' : ''}</TableCell>
-                  <TableCell align="left">{state.total ? 'Total' : ''}</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {population.map((info) => (
-                  <TableRow key={info.name}>
-                    <TableCell align="left">{state.year || state.urban || state.rural || state.total? info.nation_name : ''}</TableCell>
-                    <TableCell align="left">{state.year ? info.year : ''}</TableCell>
-                    <TableCell align="left">{state.urban ? info.urban : ''}</TableCell>
-                    <TableCell align="left">{state.rural ? info.rural : ''}</TableCell>
-                    <TableCell align="left">{state.total ? info.total : ''}</TableCell>
+            <TableContainer component={Paper}>
+              <Table className={classes.table} aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="left">
+                      {state.year || state.urban || state.rural || state.total
+                        ? "Nation Name"
+                        : ""}
+                    </TableCell>
+                    <TableCell align="left">
+                      {state.year ? "Year" : ""}
+                    </TableCell>
+                    <TableCell align="left">
+                      {state.urban ? "Urban" : ""}
+                    </TableCell>
+                    <TableCell align="left">
+                      {state.rural ? "Rural" : ""}
+                    </TableCell>
+                    <TableCell align="left">
+                      {state.total ? "Total" : ""}
+                    </TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-
+                </TableHead>
+                <TableBody>
+                  {population.map(info => (
+                    <TableRow key={info.name}>
+                      <TableCell align="left">
+                        {state.year || state.urban || state.rural || state.total
+                          ? info.nation_name
+                          : ""}
+                      </TableCell>
+                      <TableCell align="left">
+                        {state.year ? info.year : ""}
+                      </TableCell>
+                      <TableCell align="left">
+                        {state.urban ? info.urban : ""}
+                      </TableCell>
+                      <TableCell align="left">
+                        {state.rural ? info.rural : ""}
+                      </TableCell>
+                      <TableCell align="left">
+                        {state.total ? info.total : ""}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </div>
         </div>
       </div>
     </React.Fragment>

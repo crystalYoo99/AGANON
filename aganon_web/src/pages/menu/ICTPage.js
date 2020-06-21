@@ -22,17 +22,15 @@ import Divider from "@material-ui/core/Divider";
 import brown from "@material-ui/core/colors/brown";
 import Button from "@material-ui/core/Button";
 
-
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 import { render } from "@testing-library/react";
-
 
 const GreenCheckbox = withStyles({
   root: {
@@ -50,6 +48,10 @@ const mainFeaturedPost = {
 };
 
 const useStyles = makeStyles(theme => ({
+  baseCase: {
+    marginLeft: 30,
+    marginRight: 30
+  },
   base: {
     backgroundColor: blueGrey[400]
   },
@@ -248,33 +250,33 @@ export default function ICTPage() {
   };
 
   const [state, setState] = React.useState({
-    'nation_id': false,
-    'year': false,
-    'internet_users': false,
-    'mobile_subscribers': false,
-    'main_telephone_lines': false,
-    'checked1': false,
-    'checked2': false,
-    'checked3': false,
-    'checked4': false,
-    'checked5': false,
-    'checked6': false,
-    'checked7': false,
-    'checked8': false,
-    'checked9': false,
-    'checked10': false,
-    'checked11': false,
-    'checked12': false,
-    'checked13': false,
-    'checked14': false,
-    'checked15': false,
-    'checked16': false,
-    'checked17': false,
-    'checked18': false,
-    'checked19': false,
-    'checked20': false,
-    'checked21': false,
-    'ICT_': true
+    nation_id: false,
+    year: false,
+    internet_users: false,
+    mobile_subscribers: false,
+    main_telephone_lines: false,
+    checked1: false,
+    checked2: false,
+    checked3: false,
+    checked4: false,
+    checked5: false,
+    checked6: false,
+    checked7: false,
+    checked8: false,
+    checked9: false,
+    checked10: false,
+    checked11: false,
+    checked12: false,
+    checked13: false,
+    checked14: false,
+    checked15: false,
+    checked16: false,
+    checked17: false,
+    checked18: false,
+    checked19: false,
+    checked20: false,
+    checked21: false,
+    ICT_: true
   });
 
   const handleChange2 = event => {
@@ -283,24 +285,24 @@ export default function ICTPage() {
 
   function handleButtonClicked() {
     var data = {};
-    var url = 'http://localhost:4000/ict/';
+    var url = "http://localhost:4000/ict/";
     console.log(url);
     const options_post = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json;charset=UTF-8',
-        'Access-Control-Allow-Origin': 'http://localhost:3000'
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
       },
       body: JSON.stringify(state)
     };
 
     const options_get = {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json;charset=UTF-8',
-        'Access-Control-Allow-Origin': 'http://localhost:3000'
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "http://localhost:3000"
       }
     };
 
@@ -308,8 +310,7 @@ export default function ICTPage() {
 
     fetch(url, options_post)
       .then(response => response.json())
-      .then((result) => {
-
+      .then(result => {
         setICT(result);
         console.log(result);
         console.log(ICT);
@@ -317,9 +318,7 @@ export default function ICTPage() {
 
     // 비동기화 문제로 console.log(ICT)가 fetch가 끝나기도 전에 출력되서 한번 더 눌러야 지난 번 값이 log로 떠요.
     console.log(ICT);
-
   }
-
 
   return (
     <React.Fragment>
@@ -330,170 +329,222 @@ export default function ICTPage() {
         </main>
       </Container>
       <div>
-        <List className={classes.root5}>
-          <div className={classes.section5}>
-            <ListItem className={classes.list5}>
-              <ListItemText className={classes.listtext5} primary="NATION" />
-            </ListItem>
-            <FormGroup row className={classes.checks}>
-              <FormControlLabel
-                control={<Checkbox name="checked1" />}
-                label="Comoros"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked2" />}
-                label="Djibouti"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked3" />}
-                label="Eritrea"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked4" />}
-                label="Ethiopia"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked5" />}
-                label="Kenya"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked6" />}
-                label="Seychelles"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked7" />}
-                label="Somalia"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked8" />}
-                label="Somaliland"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked9" />}
-                label="Tanzania"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked10" />}
-                label="Angola"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked11" />}
-                label="Botswana"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked12" />}
-                label="Eswatini"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked13" />}
-                label="Lesotho"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked14" />}
-                label="Madagascar"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked15" />}
-                label="Malawi"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked16" />}
-                label="Mauritius"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked17" />}
-                label="Mozambique"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked18" />}
-                label="Namibia"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked19" />}
-                label="South Africa"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked20" />}
-                label="Zambia"
-                onChange={handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked21" />}
-                label="Zimbabwe"
-                onChange={handleChange2}
-              />
-            </FormGroup>
-          </div>
-          <div className={classes.section5}>
-            <Divider variant="inset" component="li" />
-            <ListItem>
-              <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
-            </ListItem>
-            <FormGroup row className={classes.checks}>
-              <FormControlLabel control={<Checkbox name="year" />} label="Year" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="internet_users" />} label="Internet Users" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="mobile_subscribers" />} label="Mobile Subscribers" onChange={handleChange2} />
-              <FormControlLabel control={<Checkbox name="main_telephone_lines" />} label="Main Telephone Lines" onChange={handleChange2} />
-            </FormGroup>
-          </div>
-        </List>
+        <div className={classes.baseCase}>
+          <List className={classes.root5}>
+            <div className={classes.section5}>
+              <ListItem className={classes.list5}>
+                <ListItemText className={classes.listtext5} primary="NATION" />
+              </ListItem>
+              <FormGroup row className={classes.checks}>
+                <FormControlLabel
+                  control={<Checkbox name="checked1" />}
+                  label="Comoros"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked2" />}
+                  label="Djibouti"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked3" />}
+                  label="Eritrea"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked4" />}
+                  label="Ethiopia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked5" />}
+                  label="Kenya"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked6" />}
+                  label="Seychelles"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked7" />}
+                  label="Somalia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked8" />}
+                  label="Somaliland"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked9" />}
+                  label="Tanzania"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked10" />}
+                  label="Angola"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked11" />}
+                  label="Botswana"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked12" />}
+                  label="Eswatini"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked13" />}
+                  label="Lesotho"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked14" />}
+                  label="Madagascar"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked15" />}
+                  label="Malawi"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked16" />}
+                  label="Mauritius"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked17" />}
+                  label="Mozambique"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked18" />}
+                  label="Namibia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked19" />}
+                  label="South Africa"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked20" />}
+                  label="Zambia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked21" />}
+                  label="Zimbabwe"
+                  onChange={handleChange2}
+                />
+              </FormGroup>
+            </div>
+            <div className={classes.section5}>
+              <Divider variant="inset" component="li" />
+              <ListItem>
+                <ListItemText
+                  className={classes.listtext5}
+                  primary="ATTRIBUTE"
+                />
+              </ListItem>
+              <FormGroup row className={classes.checks}>
+                <FormControlLabel
+                  control={<Checkbox name="year" />}
+                  label="Year"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="internet_users" />}
+                  label="Internet Users"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="mobile_subscribers" />}
+                  label="Mobile Subscribers"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="main_telephone_lines" />}
+                  label="Main Telephone Lines"
+                  onChange={handleChange2}
+                />
+              </FormGroup>
+            </div>
+          </List>
 
-        <div className={classes.root6}>
-          <Button
-            className={classes.buttoncolor}
-            variant="contained"
-            onClick={handleButtonClicked}
-          >
-            SHOW RESULTS
-          </Button>
+          <div className={classes.root6}>
+            <Button
+              className={classes.buttoncolor}
+              variant="contained"
+              onClick={handleButtonClicked}
+            >
+              SHOW RESULTS
+            </Button>
 
-
-          <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell align="left">{state.year || state.internet_users || state.mobile_subscribers || state.main_telephone_lines ? 'Nation Name' : ''}&nbsp;</TableCell>
-                  <TableCell align="left">{state.year ? 'Year' : ''}</TableCell>
-                  <TableCell align="left">{state.internet_users ? 'Internet Users' : ''}</TableCell>
-                  <TableCell align="left">{state.mobile_subscribers ? 'Mobile Subscribers' : ''}</TableCell>
-                  <TableCell align="left">{state.main_telephone_lines ? 'Main Telephone Lines' : ''}</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {ICT.map((info) => (
-                  <TableRow key={info.name}>
-                    <TableCell align="left">{state.year || state.internet_users || state.mobile_subscribers || state.main_telephone_lines ? info.nation_name : ''}</TableCell>
-                    <TableCell align="left">{state.year ? info.year : ''}</TableCell>
-                    <TableCell align="left">{state.internet_users ? info.internet_users : ''}</TableCell>
-                    <TableCell align="left">{state.mobile_subscribers ? info.mobile_subscribers : ''}</TableCell>
-                    <TableCell align="left">{state.main_telephone_lines ? info.main_telephone_lines : ''}</TableCell>
+            <TableContainer component={Paper}>
+              <Table className={classes.table} aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="left">
+                      {state.year ||
+                      state.internet_users ||
+                      state.mobile_subscribers ||
+                      state.main_telephone_lines
+                        ? "Nation Name"
+                        : ""}
+                      &nbsp;
+                    </TableCell>
+                    <TableCell align="left">
+                      {state.year ? "Year" : ""}
+                    </TableCell>
+                    <TableCell align="left">
+                      {state.internet_users ? "Internet Users" : ""}
+                    </TableCell>
+                    <TableCell align="left">
+                      {state.mobile_subscribers ? "Mobile Subscribers" : ""}
+                    </TableCell>
+                    <TableCell align="left">
+                      {state.main_telephone_lines ? "Main Telephone Lines" : ""}
+                    </TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-
-
-
+                </TableHead>
+                <TableBody>
+                  {ICT.map(info => (
+                    <TableRow key={info.name}>
+                      <TableCell align="left">
+                        {state.year ||
+                        state.internet_users ||
+                        state.mobile_subscribers ||
+                        state.main_telephone_lines
+                          ? info.nation_name
+                          : ""}
+                      </TableCell>
+                      <TableCell align="left">
+                        {state.year ? info.year : ""}
+                      </TableCell>
+                      <TableCell align="left">
+                        {state.internet_users ? info.internet_users : ""}
+                      </TableCell>
+                      <TableCell align="left">
+                        {state.mobile_subscribers
+                          ? info.mobile_subscribers
+                          : ""}
+                      </TableCell>
+                      <TableCell align="left">
+                        {state.main_telephone_lines
+                          ? info.main_telephone_lines
+                          : ""}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </div>
         </div>
       </div>
     </React.Fragment>

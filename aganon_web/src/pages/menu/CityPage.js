@@ -37,6 +37,10 @@ const mainFeaturedPost = {
 };
 
 const useStyles = makeStyles(theme => ({
+  baseCase: {
+    marginLeft: 30,
+    marginRight: 30
+  },
   base: {
     backgroundColor: blueGrey[400]
   },
@@ -234,31 +238,31 @@ export default function CityPage() {
   };
 
   const [state, setState] = React.useState({
-    'nation_id': false,
-    'city_id': false,
-    'city_name': false,
-    'checked1': false,
-    'checked2': false,
-    'checked3': false,
-    'checked4': false,
-    'checked5': false,
-    'checked6': false,
-    'checked7': false,
-    'checked8': false,
-    'checked9': false,
-    'checked10': false,
-    'checked11': false,
-    'checked12': false,
-    'checked13': false,
-    'checked14': false,
-    'checked15': false,
-    'checked16': false,
-    'checked17': false,
-    'checked18': false,
-    'checked19': false,
-    'checked20': false,
-    'checked21': false,
-    City:true
+    nation_id: false,
+    city_id: false,
+    city_name: false,
+    checked1: false,
+    checked2: false,
+    checked3: false,
+    checked4: false,
+    checked5: false,
+    checked6: false,
+    checked7: false,
+    checked8: false,
+    checked9: false,
+    checked10: false,
+    checked11: false,
+    checked12: false,
+    checked13: false,
+    checked14: false,
+    checked15: false,
+    checked16: false,
+    checked17: false,
+    checked18: false,
+    checked19: false,
+    checked20: false,
+    checked21: false,
+    City: true
   });
 
   const handleChange2 = event => {
@@ -304,144 +308,152 @@ export default function CityPage() {
         </main>
       </Container>
       <div>
-        <List className={classes.root5}>
-          <div className={classes.section5}>
-            <ListItem className={classes.list5}>
-              <ListItemText className={classes.listtext5} primary="NATION" />
-            </ListItem>
-            <FormGroup row className={classes.checks}>
-              <FormControlLabel
-                control={<Checkbox name="checked1" />}
-                label="Comoros"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked2" />}
-                label="Djibouti"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked3" />}
-                label="Eritrea"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked4" />}
-                label="Ethiopia"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked5" />}
-                label="Kenya"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked6" />}
-                label="Seychelles"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked7" />}
-                label="Somalia"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked8" />}
-                label="Somaliland"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked9" />}
-                label="Tanzania"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked10" />}
-                label="Angola"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked11" />}
-                label="Botswana"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked12" />}
-                label="Eswatini"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked13" />}
-                label="Lesotho"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked14" />}
-                label="Madagascar"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked15" />}
-                label="Malawi"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked16" />}
-                label="Mauritius"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked17" />}
-                label="Mozambique"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked18" />}
-                label="Namibia"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked19" />}
-                label="South Africa"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked20" />}
-                label="Zambia"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checked21" />}
-                label="Zimbabwe"
-                onChange = {handleChange2}
-              />
-            </FormGroup>
-          </div>
-          <div className={classes.section5}>
-            <Divider variant="inset" component="li" />
-            <ListItem>
-              <ListItemText className={classes.listtext5} primary="ATTRIBUTE" />
-            </ListItem>
-            <FormGroup row className={classes.checks}>
-              <FormControlLabel
-                control={<Checkbox name="city_id" />}
-                label="city id"
-                onChange = {handleChange2}
-              />
-              <FormControlLabel
-                control={<Checkbox name="checkedC" />}
-                label="city name"
-                onChange = {handleChange2}
-              />
-            </FormGroup>
-          </div>
-        </List>
+        <div className={classes.baseCase}>
+          <List className={classes.root5}>
+            <div className={classes.section5}>
+              <ListItem className={classes.list5}>
+                <ListItemText className={classes.listtext5} primary="NATION" />
+              </ListItem>
+              <FormGroup row className={classes.checks}>
+                <FormControlLabel
+                  control={<Checkbox name="checked1" />}
+                  label="Comoros"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked2" />}
+                  label="Djibouti"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked3" />}
+                  label="Eritrea"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked4" />}
+                  label="Ethiopia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked5" />}
+                  label="Kenya"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked6" />}
+                  label="Seychelles"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked7" />}
+                  label="Somalia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked8" />}
+                  label="Somaliland"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked9" />}
+                  label="Tanzania"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked10" />}
+                  label="Angola"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked11" />}
+                  label="Botswana"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked12" />}
+                  label="Eswatini"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked13" />}
+                  label="Lesotho"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked14" />}
+                  label="Madagascar"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked15" />}
+                  label="Malawi"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked16" />}
+                  label="Mauritius"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked17" />}
+                  label="Mozambique"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked18" />}
+                  label="Namibia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked19" />}
+                  label="South Africa"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked20" />}
+                  label="Zambia"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checked21" />}
+                  label="Zimbabwe"
+                  onChange={handleChange2}
+                />
+              </FormGroup>
+            </div>
+            <div className={classes.section5}>
+              <Divider variant="inset" component="li" />
+              <ListItem>
+                <ListItemText
+                  className={classes.listtext5}
+                  primary="ATTRIBUTE"
+                />
+              </ListItem>
+              <FormGroup row className={classes.checks}>
+                <FormControlLabel
+                  control={<Checkbox name="city_id" />}
+                  label="City ID"
+                  onChange={handleChange2}
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checkedC" />}
+                  label="City Name"
+                  onChange={handleChange2}
+                />
+              </FormGroup>
+            </div>
+          </List>
 
-        <div className={classes.root6}>
-          <Button className={classes.buttoncolor} variant="contained"
-          onClick={handleButtonClicked}>
-            SHOW RESULTS
-          </Button>
+          <div className={classes.root6}>
+            <Button
+              className={classes.buttoncolor}
+              variant="contained"
+              onClick={handleButtonClicked}
+            >
+              SHOW RESULTS
+            </Button>
+          </div>
         </div>
       </div>
     </React.Fragment>

@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     flex: 1
   },
   cardMedia: {
-    width: 180
+    width: 220
   }
 });
 
@@ -42,7 +42,12 @@ export default function FeaturedPost(props) {
             </Typography>
             <br />
             <Typography variant="overline" paragraph>
-              {post.description}
+              <span>
+                {post.description}
+                <br />
+              </span>
+
+              <span>{post.description3}</span>
             </Typography>
             <Typography variant="overline" paragraph>
               {post.description2}

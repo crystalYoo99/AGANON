@@ -179,7 +179,7 @@ export default function MainListItems() {
               </ListItemIcon>
               <ListItemText primary="Climate" />
             </ListItem>
-
+            {/*
             <ListItem
               button
               component={Link}
@@ -191,7 +191,7 @@ export default function MainListItems() {
               </ListItemIcon>
               <ListItemText primary="City" />
             </ListItem>
-
+            */}
             <ListItem
               button
               component={Link}
@@ -203,7 +203,7 @@ export default function MainListItems() {
               </ListItemIcon>
               <ListItemText primary="Capital" />
             </ListItem>
-
+            {/*
             <ListItem
               button
               component={Link}
@@ -215,6 +215,7 @@ export default function MainListItems() {
               </ListItemIcon>
               <ListItemText primary="City" />
             </ListItem>
+            */}
             <ListItem
               button
               component={Link}

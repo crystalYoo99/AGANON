@@ -15,7 +15,8 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     // backgroundColor: theme.palette.grey[800],
     //   backgroundColor:teal[800],
-    color: theme.palette.common.white,
+    color: "white",
+    //color: theme.palette.common.white,
     marginBottom: theme.spacing(4), //8
     backgroundImage: "url(https://source.unsplash.com/random)",
     backgroundSize: "cover",
@@ -34,6 +35,7 @@ const useStyles = makeStyles(theme => ({
   },
   mainFeaturedPostContent: {
     position: "relative",
+    color: "white",
     padding: theme.spacing(3),
     [theme.breakpoints.up("md")]: {
       padding: theme.spacing(6), //1
@@ -74,9 +76,11 @@ export default function MainFeaturedPost(props) {
               {post.title}
             </Typography>
           </div>
-          <Typography variant="h5" color="inherit" paragraph>
-            {post.description}
-          </Typography>
+          <div className={classes.mainFeaturedPostContent}>
+            <Typography variant="h5" color="inherit">
+              {post.description}
+            </Typography>
+          </div>
         </Grid>
       </Grid>
     </Paper>

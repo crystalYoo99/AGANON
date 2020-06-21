@@ -50,9 +50,11 @@ const initialFeaturedPost = {
 const featuredPosts = [
   {
     title: "About",
-    date: " aganon",
+    date: "AGANON",
     description:
-      "This website provides information about Southeast Africa mission in various fields, including basic information, population, economy, religion, education and industry.",
+      "This website provides information about Southeast Africa mission in various fields, ",
+    description3:
+      "including basic information, population, economy, religion, education and industry.",
     description2:
       "Therefore, it provides convenience when missionaries who are preparing to go to mission work and people interested in Africa collect data.",
     image: "../images/africamap",
@@ -61,8 +63,8 @@ const featuredPosts = [
 ];
 const featuredPosts2 = [
   {
-    title: "How to use this website",
-    date: "aganon",
+    title: "How To Use",
+    date: "AGANON",
     description: "1. First, click on the menu bar at the top left.",
     description2: "2. Click on the menu you want from the menu.",
     description3:
@@ -108,8 +110,9 @@ export default function Blog() {
         {/* <Header title="Blog" sections={sections} /> */}
 
         <main>
-          <InitialFeaturedPost post={initialFeaturedPost} />
-
+          <div>
+            <InitialFeaturedPost post={initialFeaturedPost} />
+          </div>
           <Grid container spacing={4}>
             {featuredPosts.map(post => (
               <FeaturedPost key={post.title} post={post} />
