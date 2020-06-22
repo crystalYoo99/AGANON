@@ -24,8 +24,11 @@ You have to open two Terminals.
 2. `yarn`  
 3. `yarn start`  
   
+  
 <The other Terminal>  
+ 
 0. Move to git cloned AGANON folder
+
 1. `cd aganon_web`
 2. `cd server`
 3. `node server.js`
