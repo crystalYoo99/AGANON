@@ -31,7 +31,7 @@ You have to open two Terminals.
 
 1. `cd aganon_web`
 2. `cd server`
-3. `node server.js`
+3. `node ser.js`
   
   
 ### 3. Major Features  
