@@ -10,7 +10,7 @@ AFRICA Search Service
  
  
 ### 2. Getting Started 
-- You have to open two Terminals.  
+You have to open two Terminals.  
   
 <One Terminal>  
 (You must run these command in sequence at first time)  
