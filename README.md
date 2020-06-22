@@ -10,13 +10,21 @@ AFRICA Search Service
  
  
 ### 2. Getting Started 
+- You have to open two Terminals.
+
+##<One Terminal>
 (You must run these command in sequence at first time)
 (From the second time, you can only run "2. yarn")
-
 0. `git clone`  
 1. `cd aganon_web`  
-2. `yarn`  
+2. `yarn`
 3. `yarn start`  
+
+##<The other Terminal>
+0. Move to git cloned AGANON folder
+1. `cd aganon_web`
+2. `cd server`
+3. `node server.js`
   
   
 ### 3. Major Features  
