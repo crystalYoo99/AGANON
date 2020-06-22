@@ -13,9 +13,9 @@ AFRICA Search Service
 - You have to open two Terminals.  
   
 <One Terminal>  
-(You must run these command in sequence at first time)
+(You must run these command in sequence at first time)  
 (From the second time, you can only run "2. yarn")  
-0. `git clone`  
+0. `git clone`
 1. `cd aganon_web`  
 2. `yarn`  
 3. `yarn start`  
