@@ -24,6 +24,7 @@ You have to install some tools at first.
     And then you should do this command [ yarn add cors ]
 
 
+<br>
 You have to open two Terminals.  
   
 <One Terminal>  
@@ -47,7 +48,9 @@ You have to open two Terminals.
 2. `cd server`
 3. `node ser.js`
   
-### If you have any trouble with executing AGANON, please contact us thourgh the emain, oraclemiso@naver.com
+
+If you have any trouble with executing AGANON, please contact us thourgh the e-mail, oraclemiso@naver.com
+
 
 ### 3. Major Features  
 1. You can select menu page(Economy, religion, education, etc.) what you want.  
