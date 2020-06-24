@@ -10,6 +10,19 @@ AFRICA Search Service
  
  
 ### 2. Getting Started 
+--------------------------------------------
+!!! We assume you use Visual Studio Code !!!
+--------------------------------------------
+
+You have to install some tools at first.
+
+1. "yarn" by inserting command [ yarn install ]
+2. "npm" by inserting command [ npm install ]
+3. "express" by inserting command [ npm install --save express ]
+4. "cors" by inserting command [ npm install --save cors ] 
+    And then you should do this command [ yarn add cors ]
+
+
 You have to open two Terminals.  
   
 <One Terminal>  
@@ -33,7 +46,8 @@ You have to open two Terminals.
 2. `cd server`
 3. `node ser.js`
   
-  
+### If you have any trouble with executing AGANON, please contact us thourgh the emain, oraclemiso@naver.com
+
 ### 3. Major Features  
 1. You can select menu page(Economy, religion, education, etc.) what you want.  
 2. On the page of each menu, you can select the country and attribute for which you want information.  
